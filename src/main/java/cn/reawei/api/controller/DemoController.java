@@ -3,7 +3,6 @@ package cn.reawei.api.controller;
 import cn.reawei.api.model.RwAddress;
 import cn.reawei.api.service.IRwAddressService;
 import cn.reawei.api.service.IRwCacheService;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
