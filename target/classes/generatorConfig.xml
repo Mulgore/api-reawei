@@ -13,7 +13,7 @@
         <property name="javaFileEncoding" value="UTF-8"/>
 
         <!-- 注释 -->
-        <commentGenerator type="cn.reawei.api.common.MyCommentGenerator" >
+        <commentGenerator>
             <property name="suppressAllComments" value="true"/><!-- 是否取消注释 -->
             <property name="suppressDate" value="true" /> <!-- 是否生成注释代时间戳-->
         </commentGenerator>
@@ -35,7 +35,7 @@
         </javaTypeResolver>
 
         <!-- 生成实体类地址 -->
-        <javaModelGenerator targetPackage="cn.reawei.api.model" targetProject="src/main/java" >
+        <javaModelGenerator targetPackage="cn.reawei.api.model" targetProject="${user.home}/autoCode/src/main/java" >
             <!-- 是否在当前路径下新加一层schema,eg：fase路径com.oop.eksp.user.model， true:com.oop.eksp.user.model.[schemaName] -->
             <property name="enableSubPackages" value="false"/>
             <!-- 是否针对string类型的字段在set的时候进行trim调用 -->
@@ -43,13 +43,13 @@
         </javaModelGenerator>
 
         <!-- 生成mapxml文件 -->
-        <sqlMapGenerator targetPackage="cn.reawei.api.mapper" targetProject="src/main/java" >
+        <sqlMapGenerator targetPackage="cn.reawei.api.mapper" targetProject="${user.home}/autoCode/src/main/java" >
             <!-- 是否在当前路径下新加一层schema,eg：fase路径com.oop.eksp.user.model， true:com.oop.eksp.user.model.[schemaName] -->
             <property name="enableSubPackages" value="false" />
         </sqlMapGenerator>
 
         <!-- 生成mapxml对应client，也就是接口dao -->
-        <javaClientGenerator targetPackage="cn.reawei.api.mapper" targetProject="src/main/java" type="XMLMAPPER" >
+        <javaClientGenerator targetPackage="cn.reawei.api.mapper.xml" targetProject="${user.home}/autoCode/src/main/java" type="XMLMAPPER" >
             <!-- 是否在当前路径下新加一层schema,eg：fase路径com.oop.eksp.user.model， true:com.oop.eksp.user.model.[schemaName] -->
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
@@ -61,20 +61,19 @@
             <!-- schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample
                 是否生成 example类   -->
             <!-- 忽略列，不生成bean 字段 -->
-            <ignoreColumn column="FRED" />
+            <!--<ignoreColumn column="FRED" />-->
             <!-- 指定列的java数据类型 -->
-            <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" />
+            <!--<columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" />-->
         </table>
 
         <table tableName="rw_member" domainObjectName="RwMember" enableCountByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false">
-
             <!-- schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample
                 是否生成 example类   -->
             <!-- 忽略列，不生成bean 字段 -->
-            <ignoreColumn column="FRED" />
+            <!--<ignoreColumn column="FRED" />-->
             <!--&lt;!&ndash; 指定列的java数据类型 &ndash;&gt;-->
-            <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" />
+            <!--<columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" />-->
         </table>
 
     </context>
