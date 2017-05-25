@@ -14,11 +14,5 @@ import java.util.List;
 @Service("rwAddressService")
 public class IRwAddressServiceImpl implements IRwAddressService {
 
-    @Resource
-    private RwAddressMapper rwAddressMapper;
 
-    @Override
-    public List<RwAddress> getRwAddressList() {
-        return rwAddressMapper.getAddressList();
-    }
 }

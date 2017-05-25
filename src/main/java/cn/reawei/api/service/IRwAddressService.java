@@ -11,5 +11,4 @@ import java.util.List;
 @Service
 public interface IRwAddressService {
 
-    List<RwAddress> getRwAddressList();
 }

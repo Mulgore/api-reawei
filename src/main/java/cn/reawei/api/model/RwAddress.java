@@ -1,128 +1,95 @@
 package cn.reawei.api.model;
 
-import java.io.Serializable;
 import java.util.Date;
 
-/**
- * <p>
- * 操作日志表
- * </p>
- *
- * @author xingwu
- * @since 2017-03-28
- */
-public class RwAddress implements Serializable {
+public class RwAddress {
+    private Long id;
 
-    private static final long serialVersionUID = 1L;
+    private Integer status;
 
-    /**
-     * 主键
-     */
-	private Long id;
-    /**
-     * 状态 0 未启用 1 默认
-     */
-	private Integer status;
-    /**
-     * 类目id
-     */
-	private Long memberId;
-    /**
-     * 电话
-     */
-	private String mobile;
-    /**
-     * 地址
-     */
-	private String address;
-    /**
-     * 邮编
-     */
-	private String postcode;
-    /**
-     * 备注
-     */
-	private String description;
-    /**
-     * 创建时间
-     */
-	private Date createTime;
-    /**
-     * 修改时间
-     */
-	private Date modifyTime;
+    private Long memberId;
 
+    private String mobile;
 
-	public Long getId() {
-		return id;
-	}
+    private String address;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    private String postcode;
 
-	public Integer getStatus() {
-		return status;
-	}
+    private String description;
 
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
+    private Date createTime;
 
-	public Long getMemberId() {
-		return memberId;
-	}
+    private Date modifyTime;
 
-	public void setMemberId(Long memberId) {
-		this.memberId = memberId;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getMobile() {
-		return mobile;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-	}
+    public Integer getStatus() {
+        return status;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    public Long getMemberId() {
+        return memberId;
+    }
 
-	public String getPostcode() {
-		return postcode;
-	}
+    public void setMemberId(Long memberId) {
+        this.memberId = memberId;
+    }
 
-	public void setPostcode(String postcode) {
-		this.postcode = postcode;
-	}
+    public String getMobile() {
+        return mobile;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public void setMobile(String mobile) {
+        this.mobile = mobile == null ? null : mobile.trim();
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public Date getCreateTime() {
-		return createTime;
-	}
+    public void setAddress(String address) {
+        this.address = address == null ? null : address.trim();
+    }
 
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
+    public String getPostcode() {
+        return postcode;
+    }
 
-	public Date getModifyTime() {
-		return modifyTime;
-	}
+    public void setPostcode(String postcode) {
+        this.postcode = postcode == null ? null : postcode.trim();
+    }
 
-	public void setModifyTime(Date modifyTime) {
-		this.modifyTime = modifyTime;
-	}
+    public String getDescription() {
+        return description;
+    }
 
+    public void setDescription(String description) {
+        this.description = description == null ? null : description.trim();
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
+    }
 }

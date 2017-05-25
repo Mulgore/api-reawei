@@ -1,6 +1,5 @@
 package cn.reawei.api.controller;
 
-import cn.reawei.api.model.RwAddress;
 import cn.reawei.api.service.IRwAddressService;
 import cn.reawei.api.service.IRwCacheService;
 import com.alibaba.fastjson.JSONObject;
@@ -9,7 +8,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * Created by xingwu on 2017/5/24.
@@ -30,8 +28,7 @@ public class DemoController {
     @RequestMapping("/user")
     @ResponseBody
     public String getAddress(){
-        List<RwAddress> result = rwAddressService.getRwAddressList();
-        return JSONObject.toJSONString(result);
+        return null;
     }
 
     @RequestMapping("/cache")

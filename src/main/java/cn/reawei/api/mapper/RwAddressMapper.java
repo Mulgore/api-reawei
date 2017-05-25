@@ -1,21 +1,17 @@
 package cn.reawei.api.mapper;
 
-
 import cn.reawei.api.model.RwAddress;
-import org.apache.ibatis.annotations.Mapper;
 
-import java.util.List;
-
-/**
- * <p>
-  * 操作日志表 Mapper 接口
- * </p>
- *
- * @author xingwu
- * @since 2017-03-28
- */
-@Mapper
 public interface RwAddressMapper {
+    int deleteByPrimaryKey(Long id);
 
-    List<RwAddress> getAddressList();
+    int insert(RwAddress record);
+
+    int insertSelective(RwAddress record);
+
+    RwAddress selectByPrimaryKey(Long id);
+
+    int updateByPrimaryKeySelective(RwAddress record);
+
+    int updateByPrimaryKey(RwAddress record);
 }
