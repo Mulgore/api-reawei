@@ -1,12 +1,13 @@
 package cn.reawei.api.service.Impl;
 
+import cn.reawei.api.common.utils.Page.Query;
+import cn.reawei.api.common.utils.Page.Result;
 import cn.reawei.api.mapper.RwAddressMapper;
 import cn.reawei.api.model.RwAddress;
 import cn.reawei.api.service.IRwAddressService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * Created by xingwu on 2017/5/24.
@@ -15,4 +16,14 @@ import java.util.List;
 public class IRwAddressServiceImpl implements IRwAddressService {
 
 
+    @Resource
+    private RwAddressMapper rwAddressMapper;
+
+    @Override
+    public Result<RwAddress> getRwAddressResultByQuery(Query<RwAddress> addressQuery) {
+        Result<RwAddress> result = new Result<>();
+        result.setDataList(rwAddressMapper.selectResultByQuery(addressQuery));
+        result.setTotal(rwAddressMapper.countResultByQuery(addressQuery));
+        return result;
+    }
 }

@@ -1,7 +1,9 @@
 package cn.reawei.api.mapper;
 
 import cn.reawei.api.model.RwMember;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface RwMemberMapper {
     int deleteByPrimaryKey(Long id);
 

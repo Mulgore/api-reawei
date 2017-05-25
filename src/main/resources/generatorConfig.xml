@@ -57,7 +57,6 @@
         <!-- 配置表信息 -->
         <table tableName="rw_address" domainObjectName="RwAddress" enableCountByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false">
-
             <!-- schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample
                 是否生成 example类   -->
             <!-- 忽略列，不生成bean 字段 -->

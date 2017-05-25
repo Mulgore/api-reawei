@@ -1,5 +1,7 @@
 package cn.reawei.api.service;
 
+import cn.reawei.api.common.utils.Page.Query;
+import cn.reawei.api.common.utils.Page.Result;
 import cn.reawei.api.model.RwAddress;
 import org.springframework.stereotype.Service;
 
@@ -11,4 +13,5 @@ import java.util.List;
 @Service
 public interface IRwAddressService {
 
+    Result<RwAddress> getRwAddressResultByQuery(Query<RwAddress> addressQuery);
 }
