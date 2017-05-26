@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.reawei.api.mapper.RwAppMemberMapper" >
+  <resultMap id="BaseResultMap" type="cn.reawei.api.model.RwAppMember" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="member_id" property="memberId" jdbcType="BIGINT" />
+    <result column="public_key" property="publicKey" jdbcType="VARCHAR" />
+    <result column="private_key" property="privateKey" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, member_id, public_key, private_key
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from rw_app_member
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from rw_app_member
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="cn.reawei.api.model.RwAppMember" >
+    insert into rw_app_member (id, member_id, public_key, 
+      private_key)
+    values (#{id,jdbcType=BIGINT}, #{memberId,jdbcType=BIGINT}, #{publicKey,jdbcType=VARCHAR}, 
+      #{privateKey,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.reawei.api.model.RwAppMember" >
+    insert into rw_app_member
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="memberId != null" >
+        member_id,
+      </if>
+      <if test="publicKey != null" >
+        public_key,
+      </if>
+      <if test="privateKey != null" >
+        private_key,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="memberId != null" >
+        #{memberId,jdbcType=BIGINT},
+      </if>
+      <if test="publicKey != null" >
+        #{publicKey,jdbcType=VARCHAR},
+      </if>
+      <if test="privateKey != null" >
+        #{privateKey,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.reawei.api.model.RwAppMember" >
+    update rw_app_member
+    <set >
+      <if test="memberId != null" >
+        member_id = #{memberId,jdbcType=BIGINT},
+      </if>
+      <if test="publicKey != null" >
+        public_key = #{publicKey,jdbcType=VARCHAR},
+      </if>
+      <if test="privateKey != null" >
+        private_key = #{privateKey,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.reawei.api.model.RwAppMember" >
+    update rw_app_member
+    set member_id = #{memberId,jdbcType=BIGINT},
+      public_key = #{publicKey,jdbcType=VARCHAR},
+      private_key = #{privateKey,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

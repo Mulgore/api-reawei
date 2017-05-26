@@ -2,23 +2,133 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c934edf-2c34-4020-8f57-baeb1164530a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/deployser.sh" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_8_5_14.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_8_5_14.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_8_5_14.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_1_5_3_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/MyCommentGenerator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/cn/reawei/api/common/MyCommentGenerator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/cn/reawei/api/ApiReaweiApplicationTests.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cn/reawei/api/ApiReaweiApplication.class" afterPath="$PROJECT_DIR$/target/classes/cn/reawei/api/ApiReaweiApplication.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/api-reawei.iml" afterPath="$PROJECT_DIR$/.idea/api-reawei.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/api_reawei_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/api_reawei_war.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/api_reawei_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/api_reawei_war_exploded.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/Constants.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/utils/Base64Utils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/utils/Coder.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/utils/DESCoder.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/utils/ECCCoder.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/utils/RSACoder.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/utils/RSATester.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/utils/RSAUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/AppMemberController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/BaseController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/PhotoController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/mapper/RwAppMemberMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/model/RwAppMember.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/model/vo/RwAdressVo.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/service/IRwAppMemberService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/service/Impl/IRwAppMemberServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mapper/RwAppMemberMapper.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT.war" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/META-INF/MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/application.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/ApiReaweiApplication.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/common/CacheConfiguration.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/common/MyBatisConfig.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/common/utils/Page/OrderBy.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/common/utils/Page/Query.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/common/utils/Page/Result.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/controller/DemoController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/mapper/RwAddressMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/mapper/RwMemberMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/model/RwAddress.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/model/RwMember.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/service/IRwAddressService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/service/IRwCacheService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/service/IRwMemberService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/service/Impl/IRwAddressServiceImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/service/Impl/IRwCacheServiceImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/service/Impl/IRwMemberServiceImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/ehcache.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/generatorConfig.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/mapper/RwAddressMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/mapper/RwMemberMapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/properties/generatorConfig.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/properties/jdbc.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/apache-el-8.0.33.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/asm-5.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/asm-commons-5.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/asm-tree-5.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/aspectjweaver-1.8.10.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/classmate-1.3.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/commons-lang3-3.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/druid-1.0.14.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/ehcache-2.10.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/fastjson-1.2.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/hibernate-validator-5.3.5.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-annotations-2.8.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-core-2.8.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-databind-2.8.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/javax-websocket-client-impl-9.4.4.v20170414.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/javax-websocket-server-impl-9.4.4.v20170414.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/javax.annotation-api-1.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/javax.servlet-api-3.1.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/javax.websocket-api-1.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/jboss-logging-3.3.1.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/jcl-over-slf4j-1.7.25.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/jetty-annotations-9.4.4.v20170414.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/jetty-client-9.4.4.v20170414.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/jetty-continuation-9.4.4.v20170414.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/jetty-http-9.4.4.v20170414.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/jetty-io-9.4.4.v20170414.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/jetty-plus-9.4.4.v20170414.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/jetty-security-9.4.4.v20170414.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/jetty-server-9.4.4.v20170414.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/jetty-servlet-9.4.4.v20170414.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/jetty-servlets-9.4.4.v20170414.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/jetty-util-9.4.4.v20170414.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/jetty-webapp-9.4.4.v20170414.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/jetty-xml-9.4.4.v20170414.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/jul-to-slf4j-1.7.25.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/log4j-over-slf4j-1.7.25.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/logback-classic-1.1.11.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/logback-core-1.1.11.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/mybatis-3.4.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/mybatis-generator-core-1.3.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/mybatis-spring-1.3.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/mybatis-spring-boot-autoconfigure-1.1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/mybatis-spring-boot-starter-1.1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/mysql-connector-java-5.1.41.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/slf4j-api-1.7.25.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/snakeyaml-1.17.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/spring-aop-4.3.8.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/spring-beans-4.3.8.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-1.5.3.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-autoconfigure-1.5.3.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-1.5.3.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-aop-1.5.3.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-cache-1.5.3.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-jdbc-1.5.3.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-jetty-1.5.3.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-logging-1.5.3.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-web-1.5.3.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/spring-context-4.3.8.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/spring-context-support-4.3.8.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/spring-core-4.3.8.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/spring-expression-4.3.8.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/spring-jdbc-4.3.8.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/spring-tx-4.3.8.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/spring-web-4.3.8.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/spring-webmvc-4.3.8.RELEASE.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/tomcat-jdbc-8.5.14.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/tomcat-juli-8.5.14.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/validation-api-1.1.0.Final.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/websocket-api-9.4.4.v20170414.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/websocket-client-9.4.4.v20170414.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/websocket-common-9.4.4.v20170414.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/websocket-server-9.4.4.v20170414.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/lib/websocket-servlet-9.4.4.v20170414.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/root.war" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cn/reawei/api/controller/DemoController.class" afterPath="$PROJECT_DIR$/target/classes/cn/reawei/api/controller/DemoController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api.reawei.log" afterPath="$PROJECT_DIR$/api.reawei.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/reawei/api/ApiReaweiApplication.java" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/ApiReaweiApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mapper/RwAddressMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/RwAddressMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/DemoController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/DemoController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,60 +140,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="31" column="29" lean-forward="false" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="deployser.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deployser.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DemoController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/DemoController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApiReaweiApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/ApiReaweiApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -92,6 +149,11 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>assertArrayEquals</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -108,7 +170,6 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/IntrospectedTable.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/MyCommentGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/resources/properties/generatorConfig.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/mapper/RwMemberMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/service/IRwMemberService.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/service/Impl/IRwMemberServiceImpl.java" />
@@ -120,7 +181,6 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/utils/Page/Result.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/service/IRwAddressService.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/service/Impl/IRwAddressServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/DemoController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/RwAddressMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/application-dev.properties" />
         <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/SendMessage.java" />
@@ -130,9 +190,29 @@
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/SpringBootSampleApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/ApiReaweiApplication.java" />
-        <option value="$PROJECT_DIR$/api.reawei.log" />
         <option value="$PROJECT_DIR$/deployser.sh" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/model/vo/RwAdressVo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/DemoController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/Constants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/utils/Page/QEncodeUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/QEncodeUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/utils/QEncodeUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/utils/Coder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/utils/DESCoder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/mapper/RwAppMemberMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/service/IRwAppMemberService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/service/Impl/IRwAppMemberServiceImpl.java" />
+        <option value="$PROJECT_DIR$/api.reawei.log" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/utils/ECCCoder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/AppMemberController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/utils/RSAUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/utils/Base64Utils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/utils/RSATester.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/utils/RSACoder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/BaseController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/PhotoController.java" />
       </list>
     </option>
   </component>
@@ -146,6 +226,37 @@
     <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="974" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Abstraction issuesJava</id>
+          </State>
+          <State>
+            <id>Google Web Toolkit issues</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Security issuesJava</id>
+          </State>
+          <State>
+            <id>Serialization issuesJava</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>SerializableHasSerialVersionUIDField</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -164,8 +275,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -209,10 +318,6 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -288,7 +393,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mapper" />
+              <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -352,12 +457,48 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api-reawei" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api-reawei" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="com.zeroturnaround.javarebel.idea.plugin.settings.startup.StartupConfigurable" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -369,15 +510,16 @@
       <recent name="cn.reawei.api.common" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/mapper" />
+      <recent name="$PROJECT_DIR$/src/main/java/cn/reawei/api/model" />
+      <recent name="$PROJECT_DIR$/src/main/java/cn/reawei/api/mapper" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/main/resources/properties" />
-      <recent name="$PROJECT_DIR$/src/main/resources/mapper" />
-      <recent name="$PROJECT_DIR$/src/main/java/cn/reawei/api/mapper" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="cn.reawei.api" />
+      <recent name="cn.reawei.api.controller" />
       <recent name="cn.reawei.api.service.Impl" />
+      <recent name="cn.reawei.api" />
       <recent name="cn.reawei.api.service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -397,6 +539,86 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.ApiReaweiApplication">
+    <configuration default="false" name="Coder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="cn.reawei.api.common.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="cn.reawei.api.common.utils.Coder" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="api-reawei" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="DESCoder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="cn.reawei.api.common.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="cn.reawei.api.common.utils.DESCoder" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="api-reawei" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="RSACoder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="cn.reawei.api.common.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="cn.reawei.api.common.utils.RSACoder" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="api-reawei" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="RSATester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="cn.reawei.api.common.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="cn.reawei.api.common.utils.RSATester" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="api-reawei" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -845,11 +1067,23 @@
       <envs />
       <method />
     </configuration>
-    <list size="3">
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Spring Boot.ApiReaweiApplication" />
       <item index="1" class="java.lang.String" itemvalue="Maven.generator" />
       <item index="2" class="java.lang.String" itemvalue="Spring Boot.SpringBootSampleApplication" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Coder" />
+      <item index="4" class="java.lang.String" itemvalue="Application.DESCoder" />
+      <item index="5" class="java.lang.String" itemvalue="Application.RSACoder" />
+      <item index="6" class="java.lang.String" itemvalue="Application.RSATester" />
     </list>
+    <recent_temporary>
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Application.RSACoder" />
+        <item index="1" class="java.lang.String" itemvalue="Application.RSATester" />
+        <item index="2" class="java.lang.String" itemvalue="Application.DESCoder" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Coder" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -863,16 +1097,17 @@
       <updated>1495636575666</updated>
       <workItem from="1495636579045" duration="1055000" />
       <workItem from="1495676587898" duration="7829000" />
-      <workItem from="1495692179995" duration="11224000" />
+      <workItem from="1495692179995" duration="11580000" />
+      <workItem from="1495783578676" duration="9044000" />
+      <workItem from="1495803274423" duration="9681000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20108000" />
+    <option name="totallyTimeSpent" value="39189000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="974" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -887,18 +1122,18 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997669" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4848485" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983682" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32983682" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983682" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1978022" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2026862" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -919,7 +1154,17 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/PhotoController.java</url>
+          <line>22</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="5" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -927,231 +1172,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2160">
-          <caret line="135" column="32" lean-forward="false" selection-start-line="135" selection-start-column="32" selection-end-line="135" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/DemoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1760">
-          <caret line="110" column="48" lean-forward="false" selection-start-line="110" selection-start-column="48" selection-end-line="110" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="272">
-            <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="272">
-            <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/properties/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="109" lean-forward="true" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="109" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/cn/reawei/api/mapper/RwMemberMapper.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RwMemberMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="60" column="77" lean-forward="false" selection-start-line="60" selection-start-column="77" selection-end-line="60" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/cn/reawei/api/mapper/RwAddressMapper.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RwAddressMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="31" column="40" lean-forward="false" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
-          <folding>
-            <marker date="1495696865000" expanded="true" signature="1284:1391" ph="select from rw_address" />
-            <marker date="1495696865000" expanded="true" signature="1526:1621" ph="select from rw_address" />
-            <marker date="1495696865000" expanded="true" signature="4514:4573" ph="delete from " />
-            <marker date="1495696865000" expanded="true" signature="4661:5095" ph="insert into rw_address... " />
-            <marker date="1495696865000" expanded="true" signature="6819:7683" ph="update rw_ad... " />
-            <marker date="1495696865000" expanded="true" signature="7783:8224" ph="update rw_ad... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/common/IntrospectedTable.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/generator/mybatis-generator-core/1.3.2/mybatis-generator-core-1.3.2.jar!/org/mybatis/generator/api/CommentGenerator.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="18" column="9" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/generator/mybatis-generator-core/1.3.2/mybatis-generator-core-1.3.2.jar!/org/mybatis/generator/internal/DefaultCommentGenerator.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/model/RwMember.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1299">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#410#411#0" expanded="false" />
-            <element signature="e#435#436#0" expanded="false" />
-            <element signature="e#469#470#0" expanded="false" />
-            <element signature="e#497#498#0" expanded="false" />
-            <element signature="e#528#529#0" expanded="false" />
-            <element signature="e#555#556#0" expanded="false" />
-            <element signature="e#595#596#0" expanded="false" />
-            <element signature="e#656#657#0" expanded="false" />
-            <element signature="e#691#692#0" expanded="false" />
-            <element signature="e#722#723#0" expanded="false" />
-            <element signature="e#770#771#0" expanded="false" />
-            <element signature="e#843#844#0" expanded="false" />
-            <element signature="e#877#878#0" expanded="false" />
-            <element signature="e#906#907#0" expanded="false" />
-            <element signature="e#951#952#0" expanded="false" />
-            <element signature="e#987#988#0" expanded="false" />
-            <element signature="e#1018#1019#0" expanded="false" />
-            <element signature="e#1044#1045#0" expanded="false" />
-            <element signature="e#1083#1084#0" expanded="false" />
-            <element signature="e#1113#1114#0" expanded="false" />
-            <element signature="e#1144#1145#0" expanded="false" />
-            <element signature="e#1170#1171#0" expanded="false" />
-            <element signature="e#1209#1210#0" expanded="false" />
-            <element signature="e#1239#1240#0" expanded="false" />
-            <element signature="e#1272#1273#0" expanded="false" />
-            <element signature="e#1303#1304#0" expanded="false" />
-            <element signature="e#1349#1350#0" expanded="false" />
-            <element signature="e#1389#1390#0" expanded="false" />
-            <element signature="e#1422#1423#0" expanded="false" />
-            <element signature="e#1451#1452#0" expanded="false" />
-            <element signature="e#1495#1496#0" expanded="false" />
-            <element signature="e#1562#1563#0" expanded="false" />
-            <element signature="e#1600#1601#0" expanded="false" />
-            <element signature="e#1634#1635#0" expanded="false" />
-            <element signature="e#1805#1806#0" expanded="false" />
-            <element signature="e#1838#1839#0" expanded="false" />
-            <element signature="e#1888#1889#0" expanded="false" />
-            <element signature="e#1932#1933#0" expanded="false" />
-            <element signature="e#1967#1968#0" expanded="false" />
-            <element signature="e#2000#2001#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/mapper/RwAddressMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/common/MyCommentGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="266" column="58" lean-forward="true" selection-start-line="266" selection-start-column="58" selection-end-line="266" selection-end-column="113" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/mapper/RwMemberMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/mapper/RwMemberMapper.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/properties/generatorConfig.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="58" column="136" lean-forward="false" selection-start-line="58" selection-start-column="136" selection-end-line="58" selection-end-column="136" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/model/RwAddress.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-867">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#362#363#0" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
-            <element signature="e#421#422#0" expanded="true" />
-            <element signature="e#449#450#0" expanded="true" />
-            <element signature="e#483#484#0" expanded="true" />
-            <element signature="e#512#513#0" expanded="true" />
-            <element signature="e#557#558#0" expanded="true" />
-            <element signature="e#593#594#0" expanded="true" />
-            <element signature="e#626#627#0" expanded="true" />
-            <element signature="e#657#658#0" expanded="true" />
-            <element signature="e#703#704#0" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-            <element signature="e#776#777#0" expanded="true" />
-            <element signature="e#805#806#0" expanded="true" />
-            <element signature="e#849#850#0" expanded="true" />
-            <element signature="e#916#917#0" expanded="true" />
-            <element signature="e#950#951#0" expanded="true" />
-            <element signature="e#980#981#0" expanded="true" />
-            <element signature="e#1026#1027#0" expanded="true" />
-            <element signature="e#1096#1097#0" expanded="true" />
-            <element signature="e#1131#1132#0" expanded="true" />
-            <element signature="e#1162#1163#0" expanded="true" />
-            <element signature="e#1210#1211#0" expanded="true" />
-            <element signature="e#1283#1284#0" expanded="true" />
-            <element signature="e#1321#1322#0" expanded="true" />
-            <element signature="e#1355#1356#0" expanded="true" />
-            <element signature="e#1526#1527#0" expanded="true" />
-            <element signature="e#1559#1560#0" expanded="true" />
-            <element signature="e#1609#1610#0" expanded="true" />
-            <element signature="e#1653#1654#0" expanded="true" />
-            <element signature="e#1688#1689#0" expanded="true" />
-            <element signature="e#1721#1722#0" expanded="true" />
-            <marker date="1495692247000" expanded="false" signature="1770:1781" ph=" { " />
-            <marker date="1495692247000" expanded="false" signature="1810:1816" ph=" }" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1159,9 +1184,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
           <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1169,17 +1191,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/service/IRwMemberService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1188,11 +1199,11 @@
         <state relative-caret-position="193">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#555#556#0" expanded="true" />
-            <element signature="e#582#583#0" expanded="true" />
-            <element signature="e#650#651#0" expanded="true" />
-            <element signature="e#714#715#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#555#556#0" expanded="false" />
+            <element signature="e#582#583#0" expanded="false" />
+            <element signature="e#650#651#0" expanded="false" />
+            <element signature="e#714#715#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1201,16 +1212,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/mapper/RwAddressMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
@@ -1231,7 +1232,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1240,7 +1240,7 @@
         <state relative-caret-position="385">
           <caret line="26" column="22" lean-forward="true" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1260,42 +1260,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.properties" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/common/DevSendMessage.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/common/StgSendMessage.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/logback-spring.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/common/SendMessage.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/SpringBootSampleApplication.java" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/common/DevSendMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/common/StgSendMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/logback-spring.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="66" lean-forward="false" selection-start-line="2" selection-start-column="66" selection-end-line="2" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/common/SendMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+        <state relative-caret-position="496">
+          <caret line="31" column="29" lean-forward="false" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -1304,25 +1278,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/DemoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/SpringBootSampleApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="77" lean-forward="true" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="77" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1330,14 +1285,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api.reawei.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1350,11 +1297,288 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/model/vo/RwAdressVo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="31" column="29" lean-forward="false" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+        <state relative-caret-position="224">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/model/RwAddress.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/DemoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <element signature="e#747#748#0" expanded="false" />
+            <element signature="e#784#785#0" expanded="false" />
+            <element signature="e#1022#1023#0" expanded="false" />
+            <element signature="e#1080#1081#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/model/RwAppMember.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RwAppMemberMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+          <folding>
+            <marker date="1495790378000" expanded="true" signature="757:865" ph="select from rw_app_member" />
+            <marker date="1495790378000" expanded="true" signature="949:1011" ph="delete from " />
+            <marker date="1495790378000" expanded="true" signature="1100:1307" ph="insert into rw_app_member... " />
+            <marker date="1495790378000" expanded="true" signature="2276:2657" ph="update rw_ap... " />
+            <marker date="1495790378000" expanded="true" signature="2758:2965" ph="update rw_ap... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1216">
+          <caret line="76" column="64" lean-forward="false" selection-start-line="76" selection-start-column="64" selection-end-line="76" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/service/IRwMemberService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/common/utils/Coder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="162" column="57" lean-forward="true" selection-start-line="162" selection-start-column="57" selection-end-line="162" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/common/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="60" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/mapper/RwAppMemberMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/service/Impl/IRwAppMemberServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="25" column="53" lean-forward="false" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#530#531#0" expanded="true" />
+            <element signature="e#593#594#0" expanded="true" />
+            <element signature="e#729#730#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/service/IRwAppMemberService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/mapper/RwAddressMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api.reawei.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="3852" column="145" lean-forward="false" selection-start-line="3852" selection-start-column="145" selection-end-line="3852" selection-end-column="145" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/jre/lib/ext/sunec.jar!/sun/security/ec/ECKeyFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="26" column="19" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/src.zip!/java/security/KeyPair.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="68" column="21" lean-forward="false" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
+          <folding>
+            <element signature="e#1438#1439#0" expanded="false" />
+            <element signature="e#1470#1471#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/src.zip!/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="211" column="6" lean-forward="false" selection-start-line="211" selection-start-column="6" selection-end-line="211" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/src.zip!/java/security/Signature.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="576" column="24" lean-forward="false" selection-start-line="576" selection-start-column="24" selection-end-line="576" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/src.zip!/java/security/KeyPairGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-268">
+          <caret line="127" column="22" lean-forward="false" selection-start-line="127" selection-start-column="22" selection-end-line="127" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.3.8.RELEASE/spring-core-4.3.8.RELEASE.jar!/org/springframework/util/Base64Utils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="28" column="25" lean-forward="false" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/src.zip!/java/security/Key.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="150" column="18" lean-forward="false" selection-start-line="150" selection-start-column="18" selection-end-line="150" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#4648#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/common/utils/DESCoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="151" column="50" lean-forward="false" selection-start-line="151" selection-start-column="50" selection-end-line="151" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/common/utils/ECCCoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/AppMemberController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/common/utils/Base64Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="42" column="19" lean-forward="false" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/common/utils/RSATester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/common/utils/RSAUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="303" column="26" lean-forward="false" selection-start-line="303" selection-start-column="15" selection-end-line="303" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2010#2026#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="84" column="28" lean-forward="false" selection-start-line="84" selection-start-column="28" selection-end-line="84" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.8.RELEASE/spring-web-4.3.8.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/common/utils/RSACoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="261" column="156" lean-forward="false" selection-start-line="261" selection-start-column="156" selection-end-line="261" selection-end-column="156" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/PhotoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
