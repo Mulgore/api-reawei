@@ -1,15 +1,21 @@
 package cn.reawei.api.controller;
 
 import cn.reawei.api.common.Constants;
+import cn.reawei.api.common.utils.AjaxResult;
 import cn.reawei.api.common.utils.RSACoder;
 import cn.reawei.api.model.RwAppMember;
 import cn.reawei.api.service.IRwAppMemberService;
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import org.eclipse.jetty.util.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,6 +26,11 @@ public class BaseController {
 
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
+    @Autowired
+    protected HttpServletRequest request;
+
+    @Autowired
+    protected HttpServletResponse response;
 
     @Resource
     private IRwAppMemberService rwAppMemberService;
@@ -30,8 +41,22 @@ public class BaseController {
      * @param object 参数
      * @return 返回JSON字符串
      */
-    public String toJSON(Object object) {
-        return JSONObject.toJSONString(object);
+    protected String toJSON(Object object) {
+        return JSONObject.toJSONString(object, SerializerFeature.WriteDateUseDateFormat);
+    }
+
+    /**
+     * 返回 JSON 格式对象
+     *
+     * @param object 转换对象
+     * @param format 序列化特点
+     * @return
+     */
+    protected String toJSON(Object object, String format) {
+        if (format == null) {
+            return toJSON(object);
+        }
+        return JSONObject.toJSONStringWithDateFormat(object, format, SerializerFeature.WriteDateUseDateFormat);
     }
 
     /**
@@ -41,7 +66,7 @@ public class BaseController {
      * @param deskKey
      * @return
      */
-    public String checkAppIdAndDeskKey(String appId, String deskKey) {
+    protected String checkAppIdAndDeskKey(String appId, String deskKey) {
         Map<String, Object> ret = new HashMap<>();
         if (StringUtil.isBlank(deskKey)) {
             ret.put("code", Constants.PHOTO_CODE_ERROR_DESK_KEY_NULL);
@@ -66,7 +91,7 @@ public class BaseController {
             boolean status = false;
             try {
                 String privateKey = appMember.getPrivateKey();
-                String publicKey = deskKey.replace(" ","");
+                String publicKey = deskKey.replace(" ", "");
                 String inputStr = "";
                 byte[] data = inputStr.getBytes();
 
@@ -82,7 +107,7 @@ public class BaseController {
 
                 // 验证签名
                 status = RSACoder.verify(encodedData, publicKey, sign);
-                logger.info("AppId : "+ appId+ " 验签状态 : " + status);
+                logger.info("AppId : " + appId + " 验签状态 : " + status);
             } catch (Exception e) {
                 e.printStackTrace();
             } finally {
@@ -94,4 +119,39 @@ public class BaseController {
         }
         return toJSON(ret);
     }
+
+    /**
+     * <p>
+     * 自动判定是否有跨域操作,转成字符串并返回
+     * </p>
+     *
+     * @param object
+     * @return 跨域或不跨域的字符串
+     */
+    protected String callback(AjaxResult object) {
+        return callback(object, null);
+    }
+
+    protected String callback(AjaxResult object, String format) {
+        String callback = request.getParameter("callback");
+        if (callback == null) {
+            /**
+             * 非 JSONP 请求
+             */
+            return toJSON(object, format);
+        }
+        StringBuffer json = new StringBuffer();
+        json.append(callback);
+        json.append("(").append(toJSON(object, format)).append(")");
+        return json.toString();
+    }
+
+    protected String callbackSuccess(Object obj) {
+        return callback(new AjaxResult(obj));
+    }
+
+    protected String callbackFail(String message) {
+        return callback(new AjaxResult(false, message));
+    }
+
 }

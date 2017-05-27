@@ -3,7 +3,6 @@ package cn.reawei.api.controller;
 import org.eclipse.jetty.util.StringUtil;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,8 +18,10 @@ public class PhotoController extends BaseController {
 
     @ResponseBody
     @RequestMapping(value = "/result/**", method = RequestMethod.GET)
-    public String equals(String appId, HttpServletRequest request) {
-        String path = request.getServletPath();
+    public String equals(String appId) {
+
+        this.response.setHeader("Access-Control-Allow-Origin", "*");
+        String path = this.request.getServletPath();
         String deskKey = path.substring(path.indexOf("result/") + 7, path.lastIndexOf("."));
         Map<String, Object> ret = new HashMap<>();
         String checkStr = checkAppIdAndDeskKey(appId, deskKey);
