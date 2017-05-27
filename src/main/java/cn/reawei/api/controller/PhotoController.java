@@ -1,8 +1,12 @@
 package cn.reawei.api.controller;
 
+import cn.reawei.api.common.Constants;
+import cn.reawei.api.model.RwAppMember;
+import cn.reawei.api.service.IRwAppMemberService;
 import org.eclipse.jetty.util.StringUtil;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -15,6 +19,8 @@ import java.util.Map;
 @RequestMapping("/v1/photo")
 public class PhotoController extends BaseController {
 
+    @Resource
+    private IRwAppMemberService rwAppMemberService;
 
     @ResponseBody
     @RequestMapping(value = "/result/**", method = RequestMethod.GET)
@@ -28,7 +34,40 @@ public class PhotoController extends BaseController {
         if (StringUtil.isNotBlank(checkStr) && !"{}".equals(checkStr)) {
             return checkStr;
         }
-        ret.put("code",0);
+        RwAppMember appMember = rwAppMemberService.getAppMemberById(Long.parseLong(appId));
+        switch (appMember.getLevel()) {
+            case 0:
+                if (appMember.getNumberTotal() >= 500) {
+                    ret.put("code", Constants.PHOTO_CODE_ERROR_TOTAL_NUMBER_MAX);
+                    ret.put("msg", "接口调用上限！");
+                    return toJSON(ret);
+                }
+                break;
+            case 1:
+                if (appMember.getNumberTotal() >= 2000) {
+                    ret.put("code", Constants.PHOTO_CODE_ERROR_TOTAL_NUMBER_MAX);
+                    ret.put("msg", "接口调用上限！");
+                    return toJSON(ret);
+                }
+                break;
+            case 2:
+                if (appMember.getNumberTotal() >= 5000) {
+                    ret.put("code", Constants.PHOTO_CODE_ERROR_TOTAL_NUMBER_MAX);
+                    ret.put("msg", "接口调用上限！");
+                    return toJSON(ret);
+                }
+                break;
+            case 3:
+                if (appMember.getNumberTotal() >= 10000) {
+                    ret.put("code", Constants.PHOTO_CODE_ERROR_TOTAL_NUMBER_MAX);
+                    ret.put("msg", "接口调用上限！");
+                    return toJSON(ret);
+                }
+        }
+        appMember.setNumberTotal(appMember.getNumberTotal() + 1);
+        rwAppMemberService.updateAppMemberById(appMember);
+
+        ret.put("code", 0);
         List<String> result = new ArrayList<>();
         result.add("http://pic.58pic.com/58pic/17/41/38/88658PICNuP_1024.jpg");
         result.add("http://pic76.nipic.com/file/20150825/11284670_155836545000_2.jpg");
@@ -41,7 +80,7 @@ public class PhotoController extends BaseController {
         result.add("http://pic.58pic.com/58pic/13/19/66/66H58PICcnt_1024.jpg");
         result.add("http://pic.58pic.com/58pic/13/04/21/31D58PICVAH.jpg");
         result.add("http://pic.58pic.com/58pic/11/34/45/97E58PICIti.jpg");
-        ret.put("data",result);
+        ret.put("data", result);
         return toJSON(ret);
     }
 }

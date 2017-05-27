@@ -12,4 +12,6 @@ public interface IRwAppMemberService {
     RwAppMember getAppMemberById(Long id);
 
     int saveAppMember(RwAppMember appMember);
+
+    int updateAppMemberById(RwAppMember appMember);
 }

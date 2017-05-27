@@ -27,4 +27,8 @@ public class IRwAppMemberServiceImpl implements IRwAppMemberService {
         return rwAppMemberMapper.insertSelective(appMember);
     }
 
+    @Override
+    public int updateAppMemberById(RwAppMember appMember) {
+        return rwAppMemberMapper.updateByPrimaryKeySelective(appMember);
+    }
 }
