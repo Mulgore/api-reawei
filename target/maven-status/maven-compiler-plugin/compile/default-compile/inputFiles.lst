@@ -23,6 +23,7 @@
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/controller/BaseController.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/common/utils/DESCoder.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/service/Impl/IRwAppMemberServiceImpl.java
+/Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/common/utils/AjaxResult.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/ApiReaweiApplication.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/common/CacheConfiguration.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/service/IRwMemberService.java

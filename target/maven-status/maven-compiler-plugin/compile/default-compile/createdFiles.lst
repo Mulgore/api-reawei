@@ -16,6 +16,7 @@ cn/reawei/api/controller/BaseController.class
 cn/reawei/api/service/Impl/IRwCacheServiceImpl.class
 cn/reawei/api/common/CacheConfiguration.class
 cn/reawei/api/common/MyBatisConfig.class
+cn/reawei/api/common/utils/AjaxResult.class
 cn/reawei/api/mapper/RwAppMemberMapper.class
 cn/reawei/api/common/utils/Page/OrderBy.class
 cn/reawei/api/mapper/RwMemberMapper.class
