@@ -31,4 +31,9 @@ public class IRwAppMemberServiceImpl implements IRwAppMemberService {
     public int updateAppMemberById(RwAppMember appMember) {
         return rwAppMemberMapper.updateByPrimaryKeySelective(appMember);
     }
+
+    @Override
+    public int deleteAppMemberById(Long id) {
+        return rwAppMemberMapper.deleteByPrimaryKey(id);
+    }
 }

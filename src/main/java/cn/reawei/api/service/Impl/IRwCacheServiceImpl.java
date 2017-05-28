@@ -15,6 +15,12 @@ import java.sql.Timestamp;
 public class IRwCacheServiceImpl implements IRwCacheService {
 
 
+    /**
+     * 缓存测试类添加标签Cacheable注解
+     * value：缓存名称
+     *
+     * @return
+     */
     @Cacheable(value = "concurrenmapcache")
     public long getByCache() {
         try {

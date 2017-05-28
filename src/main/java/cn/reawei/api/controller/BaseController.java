@@ -60,7 +60,7 @@ public class BaseController {
     }
 
     /**
-     * 检查AppId和DeskKey是否为空
+     * 检查AppId和DeskKey是否为空，验证公私钥
      *
      * @param appId
      * @param deskKey

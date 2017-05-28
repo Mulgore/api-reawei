@@ -9,7 +9,19 @@ import org.springframework.stereotype.Service;
 @Service
 public interface IRwApiInfoService {
 
-    RwApiInfo getAppMemberById(Long id);
+    /**
+     * 根据id主键查询
+     *
+     * @param id
+     * @return
+     */
+    RwApiInfo getAppInfoById(Long id);
 
-    int saveAppMember(RwApiInfo apiInfo);
+    /**
+     * 保存数据
+     *
+     * @param apiInfo
+     * @return
+     */
+    int saveAppInfo(RwApiInfo apiInfo);
 }

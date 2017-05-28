@@ -1,8 +1,13 @@
 package cn.reawei.api.controller;
 
 import cn.reawei.api.common.Constants;
+import cn.reawei.api.common.utils.Page.OrderBy;
+import cn.reawei.api.common.utils.Page.Query;
+import cn.reawei.api.common.utils.Page.Result;
 import cn.reawei.api.model.RwAppMember;
+import cn.reawei.api.model.RwPhotoInfo;
 import cn.reawei.api.service.IRwAppMemberService;
+import cn.reawei.api.service.IRwPhotoInfoService;
 import org.eclipse.jetty.util.StringUtil;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +26,8 @@ public class PhotoController extends BaseController {
 
     @Resource
     private IRwAppMemberService rwAppMemberService;
+    @Resource
+    private IRwPhotoInfoService rwPhotoInfoService;
 
     @ResponseBody
     @RequestMapping(value = "/result/**", method = RequestMethod.GET)
@@ -66,21 +73,19 @@ public class PhotoController extends BaseController {
         }
         appMember.setNumberTotal(appMember.getNumberTotal() + 1);
         rwAppMemberService.updateAppMemberById(appMember);
-
+        Query<RwPhotoInfo> photoInfoQuery = new Query<>();
+        RwPhotoInfo photoInfo = new RwPhotoInfo();
+        photoInfo.setStatus(0);
+        photoInfoQuery.setQueryObject(photoInfo);
+        System.out.println(photoInfoQuery.getQueryObject().getStatus());
+        OrderBy orderBy = new OrderBy();
+        orderBy.setDesc(true);
+        orderBy.setFieldName("id");
+        photoInfoQuery.setOrderBy(orderBy);
         ret.put("code", 0);
-        List<String> result = new ArrayList<>();
-        result.add("http://pic.58pic.com/58pic/17/41/38/88658PICNuP_1024.jpg");
-        result.add("http://pic76.nipic.com/file/20150825/11284670_155836545000_2.jpg");
-        result.add("http://img05.tooopen.com/images/20150531/tooopen_sy_127457023651.jpg");
-        result.add("http://img06.tooopen.com/images/20160712/tooopen_sy_170083325566.jpg");
-        result.add("http://p4.gexing.com/shaitu/2011/11/12/14074ebe0d2bc101f.jpg");
-        result.add("http://pic44.nipic.com/20140717/12432466_121957328000_2.jpg");
-        result.add("http://pic.58pic.com/58pic/16/01/58/80F58PICvCc_1024.jpg");
-        result.add("http://pic.58pic.com/58pic/13/20/61/89B58PIC5Nz_1024.jpg");
-        result.add("http://pic.58pic.com/58pic/13/19/66/66H58PICcnt_1024.jpg");
-        result.add("http://pic.58pic.com/58pic/13/04/21/31D58PICVAH.jpg");
-        result.add("http://pic.58pic.com/58pic/11/34/45/97E58PICIti.jpg");
-        ret.put("data", result);
+
+        Result<RwPhotoInfo> result = rwPhotoInfoService.getPhotoInfoResultByQuery(photoInfoQuery);
+        ret.put("data", result.getDataList());
         return toJSON(ret);
     }
 }

@@ -39,31 +39,31 @@
     where
       1=1
       <if test="queryObject != null and queryObject.id != null" >
-        and id = #{id,jdbcType=BIGINT},
+        and id = #{queryObject.id,jdbcType=BIGINT}
       </if>
       <if test="queryObject != null and queryObject.status != null" >
-        and status = #{status,jdbcType=INTEGER},
+        and status = #{queryObject.status,jdbcType=INTEGER}
       </if>
       <if test="queryObject != null and queryObject.memberId != null" >
-        and member_id = #{memberId,jdbcType=BIGINT},
+        and member_id = #{queryObject.memberId,jdbcType=BIGINT}
       </if>
       <if test="queryObject != null and queryObject.mobile != null" >
-        and mobile = #{mobile,jdbcType=VARCHAR},
+        and mobile = #{queryObject.mobile,jdbcType=VARCHAR}
       </if>
       <if test="queryObject != null and queryObject.address != null" >
-        and address = #{address,jdbcType=VARCHAR},
+        and address = #{queryObject.address,jdbcType=VARCHAR}
       </if>
       <if test="queryObject != null and queryObject.postcode != null" >
-        and postcode = #{postcode,jdbcType=VARCHAR},
+        and postcode = #{queryObject.postcode,jdbcType=VARCHAR}
       </if>
       <if test="queryObject != null and queryObject.description != null" >
-        and description = #{description,jdbcType=VARCHAR},
+        and description = #{queryObject.description,jdbcType=VARCHAR}
       </if>
       <if test="queryObject != null and queryObject.createTime != null" >
-        and create_time = #{createTime,jdbcType=TIMESTAMP},
+        and create_time = #{queryObject.createTime,jdbcType=TIMESTAMP}
       </if>
       <if test="queryObject != null and queryObject.modifyTime != null" >
-        and modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+        and modify_time = #{queryObject.modifyTime,jdbcType=TIMESTAMP}
       </if>
       <if test="orderBy!=null and orderBy.toOrderBy != null" >
         order by ${orderBy.toOrderBy}
@@ -79,31 +79,31 @@
     where
       1=1
       <if test="queryObject != null and queryObject.id != null" >
-        and id = #{id,jdbcType=BIGINT},
+        and id = #{queryObject.id,jdbcType=BIGINT}
       </if>
       <if test="queryObject != null and queryObject.status != null" >
-        and status = #{status,jdbcType=INTEGER},
+        and status = #{queryObject.status,jdbcType=INTEGER}
       </if>
       <if test="queryObject != null and queryObject.memberId != null" >
-        and member_id = #{memberId,jdbcType=BIGINT},
+        and member_id = #{queryObject.memberId,jdbcType=BIGINT}
       </if>
       <if test="queryObject != null and queryObject.mobile != null" >
-        and mobile = #{mobile,jdbcType=VARCHAR},
+        and mobile = #{queryObject.mobile,jdbcType=VARCHAR}
       </if>
       <if test="queryObject != null and queryObject.address != null" >
-        and address = #{address,jdbcType=VARCHAR},
+        and address = #{queryObject.address,jdbcType=VARCHAR}
       </if>
       <if test="queryObject != null and queryObject.postcode != null" >
-        and postcode = #{postcode,jdbcType=VARCHAR},
+        and postcode = #{queryObject.postcode,jdbcType=VARCHAR}
       </if>
       <if test="queryObject != null and queryObject.description != null" >
-        and description = #{description,jdbcType=VARCHAR},
+        and description = #{queryObject.description,jdbcType=VARCHAR}
       </if>
       <if test="queryObject != null and queryObject.createTime != null" >
-        and create_time = #{createTime,jdbcType=TIMESTAMP},
+        and create_time = #{queryObject.createTime,jdbcType=TIMESTAMP}
       </if>
       <if test="queryObject != null and queryObject.modifyTime != null" >
-        and modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+        and modify_time = #{queryObject.modifyTime,jdbcType=TIMESTAMP}
       </if>
   </select>
 

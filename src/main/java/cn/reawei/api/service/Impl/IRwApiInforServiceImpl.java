@@ -18,12 +18,12 @@ public class IRwApiInforServiceImpl implements IRwApiInfoService {
     private RwApiInfoMapper rwApiInfoMapper;
 
     @Override
-    public RwApiInfo getAppMemberById(Long id) {
+    public RwApiInfo getAppInfoById(Long id) {
         return rwApiInfoMapper.selectByPrimaryKey(id);
     }
 
     @Override
-    public int saveAppMember(RwApiInfo apiInfo) {
+    public int saveAppInfo(RwApiInfo apiInfo) {
         return rwApiInfoMapper.insertSelective(apiInfo);
     }
 
