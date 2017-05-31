@@ -122,7 +122,7 @@ public class BaseController {
         return rlt;
     }
 
-    public boolean updateLevelUseNumber(String appId, Map<String, Object> ret) {
+    protected boolean updateLevelUseNumber(String appId, Map<String, Object> ret) {
         RwAppMember appMember = rwAppMemberService.getAppMemberById(Long.parseLong(appId));
         switch (appMember.getLevel()) {
             case 0:
@@ -192,4 +192,13 @@ public class BaseController {
         return callback(new AjaxResult(false, message));
     }
 
+    /**
+     * 根据请求的URL,截取公钥
+     *
+     * @param path 请求URL
+     * @return 公钥字符串
+     */
+    protected String getDeskKey(String path) {
+        return path.substring(path.indexOf("result/") + 7, path.lastIndexOf("."));
+    }
 }

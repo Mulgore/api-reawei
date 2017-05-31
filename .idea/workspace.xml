@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c934edf-2c34-4020-8f57-baeb1164530a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cn/reawei/api/common/Constants.class" afterPath="$PROJECT_DIR$/target/classes/cn/reawei/api/common/Constants.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cn/reawei/api/controller/BaseController.class" afterPath="$PROJECT_DIR$/target/classes/cn/reawei/api/controller/BaseController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/common/Constants.class" afterPath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/common/Constants.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/controller/BaseController.class" afterPath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/controller/BaseController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/controller/DocumentController.class" afterPath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/controller/DocumentController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/controller/PhotoController.class" afterPath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/controller/PhotoController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cn/reawei/api/controller/DocumentController.class" afterPath="$PROJECT_DIR$/target/classes/cn/reawei/api/controller/DocumentController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cn/reawei/api/controller/PhotoController.class" afterPath="$PROJECT_DIR$/target/classes/cn/reawei/api/controller/PhotoController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/root.war" afterPath="$PROJECT_DIR$/target/root.war" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/Constants.java" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/Constants.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/BaseController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/BaseController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/DocumentController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/DocumentController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/PhotoController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/PhotoController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,8 +30,20 @@
       <file leaf-file-name="PhotoController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/PhotoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+            <state relative-caret-position="257">
+              <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/BaseController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="196" column="6" lean-forward="true" selection-start-line="196" selection-start-column="6" selection-end-line="196" selection-end-column="6" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -36,8 +54,8 @@
       <file leaf-file-name="DocumentController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/DocumentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="42" column="47" lean-forward="true" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="47" />
+            <state relative-caret-position="378">
+              <caret line="43" column="42" lean-forward="false" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -132,9 +150,9 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/service/IRwDocumentService.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/service/Impl/IRwDocumentServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/RwDocumentMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/DocumentController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/PhotoController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/common/Constants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/PhotoController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/DocumentController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/BaseController.java" />
       </list>
     </option>
@@ -974,12 +992,12 @@
       <workItem from="1495936255001" duration="5584000" />
       <workItem from="1496197396092" duration="243000" />
       <workItem from="1496199510061" duration="2342000" />
-      <workItem from="1496210900074" duration="3982000" />
+      <workItem from="1496210900074" duration="5228000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57466000" />
+    <option name="totallyTimeSpent" value="58712000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="974" extended-state="0" />
@@ -1399,16 +1417,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/DocumentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="42" column="47" lean-forward="true" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/common/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -1417,10 +1425,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/DocumentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="43" column="42" lean-forward="false" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/BaseController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1069">
-          <caret line="93" column="37" lean-forward="false" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="37" />
+        <state relative-caret-position="380">
+          <caret line="196" column="6" lean-forward="true" selection-start-line="196" selection-start-column="6" selection-end-line="196" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1429,8 +1447,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/PhotoController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+        <state relative-caret-position="257">
+          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -8,7 +8,6 @@ import cn.reawei.api.model.RwAppMember;
 import cn.reawei.api.model.RwPhotoInfo;
 import cn.reawei.api.service.IRwAppMemberService;
 import cn.reawei.api.service.IRwPhotoInfoService;
-import org.eclipse.jetty.util.StringUtil;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -27,13 +26,19 @@ public class PhotoController extends BaseController {
     @Resource
     private IRwPhotoInfoService rwPhotoInfoService;
 
+    /**
+     * 请求照片墙接口列表
+     *
+     * @param appId appID和公钥
+     * @return 返回JSON格式的字符串
+     */
     @ResponseBody
     @RequestMapping(value = "/result/**", method = RequestMethod.GET)
-    public String equals(String appId) {
+    public String getPhotoResult(String appId) {
 
         this.response.setHeader("Access-Control-Allow-Origin", "*");
         String path = this.request.getServletPath();
-        String deskKey = path.substring(path.indexOf("result/") + 7, path.lastIndexOf("."));
+        String deskKey = getDeskKey(path);
         Map<String, Object> ret = new HashMap<>();
         if (checkAppIdAndDeskKey(appId, deskKey, ret)) {
             return toJSON(ret);
@@ -63,4 +68,6 @@ public class PhotoController extends BaseController {
         ret.put("data", result.getDataList());
         return toJSON(ret);
     }
+
+
 }

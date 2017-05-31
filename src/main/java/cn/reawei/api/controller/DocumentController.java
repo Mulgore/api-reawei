@@ -29,13 +29,19 @@ public class DocumentController extends BaseController {
     @Resource
     private IRwDocumentService rwDocumentService;
 
+    /**
+     * 请求文章列表
+     *
+     * @param appId appId和公钥
+     * @return 返回JSON格式的字符串
+     */
     @ResponseBody
     @RequestMapping(value = "/result/**", method = RequestMethod.GET)
-    public String equals(String appId) {
+    public String getDocResult(String appId) {
 
         this.response.setHeader("Access-Control-Allow-Origin", "*");
         String path = this.request.getServletPath();
-        String deskKey = path.substring(path.indexOf("result/") + 7, path.lastIndexOf("."));
+        String deskKey = getDeskKey(path);
         Map<String, Object> ret = new HashMap<>();
         if (checkAppIdAndDeskKey(appId, deskKey, ret)) {
             return toJSON(ret);
