@@ -1,0 +1,39 @@
+Manifest-Version: 1.0
+Class-Path: jetty-servlet-9.4.4.v20170414.jar javax-websocket-server-i
+ mpl-9.4.4.v20170414.jar druid-1.0.14.jar spring-boot-1.5.3.RELEASE.ja
+ r tomcat-jdbc-8.5.14.jar hibernate-validator-5.3.5.Final.jar tomcat-j
+ uli-8.5.14.jar spring-boot-starter-cache-1.5.3.RELEASE.jar asm-tree-5
+ .1.jar spring-context-4.3.8.RELEASE.jar jackson-databind-2.8.8.jar sp
+ ring-tx-4.3.8.RELEASE.jar jetty-xml-9.4.4.v20170414.jar spring-boot-d
+ evtools-1.5.3.RELEASE.jar mybatis-spring-boot-autoconfigure-1.1.1.jar
+  snakeyaml-1.17.jar websocket-common-9.4.4.v20170414.jar validation-a
+ pi-1.1.0.Final.jar spring-boot-starter-tomcat-1.5.3.RELEASE.jar sprin
+ g-core-4.3.8.RELEASE.jar classmate-1.3.3.jar jetty-util-9.4.4.v201704
+ 14.jar jconsole.jar mysql-connector-java-5.1.41.jar jetty-http-9.4.4.
+ v20170414.jar javax.servlet-api-3.1.0.jar websocket-api-9.4.4.v201704
+ 14.jar tomcat-embed-websocket-8.5.14.jar mybatis-spring-boot-starter-
+ 1.1.1.jar jboss-logging-3.3.1.Final.jar mybatis-generator-core-1.3.2.
+ jar spring-boot-starter-1.5.3.RELEASE.jar spring-beans-4.3.8.RELEASE.
+ jar asm-5.1.jar slf4j-api-1.7.25.jar jackson-core-2.8.8.jar javax-web
+ socket-client-impl-9.4.4.v20170414.jar jetty-servlets-9.4.4.v20170414
+ .jar websocket-server-9.4.4.v20170414.jar spring-boot-autoconfigure-1
+ .5.3.RELEASE.jar jetty-continuation-9.4.4.v20170414.jar tools.jar log
+ back-classic-1.1.11.jar log4j-over-slf4j-1.7.25.jar spring-jdbc-4.3.8
+ .RELEASE.jar spring-web-4.3.8.RELEASE.jar mybatis-spring-1.3.0.jar je
+ tty-io-9.4.4.v20170414.jar websocket-client-9.4.4.v20170414.jar jacks
+ on-annotations-2.8.0.jar spring-boot-starter-web-1.5.3.RELEASE.jar as
+ m-commons-5.1.jar apache-el-8.0.33.jar jul-to-slf4j-1.7.25.jar spring
+ -webmvc-4.3.8.RELEASE.jar websocket-servlet-9.4.4.v20170414.jar tomca
+ t-embed-el-8.5.14.jar jetty-webapp-9.4.4.v20170414.jar javax.websocke
+ t-api-1.0.jar jetty-client-9.4.4.v20170414.jar tomcat-embed-core-8.5.
+ 14.jar ehcache-2.10.4.jar aspectjweaver-1.8.10.jar jetty-security-9.4
+ .4.v20170414.jar spring-expression-4.3.8.RELEASE.jar mybatis-3.4.0.ja
+ r jetty-plus-9.4.4.v20170414.jar spring-boot-starter-logging-1.5.3.RE
+ LEASE.jar spring-aop-4.3.8.RELEASE.jar spring-boot-starter-aop-1.5.3.
+ RELEASE.jar fastjson-1.2.7.jar jetty-annotations-9.4.4.v20170414.jar 
+ spring-context-support-4.3.8.RELEASE.jar javax.annotation-api-1.2.jar
+  logback-core-1.1.11.jar jcl-over-slf4j-1.7.25.jar spring-boot-starte
+ r-jetty-1.5.3.RELEASE.jar jetty-server-9.4.4.v20170414.jar spring-boo
+ t-starter-jdbc-1.5.3.RELEASE.jar
+Main-Class: cn.reawei.api.common.MyCommentGenerator
+
