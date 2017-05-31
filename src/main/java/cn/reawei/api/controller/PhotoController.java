@@ -38,15 +38,16 @@ public class PhotoController extends BaseController {
         if (checkAppIdAndDeskKey(appId, deskKey, ret)) {
             return toJSON(ret);
         }
-        if (updateLevelUseNumber(appId, ret)) {
-            return toJSON(ret);
-        }
         RwAppMember appMember = rwAppMemberService.getAppMemberById(Long.parseLong(appId));
         if (!"100078".equals(appMember.getApiId().toString())) {
             ret.put("code", Constants.CODE_ERROR_APP_ID_NOT_PERM);
             ret.put("msg", "AppId没有权限!!!");
             return toJSON(ret);
         }
+        if (updateLevelUseNumber(appId, ret)) {
+            return toJSON(ret);
+        }
+
         Query<RwPhotoInfo> photoInfoQuery = new Query<>();
         RwPhotoInfo photoInfo = new RwPhotoInfo();
         photoInfo.setStatus(0);

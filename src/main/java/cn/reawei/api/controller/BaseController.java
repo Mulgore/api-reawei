@@ -66,27 +66,33 @@ public class BaseController {
      */
     protected boolean checkAppIdAndDeskKey(String appId, String deskKey, Map<String, Object> ret) {
         boolean rlt = false;
+        if (StringUtil.isBlank(appId) && StringUtil.isBlank(deskKey)) {
+            ret.put("code", Constants.CODE_ERROR_APP_ID_AND_DESK_KEY_NULL);
+            ret.put("msg", "AppId和DeskKey为空!!!");
+            return true;
+        }
         if (StringUtil.isBlank(deskKey)) {
             ret.put("code", Constants.CODE_ERROR_DESK_KEY_NULL);
             ret.put("msg", "DeskKey为空!!!");
-            rlt = true;
+            return true;
         }
         if (StringUtil.isBlank(appId)) {
             ret.put("code", Constants.CODE_ERROR_APP_ID_NULL);
             ret.put("msg", "AppId为空!!!");
-            rlt = true;
+            return true;
         }
-        if (StringUtil.isBlank(appId) && StringUtil.isBlank(deskKey)) {
-            ret.put("code", Constants.CODE_ERROR_APP_ID_AND_DESK_KEY_NULL);
-            ret.put("msg", "AppId和DeskKey为空!!!");
-            rlt = true;
-        }
+
         if (StringUtil.isNotBlank(appId) && StringUtil.isNotBlank(deskKey)) {
             RwAppMember appMember = rwAppMemberService.getAppMemberById(Long.parseLong(appId));
             if (appMember == null) {
                 ret.put("code", Constants.CODE_ERROR_APP_ID_NOT_PERM);
                 ret.put("msg", "没有接口权限!!!");
-                rlt = true;
+                return true;
+            }
+            if (!"0".equals(appMember.getStatus().toString())) {
+                ret.put("code", Constants.CODE_ERROR_APP_ID_NOT_ENABLED);
+                ret.put("msg", "接口未启用!!!");
+                return true;
             }
             boolean status = false;
             try {
