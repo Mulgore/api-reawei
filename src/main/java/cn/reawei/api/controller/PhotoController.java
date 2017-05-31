@@ -35,42 +35,18 @@ public class PhotoController extends BaseController {
         String path = this.request.getServletPath();
         String deskKey = path.substring(path.indexOf("result/") + 7, path.lastIndexOf("."));
         Map<String, Object> ret = new HashMap<>();
-        String checkStr = checkAppIdAndDeskKey(appId, deskKey);
-        if (StringUtil.isNotBlank(checkStr) && !"{}".equals(checkStr)) {
-            return checkStr;
+        if (checkAppIdAndDeskKey(appId, deskKey, ret)) {
+            return toJSON(ret);
+        }
+        if (updateLevelUseNumber(appId, ret)) {
+            return toJSON(ret);
         }
         RwAppMember appMember = rwAppMemberService.getAppMemberById(Long.parseLong(appId));
-        switch (appMember.getLevel()) {
-            case 0:
-                if (appMember.getNumberTotal() >= 500) {
-                    ret.put("code", Constants.PHOTO_CODE_ERROR_TOTAL_NUMBER_MAX);
-                    ret.put("msg", "接口调用上限！");
-                    return toJSON(ret);
-                }
-                break;
-            case 1:
-                if (appMember.getNumberTotal() >= 2000) {
-                    ret.put("code", Constants.PHOTO_CODE_ERROR_TOTAL_NUMBER_MAX);
-                    ret.put("msg", "接口调用上限！");
-                    return toJSON(ret);
-                }
-                break;
-            case 2:
-                if (appMember.getNumberTotal() >= 5000) {
-                    ret.put("code", Constants.PHOTO_CODE_ERROR_TOTAL_NUMBER_MAX);
-                    ret.put("msg", "接口调用上限！");
-                    return toJSON(ret);
-                }
-                break;
-            case 3:
-                if (appMember.getNumberTotal() >= 10000) {
-                    ret.put("code", Constants.PHOTO_CODE_ERROR_TOTAL_NUMBER_MAX);
-                    ret.put("msg", "接口调用上限！");
-                    return toJSON(ret);
-                }
+        if (!"100078".equals(appMember.getApiId().toString())) {
+            ret.put("code", Constants.CODE_ERROR_APP_ID_NOT_PERM);
+            ret.put("msg", "AppId没有权限!!!");
+            return toJSON(ret);
         }
-        appMember.setNumberTotal(appMember.getNumberTotal() + 1);
-        rwAppMemberService.updateAppMemberById(appMember);
         Query<RwPhotoInfo> photoInfoQuery = new Query<>();
         RwPhotoInfo photoInfo = new RwPhotoInfo();
         photoInfo.setStatus(0);

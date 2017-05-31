@@ -20,7 +20,7 @@
       <![CDATA[ limit #{start}, #{limit}]]>
     </if>
   </sql>
-  
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />

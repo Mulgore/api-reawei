@@ -5,10 +5,10 @@ package cn.reawei.api.common;
  */
 public class Constants {
 
-    public static final int PHOTO_CODE_ERROR_APP_ID_NULL = 1001;
-    public static final int PHOTO_CODE_ERROR_DESK_KEY_NULL = 1002;
-    public static final int PHOTO_CODE_ERROR_APP_ID_AND_DESK_KEY_NULL = 1003;
-    public static final int PHOTO_CODE_ERROR_APP_ID_NOT_PERM = 1004;
-    public static final int PHOTO_CODE_ERROR_TOTAL_NUMBER_MAX = 1005;
+    public static final int CODE_ERROR_APP_ID_NULL = 1001;
+    public static final int CODE_ERROR_DESK_KEY_NULL = 1002;
+    public static final int CODE_ERROR_APP_ID_AND_DESK_KEY_NULL = 1003;
+    public static final int CODE_ERROR_APP_ID_NOT_PERM = 1004;
+    public static final int CODE_ERROR_TOTAL_NUMBER_MAX = 1005;
 
 }

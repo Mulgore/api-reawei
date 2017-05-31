@@ -5,7 +5,6 @@ import cn.reawei.api.common.utils.AjaxResult;
 import cn.reawei.api.common.utils.RSACoder;
 import cn.reawei.api.model.RwAppMember;
 import cn.reawei.api.service.IRwAppMemberService;
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import org.eclipse.jetty.util.StringUtil;
@@ -16,7 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -66,28 +64,30 @@ public class BaseController {
      * @param deskKey
      * @return
      */
-    protected String checkAppIdAndDeskKey(String appId, String deskKey) {
-        Map<String, Object> ret = new HashMap<>();
+    protected boolean checkAppIdAndDeskKey(String appId, String deskKey, Map<String, Object> ret) {
+        boolean rlt = false;
         if (StringUtil.isBlank(deskKey)) {
-            ret.put("code", Constants.PHOTO_CODE_ERROR_DESK_KEY_NULL);
+            ret.put("code", Constants.CODE_ERROR_DESK_KEY_NULL);
             ret.put("msg", "DeskKey为空!!!");
+            rlt = true;
         }
         if (StringUtil.isBlank(appId)) {
-            ret.put("code", Constants.PHOTO_CODE_ERROR_APP_ID_NULL);
+            ret.put("code", Constants.CODE_ERROR_APP_ID_NULL);
             ret.put("msg", "AppId为空!!!");
+            rlt = true;
         }
         if (StringUtil.isBlank(appId) && StringUtil.isBlank(deskKey)) {
-            ret.put("code", Constants.PHOTO_CODE_ERROR_APP_ID_AND_DESK_KEY_NULL);
+            ret.put("code", Constants.CODE_ERROR_APP_ID_AND_DESK_KEY_NULL);
             ret.put("msg", "AppId和DeskKey为空!!!");
+            rlt = true;
         }
         if (StringUtil.isNotBlank(appId) && StringUtil.isNotBlank(deskKey)) {
             RwAppMember appMember = rwAppMemberService.getAppMemberById(Long.parseLong(appId));
             if (appMember == null) {
-                ret.put("code", Constants.PHOTO_CODE_ERROR_APP_ID_NOT_PERM);
-                ret.put("msg", "AppId没有权限!!!");
-                toJSON(ret);
+                ret.put("code", Constants.CODE_ERROR_APP_ID_NOT_PERM);
+                ret.put("msg", "没有接口权限!!!");
+                rlt = true;
             }
-
             boolean status = false;
             try {
                 String privateKey = appMember.getPrivateKey();
@@ -96,15 +96,10 @@ public class BaseController {
                 byte[] data = inputStr.getBytes();
 
                 byte[] encodedData = RSACoder.encryptByPrivateKey(data, privateKey);
-//
-//                byte[] decodedData = RSACoder
-//                        .decryptByPublicKey(encodedData, publicKey);
-//
+//                byte[] decodedData = RSACoder.decryptByPublicKey(encodedData, publicKey);
 //                String outputStr = new String(decodedData);
                 // 产生签名
                 String sign = RSACoder.sign(encodedData, privateKey);
-//                System.err.println("签名:\r" + sign);
-
                 // 验证签名
                 status = RSACoder.verify(encodedData, publicKey, sign);
                 logger.info("AppId : " + appId + " 验签状态 : " + status);
@@ -112,12 +107,49 @@ public class BaseController {
                 e.printStackTrace();
             } finally {
                 if (!status) {
-                    ret.put("code", Constants.PHOTO_CODE_ERROR_APP_ID_NOT_PERM);
+                    ret.put("code", Constants.CODE_ERROR_APP_ID_NOT_PERM);
                     ret.put("msg", "验证签名失败!!!");
+                    rlt = true;
                 }
             }
         }
-        return toJSON(ret);
+        return rlt;
+    }
+
+    public boolean updateLevelUseNumber(String appId, Map<String, Object> ret) {
+        RwAppMember appMember = rwAppMemberService.getAppMemberById(Long.parseLong(appId));
+        switch (appMember.getLevel()) {
+            case 0:
+                if (appMember.getNumberTotal() >= 500) {
+                    ret.put("code", Constants.CODE_ERROR_TOTAL_NUMBER_MAX);
+                    ret.put("msg", "接口调用上限！");
+                    return true;
+                }
+                break;
+            case 1:
+                if (appMember.getNumberTotal() >= 2000) {
+                    ret.put("code", Constants.CODE_ERROR_TOTAL_NUMBER_MAX);
+                    ret.put("msg", "接口调用上限！");
+                    return true;
+                }
+                break;
+            case 2:
+                if (appMember.getNumberTotal() >= 5000) {
+                    ret.put("code", Constants.CODE_ERROR_TOTAL_NUMBER_MAX);
+                    ret.put("msg", "接口调用上限！");
+                    return true;
+                }
+                break;
+            case 3:
+                if (appMember.getNumberTotal() >= 10000) {
+                    ret.put("code", Constants.CODE_ERROR_TOTAL_NUMBER_MAX);
+                    ret.put("msg", "接口调用上限！");
+                    return true;
+                }
+        }
+        appMember.setNumberTotal(appMember.getNumberTotal() + 1);
+        rwAppMemberService.updateAppMemberById(appMember);
+        return false;
     }
 
     /**
