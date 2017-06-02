@@ -38,12 +38,9 @@ public class DocumentController extends BaseController {
     @ResponseBody
     @RequestMapping(value = "/result/**", method = RequestMethod.GET)
     public String getDocResult(String appId) {
-
         this.response.setHeader("Access-Control-Allow-Origin", "*");
-        String path = this.request.getServletPath();
-        String deskKey = getDeskKey(path);
         Map<String, Object> ret = new HashMap<>();
-        if (checkAppIdAndDeskKey(appId, deskKey, ret)) {
+        if (checkAppIdAndDeskKey(appId, ret)) {
             return toJSON(ret);
         }
         if (updateLevelUseNumber(appId, ret)) {

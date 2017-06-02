@@ -10,7 +10,7 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import org.eclipse.jetty.util.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -20,18 +20,19 @@ import java.util.Map;
 /**
  * Created by xingwu on 2017/5/24.
  */
+@RestController
 public class BaseController {
 
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Autowired
+    @Resource
     protected HttpServletRequest request;
-
-    @Autowired
+    @Resource
     protected HttpServletResponse response;
 
     @Resource
     private IRwAppMemberService rwAppMemberService;
+
 
     /**
      * 转化成JSON格式
@@ -61,10 +62,13 @@ public class BaseController {
      * 检查AppId和DeskKey是否为空，验证公私钥
      *
      * @param appId
-     * @param deskKey
      * @return
      */
-    protected boolean checkAppIdAndDeskKey(String appId, String deskKey, Map<String, Object> ret) {
+    protected boolean checkAppIdAndDeskKey(String appId, Map<String, Object> ret) {
+        String path = this.request.getServletPath();
+
+        String deskKey = getDeskKey(path);
+
         boolean rlt = false;
         if (StringUtil.isBlank(appId) && StringUtil.isBlank(deskKey)) {
             ret.put("code", Constants.CODE_ERROR_APP_ID_AND_DESK_KEY_NULL);
@@ -111,6 +115,7 @@ public class BaseController {
                 logger.info("AppId : " + appId + " 验签状态 : " + status);
             } catch (Exception e) {
                 e.printStackTrace();
+                logger.info("------- { appId= " + appId + " deskKey= " + deskKey + " 验证签名异常 " + e.getMessage() + " } ---------");
             } finally {
                 if (!status) {
                     ret.put("code", Constants.CODE_ERROR_APP_ID_NOT_PERM);

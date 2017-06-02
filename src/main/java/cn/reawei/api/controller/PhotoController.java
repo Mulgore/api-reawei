@@ -32,15 +32,12 @@ public class PhotoController extends BaseController {
      * @param appId appID和公钥
      * @return 返回JSON格式的字符串
      */
-    @ResponseBody
     @RequestMapping(value = "/result/**", method = RequestMethod.GET)
     public String getPhotoResult(String appId) {
-
         this.response.setHeader("Access-Control-Allow-Origin", "*");
-        String path = this.request.getServletPath();
-        String deskKey = getDeskKey(path);
         Map<String, Object> ret = new HashMap<>();
-        if (checkAppIdAndDeskKey(appId, deskKey, ret)) {
+        // 公钥验签
+        if (checkAppIdAndDeskKey(appId, ret)) {
             return toJSON(ret);
         }
         RwAppMember appMember = rwAppMemberService.getAppMemberById(Long.parseLong(appId));
@@ -49,6 +46,7 @@ public class PhotoController extends BaseController {
             ret.put("msg", "AppId没有权限!!!");
             return toJSON(ret);
         }
+        // 接口调用权限，次数控制
         if (updateLevelUseNumber(appId, ret)) {
             return toJSON(ret);
         }
@@ -57,7 +55,6 @@ public class PhotoController extends BaseController {
         RwPhotoInfo photoInfo = new RwPhotoInfo();
         photoInfo.setStatus(0);
         photoInfoQuery.setQueryObject(photoInfo);
-        System.out.println(photoInfoQuery.getQueryObject().getStatus());
         OrderBy orderBy = new OrderBy();
         orderBy.setDesc(true);
         orderBy.setFieldName("id");
