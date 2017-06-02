@@ -24,6 +24,7 @@ cn/reawei/api/mapper/RwDocumentMapper.class
 cn/reawei/api/common/utils/Coder.class
 cn/reawei/api/mapper/RwPhotoInfoMapper.class
 cn/reawei/api/model/RwMember.class
+cn/reawei/api/controller/SuperController.class
 cn/reawei/api/service/IRwAddressService.class
 cn/reawei/api/model/RwAddress.class
 cn/reawei/api/service/Impl/IRwDocumentServiceImpl.class

@@ -1,10 +1,10 @@
 package cn.reawei.api.controller;
 
+import cn.reawei.api.controller.sys.BaseController;
 import cn.reawei.api.service.IRwAddressService;
 import cn.reawei.api.service.IRwCacheService;
 import cn.reawei.api.service.IRwMemberService;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;

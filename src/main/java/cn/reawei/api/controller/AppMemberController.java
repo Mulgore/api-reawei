@@ -1,6 +1,7 @@
 package cn.reawei.api.controller;
 
 import cn.reawei.api.common.utils.RSACoder;
+import cn.reawei.api.controller.sys.BaseController;
 import cn.reawei.api.model.RwAppMember;
 import cn.reawei.api.service.IRwAppMemberService;
 import org.eclipse.jetty.util.StringUtil;
@@ -38,7 +39,6 @@ public class AppMemberController extends BaseController {
      */
     @RequestMapping(value = "/save", method = RequestMethod.GET)
     public String saveAppMember() {
-        this.response.setHeader("Access-Control-Allow-Origin", "*");
         RwAppMember appMember = new RwAppMember();
         appMember.setMemberId(864840390186938368l);
         boolean ret = false;

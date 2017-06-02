@@ -6,7 +6,7 @@ import java.util.Date;
 public class RwMember implements Serializable {
 
     private static final long serialVersionUID = 8554212943432650227L;
-    
+
     private Long id;
 
     private String name;

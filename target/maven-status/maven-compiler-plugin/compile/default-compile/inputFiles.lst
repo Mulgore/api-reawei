@@ -28,6 +28,7 @@
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/service/Impl/IRwDocumentServiceImpl.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/mapper/RwAppMemberMapper.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/model/RwMember.java
+/Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/controller/SuperController.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/service/Impl/IRwMemberServiceImpl.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/controller/BaseController.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/service/Impl/IRwPhotoInforServiceImpl.java

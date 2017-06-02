@@ -4,6 +4,7 @@ import cn.reawei.api.common.Constants;
 import cn.reawei.api.common.utils.Page.OrderBy;
 import cn.reawei.api.common.utils.Page.Query;
 import cn.reawei.api.common.utils.Page.Result;
+import cn.reawei.api.controller.sys.BaseController;
 import cn.reawei.api.model.RwAppMember;
 import cn.reawei.api.model.RwPhotoInfo;
 import cn.reawei.api.service.IRwAppMemberService;
@@ -44,7 +45,7 @@ public class PhotoController extends BaseController {
      */
     @RequestMapping(value = "/result/**", method = RequestMethod.GET)
     public String getPhotoResult(String appId) {
-        this.response.setHeader("Access-Control-Allow-Origin", "*");
+
         Map<String, Object> ret = new HashMap<>();
         // 公钥验签
         if (checkAppIdAndDeskKey(appId, ret)) {

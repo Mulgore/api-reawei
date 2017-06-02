@@ -4,6 +4,7 @@ import cn.reawei.api.common.Constants;
 import cn.reawei.api.common.utils.Page.OrderBy;
 import cn.reawei.api.common.utils.Page.Query;
 import cn.reawei.api.common.utils.Page.Result;
+import cn.reawei.api.controller.sys.BaseController;
 import cn.reawei.api.model.RwAppMember;
 import cn.reawei.api.model.RwDocument;
 import cn.reawei.api.service.IRwAppMemberService;
@@ -48,7 +49,6 @@ public class DocumentController extends BaseController {
     @ResponseBody
     @RequestMapping(value = "/result/**", method = RequestMethod.GET)
     public String getDocResult(String appId) {
-        this.response.setHeader("Access-Control-Allow-Origin", "*");
         Map<String, Object> ret = new HashMap<>();
         if (checkAppIdAndDeskKey(appId, ret)) {
             return toJSON(ret);
