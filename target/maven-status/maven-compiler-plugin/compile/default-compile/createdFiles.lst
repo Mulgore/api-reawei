@@ -12,6 +12,7 @@ cn/reawei/api/service/Impl/IRwPhotoInforServiceImpl.class
 cn/reawei/api/model/RwApiInfo.class
 cn/reawei/api/common/utils/Page/Query.class
 cn/reawei/api/service/Impl/IRwAddressServiceImpl.class
+cn/reawei/api/controller/sys/BaseController.class
 cn/reawei/api/service/Impl/IRwCacheServiceImpl.class
 cn/reawei/api/common/MyBatisConfig.class
 cn/reawei/api/common/utils/AjaxResult.class
@@ -24,7 +25,6 @@ cn/reawei/api/mapper/RwDocumentMapper.class
 cn/reawei/api/common/utils/Coder.class
 cn/reawei/api/mapper/RwPhotoInfoMapper.class
 cn/reawei/api/model/RwMember.class
-cn/reawei/api/controller/SuperController.class
 cn/reawei/api/service/IRwAddressService.class
 cn/reawei/api/model/RwAddress.class
 cn/reawei/api/service/Impl/IRwDocumentServiceImpl.class
@@ -36,9 +36,9 @@ cn/reawei/api/controller/DocumentController.class
 cn/reawei/api/service/IRwDocumentService.class
 cn/reawei/api/controller/DemoController.class
 cn/reawei/api/common/utils/Page/Result.class
-cn/reawei/api/controller/BaseController.class
 cn/reawei/api/common/CacheConfiguration.class
 cn/reawei/api/controller/AppMemberController.class
+cn/reawei/api/controller/sys/SuperController.class
 cn/reawei/api/model/RwDocument.class
 cn/reawei/api/common/utils/ECCCoder.class
 cn/reawei/api/mapper/RwAddressMapper.class

@@ -2,35 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c934edf-2c34-4020-8f57-baeb1164530a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/sys/SuperController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/BaseController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/sys/BaseController.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/controller/BaseController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/controller/SuperController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/cn/reawei/api/controller/BaseController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/cn/reawei/api/controller/SuperController.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT.war" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/controller/AppMemberController.class" afterPath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/controller/AppMemberController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/controller/BaseController.class" afterPath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/controller/BaseController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/controller/DemoController.class" afterPath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/controller/DemoController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/controller/DocumentController.class" afterPath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/controller/DocumentController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/controller/PhotoController.class" afterPath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/controller/PhotoController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/model/RwAddress.class" afterPath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/model/RwAddress.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/model/RwApiInfo.class" afterPath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/model/RwApiInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/model/RwAppMember.class" afterPath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/model/RwAppMember.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/model/RwDocument.class" afterPath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/model/RwDocument.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/model/RwMember.class" afterPath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/model/RwMember.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/model/RwPhotoInfo.class" afterPath="$PROJECT_DIR$/target/api-reawei-0.0.1-SNAPSHOT/WEB-INF/classes/cn/reawei/api/model/RwPhotoInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cn/reawei/api/controller/BaseController.class" afterPath="$PROJECT_DIR$/target/classes/cn/reawei/api/controller/BaseController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cn/reawei/api/controller/AppMemberController.class" afterPath="$PROJECT_DIR$/target/classes/cn/reawei/api/controller/AppMemberController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cn/reawei/api/controller/DemoController.class" afterPath="$PROJECT_DIR$/target/classes/cn/reawei/api/controller/DemoController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cn/reawei/api/controller/DocumentController.class" afterPath="$PROJECT_DIR$/target/classes/cn/reawei/api/controller/DocumentController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cn/reawei/api/controller/PhotoController.class" afterPath="$PROJECT_DIR$/target/classes/cn/reawei/api/controller/PhotoController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cn/reawei/api/model/RwAddress.class" afterPath="$PROJECT_DIR$/target/classes/cn/reawei/api/model/RwAddress.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cn/reawei/api/model/RwApiInfo.class" afterPath="$PROJECT_DIR$/target/classes/cn/reawei/api/model/RwApiInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cn/reawei/api/model/RwAppMember.class" afterPath="$PROJECT_DIR$/target/classes/cn/reawei/api/model/RwAppMember.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cn/reawei/api/model/RwDocument.class" afterPath="$PROJECT_DIR$/target/classes/cn/reawei/api/model/RwDocument.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cn/reawei/api/model/RwMember.class" afterPath="$PROJECT_DIR$/target/classes/cn/reawei/api/model/RwMember.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cn/reawei/api/model/RwPhotoInfo.class" afterPath="$PROJECT_DIR$/target/classes/cn/reawei/api/model/RwPhotoInfo.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/root.war" afterPath="$PROJECT_DIR$/target/root.war" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/AppMemberController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/AppMemberController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/DemoController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/DemoController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/DocumentController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/DocumentController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/PhotoController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/PhotoController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/reawei/api/model/RwMember.java" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/model/RwMember.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/sys/BaseController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/sys/BaseController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
@@ -45,63 +32,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PhotoController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/PhotoController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="51" column="31" lean-forward="false" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppMemberController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/AppMemberController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="41" column="50" lean-forward="true" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/sys/BaseController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="25" column="46" lean-forward="false" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DocumentController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/DocumentController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="51" column="50" lean-forward="true" selection-start-line="51" selection-start-column="50" selection-end-line="51" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DemoController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/DemoController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="46" column="17" lean-forward="false" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
-              <folding>
-                <element signature="e#1229#1230#0" expanded="true" />
-                <element signature="e#1312#1313#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -179,9 +110,9 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/SuperController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/BaseController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/sys/SuperController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/sys/BaseController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/DocumentController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/AppMemberController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/sys/BaseController.java" />
       </list>
     </option>
   </component>
@@ -252,6 +183,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -407,8 +340,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1028,11 +959,12 @@
       <workItem from="1496210900074" duration="5324000" />
       <workItem from="1496371116161" duration="22000" />
       <workItem from="1496382270662" duration="5489000" />
+      <workItem from="1496394450259" duration="118000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64319000" />
+    <option name="totallyTimeSpent" value="64437000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="974" extended-state="6" />
@@ -1061,7 +993,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23443224" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23687424" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1280,7 +1212,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
           <caret line="1" column="26" lean-forward="false" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1288,7 +1219,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
           <caret line="13" column="9" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1304,7 +1234,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="14" column="2" lean-forward="false" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1312,7 +1241,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1320,7 +1248,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1328,7 +1255,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1336,7 +1262,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="13" column="30" lean-forward="false" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1344,7 +1269,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1352,9 +1276,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1362,7 +1283,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1370,7 +1290,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="18" column="27" lean-forward="true" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1378,9 +1297,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1388,9 +1304,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1398,7 +1311,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1406,9 +1318,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1416,7 +1325,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1424,7 +1332,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1432,40 +1339,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/sys/BaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="25" column="46" lean-forward="false" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/PhotoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="51" column="31" lean-forward="false" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/AppMemberController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="41" column="50" lean-forward="true" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/DocumentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="51" column="50" lean-forward="true" selection-start-line="51" selection-start-column="50" selection-end-line="51" selection-end-column="50" />
           <folding />
         </state>
       </provider>
@@ -1478,6 +1351,38 @@
             <element signature="e#1229#1230#0" expanded="true" />
             <element signature="e#1312#1313#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/DocumentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="51" column="50" lean-forward="false" selection-start-line="51" selection-start-column="50" selection-end-line="51" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/AppMemberController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="41" column="50" lean-forward="false" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/PhotoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="51" column="31" lean-forward="false" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/reawei/api/controller/sys/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>

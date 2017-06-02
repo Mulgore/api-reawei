@@ -2,7 +2,6 @@ package cn.reawei.api.controller.sys;
 
 import cn.reawei.api.common.Constants;
 import cn.reawei.api.common.utils.RSACoder;
-import cn.reawei.api.controller.sys.SuperController;
 import cn.reawei.api.model.RwAppMember;
 import cn.reawei.api.service.IRwAppMemberService;
 import org.eclipse.jetty.util.StringUtil;
@@ -29,11 +28,9 @@ public class BaseController extends SuperController implements HandlerIntercepto
     private IRwAppMemberService rwAppMemberService;
 
     /**
-     * 该方法返回true，才会继续执行后续的Interceptor和Controller，
+     * 在请求处理之前进行调用（Controller方法调用之前）
      * <p>
-     * 当返回值为true 时就会继续调用下一个Interceptor的preHandle 方法，
-     * <p>
-     * 如果已经是最后一个Interceptor的时候就会是调用当前请求的Controller方法；
+     * 该方法返回true，才会继续执行后续的Interceptor和Controller
      *
      * @param httpServletRequest
      * @param httpServletResponse
@@ -48,9 +45,7 @@ public class BaseController extends SuperController implements HandlerIntercepto
     }
 
     /**
-     * 该方法将在请求处理之后, DispatcherServlet进行视图返回渲染之前进行调用，
-     * <p>
-     * 可以在这个方法中对Controller 处理之后的ModelAndView 对象进行操作
+     * 请求处理之后进行调用，但是在视图被渲染之前（Controller方法调用之后)
      *
      * @param httpServletRequest
      * @param httpServletResponse
@@ -64,9 +59,7 @@ public class BaseController extends SuperController implements HandlerIntercepto
     }
 
     /**
-     * 该方法也是需要当前对应的Interceptor的preHandle方法的返回值为true时才会执行，
-     * <p>
-     * 该方法将在整个请求结束之后，也就是在DispatcherServlet 渲染了对应的视图之后执行,用于进行资源清理。
+     * 在整个请求结束之后被调用，也就是在DispatcherServlet 渲染了对应的视图之后执行（主要是用于进行资源清理工作）
      *
      * @param httpServletRequest
      * @param httpServletResponse

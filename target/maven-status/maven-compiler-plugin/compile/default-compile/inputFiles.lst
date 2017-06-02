@@ -3,6 +3,7 @@
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/service/IRwCacheService.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/mapper/RwPhotoInfoMapper.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/model/RwDocument.java
+/Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/controller/sys/BaseController.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/common/utils/RSACoder.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/service/IRwPhotoInfoService.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/common/utils/ECCCoder.java
@@ -28,9 +29,7 @@
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/service/Impl/IRwDocumentServiceImpl.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/mapper/RwAppMemberMapper.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/model/RwMember.java
-/Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/controller/SuperController.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/service/Impl/IRwMemberServiceImpl.java
-/Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/controller/BaseController.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/service/Impl/IRwPhotoInforServiceImpl.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/common/utils/DESCoder.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/service/Impl/IRwAppMemberServiceImpl.java
@@ -38,6 +37,7 @@
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/service/IRwApiInfoService.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/ApiReaweiApplication.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/common/CacheConfiguration.java
+/Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/controller/sys/SuperController.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/mapper/RwApiInfoMapper.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/service/IRwMemberService.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/controller/DocumentController.java
