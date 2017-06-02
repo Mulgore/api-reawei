@@ -1,6 +1,11 @@
 package cn.reawei.api.model;
 
-public class RwPhotoInfo {
+import java.io.Serializable;
+
+public class RwPhotoInfo implements Serializable {
+
+    private static final long serialVersionUID = -2307364508217301467L;
+
     private Long id;
 
     private String imgUrl;
@@ -60,4 +65,5 @@ public class RwPhotoInfo {
     public void setComment(String comment) {
         this.comment = comment == null ? null : comment.trim();
     }
+
 }

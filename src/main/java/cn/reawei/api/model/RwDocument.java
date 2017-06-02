@@ -1,8 +1,12 @@
 package cn.reawei.api.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class RwDocument {
+public class RwDocument implements Serializable {
+
+    private static final long serialVersionUID = -2190090824159963932L;
+
     private Long id;
 
     private String title;

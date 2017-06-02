@@ -1,8 +1,12 @@
 package cn.reawei.api.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class RwAddress {
+public class RwAddress implements Serializable {
+
+    private static final long serialVersionUID = -4081388707865210991L;
+
     private Long id;
 
     private Integer status;
