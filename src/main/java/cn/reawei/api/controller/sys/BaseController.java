@@ -83,6 +83,7 @@ public class BaseController extends SuperController implements HandlerIntercepto
         String deskKey = path.substring(path.indexOf("result/") + 7, path.lastIndexOf("."));
 
         boolean rlt = false;
+        //判断公钥与AppId是否为空
         if (StringUtil.isBlank(appId) && StringUtil.isBlank(deskKey)) {
             ret.put("code", Constants.CODE_ERROR_APP_ID_AND_DESK_KEY_NULL);
             ret.put("msg", "AppId和DeskKey为空!!!");
@@ -98,19 +99,25 @@ public class BaseController extends SuperController implements HandlerIntercepto
             ret.put("msg", "AppId为空!!!");
             return true;
         }
-
+        RwAppMember appMember = rwAppMemberService.getAppMemberById(Long.parseLong(appId));
+        // 验证appId调用权限
+        if (appMember == null) {
+            ret.put("code", Constants.CODE_ERROR_APP_ID_NOT_PERM);
+            ret.put("msg", "AppId没有权限!!!");
+            return true;
+        }
+        if (!apiId.equals(appMember.getApiId().toString())) {
+            ret.put("code", Constants.CODE_ERROR_APP_ID_NOT_PERM);
+            ret.put("msg", "AppId没有权限!!!");
+            return true;
+        }
+        if (!"0".equals(appMember.getStatus().toString())) {
+            ret.put("code", Constants.CODE_ERROR_APP_ID_NOT_ENABLED);
+            ret.put("msg", "接口未启用!!!");
+            return true;
+        }
+//        验证公钥
         if (StringUtil.isNotBlank(appId) && StringUtil.isNotBlank(deskKey)) {
-            RwAppMember appMember = rwAppMemberService.getAppMemberById(Long.parseLong(appId));
-            if (appMember == null) {
-                ret.put("code", Constants.CODE_ERROR_APP_ID_NOT_PERM);
-                ret.put("msg", "没有接口权限!!!");
-                return true;
-            }
-            if (!"0".equals(appMember.getStatus().toString())) {
-                ret.put("code", Constants.CODE_ERROR_APP_ID_NOT_ENABLED);
-                ret.put("msg", "接口未启用!!!");
-                return true;
-            }
             boolean status = false;
             try {
                 String privateKey = appMember.getPrivateKey();
@@ -128,7 +135,7 @@ public class BaseController extends SuperController implements HandlerIntercepto
                 logger.info("AppId : " + appId + " 验签状态 : " + status);
             } catch (Exception e) {
                 e.printStackTrace();
-                logger.info("------- { appId= " + appId + " deskKey= " + deskKey + " 验证签名异常 " + e.getMessage() + " } ---------");
+                logger.info("------- { appId= " + appId + " deskKey= " + deskKey + " Exception " + e.getMessage() + " } ---------");
             } finally {
                 if (!status) {
                     ret.put("code", Constants.CODE_ERROR_APP_ID_NOT_PERM);
@@ -138,14 +145,7 @@ public class BaseController extends SuperController implements HandlerIntercepto
             }
         }
 
-        RwAppMember appMember = rwAppMemberService.getAppMemberById(Long.parseLong(appId));
-
-        if (!apiId.equals(appMember.getApiId().toString())) {
-            ret.put("code", Constants.CODE_ERROR_APP_ID_NOT_PERM);
-            ret.put("msg", "AppId没有权限!!!");
-            return true;
-        }
-
+        // 验证用户等级与可调用次数限制
         switch (appMember.getLevel()) {
             case 0:
                 if (appMember.getNumberTotal() >= 500) {
@@ -175,6 +175,7 @@ public class BaseController extends SuperController implements HandlerIntercepto
                     return true;
                 }
         }
+        // 接口调用次数 + 1
         appMember.setNumberTotal(appMember.getNumberTotal() + 1);
         rwAppMemberService.updateAppMemberById(appMember);
         return rlt;
