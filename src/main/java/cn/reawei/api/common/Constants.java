@@ -17,6 +17,8 @@ public class Constants {
     public static final String PHOTO_API_ID = "100078";
     public static final String DOCUMENT_API_ID = "100079";
 
+    public static final int CODE_DOCUMENT_INFO_IS_NULL = 2000;
+
 
 
 }

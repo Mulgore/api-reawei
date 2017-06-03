@@ -44,7 +44,7 @@ public class DocumentController extends BaseController {
     @RequestMapping(value = "/result/**", method = RequestMethod.GET)
     public String getDocResult(String appId) {
         Map<String, Object> ret = new HashMap<>();
-        if (checkAppIdAndDeskKeyPermission(appId, Constants.DOCUMENT_API_ID,ret)) {
+        if (checkAppIdAndDeskKeyPermission(appId, Constants.DOCUMENT_API_ID, ret)) {
             return toJSON(ret);
         }
         Query<RwDocument> documentQuery = new Query<>();
@@ -61,15 +61,30 @@ public class DocumentController extends BaseController {
         return toJSON(ret);
     }
 
+    /**
+     * 致终于来到这里的勇敢的人：
+     * <p>
+     * 天将降大任于是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为，所以动心忍性，曾益其所不能。
+     * <p>
+     * 嗯！好了这个接口的作用是: 根据文章Id查询文档内容详情
+     *
+     * @param appId appId和公钥
+     * @param docId 文档Id
+     * @return
+     */
     @RequestMapping(value = "/info/result/**", method = RequestMethod.GET)
     public String getOneDocument(String appId, Long docId) {
         Map<String, Object> ret = new HashMap<>();
-        if (checkAppIdAndDeskKeyPermission(appId, Constants.DOCUMENT_API_ID,ret)) {
+        if (checkAppIdAndDeskKeyPermission(appId, Constants.DOCUMENT_API_ID, ret)) {
             return toJSON(ret);
         }
-        ret.put("code", 0);
         RwDocument result = rwDocumentService.getOneDocumentById(docId);
+        ret.put("code", 0);
         ret.put("data", result);
+        if (result == null) {
+            ret.put("code", Constants.CODE_DOCUMENT_INFO_IS_NULL);
+            ret.put("data", "文档不存在!");
+        }
         return toJSON(ret);
     }
 
