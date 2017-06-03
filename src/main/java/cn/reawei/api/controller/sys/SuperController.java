@@ -97,23 +97,4 @@ public class SuperController {
         return callback(new AjaxResult(false, message));
     }
 
-    /**
-     * 根据请求的URL,截取公钥
-     *
-     * @param path 请求URL
-     * @return 公钥字符串
-     */
-    protected String getDeskKey(String path) {
-        return path.substring(path.indexOf("result/") + 7, path.lastIndexOf("."));
-    }
-
-    protected boolean checkAppIdPermission(String appId, Map<String, Object> ret, String apiId) {
-        RwAppMember appMember = rwAppMemberService.getAppMemberById(Long.parseLong(appId));
-        if (!apiId.equals(appMember.getApiId().toString())) {
-            ret.put("code", Constants.CODE_ERROR_APP_ID_NOT_PERM);
-            ret.put("msg", "AppId没有权限!!!");
-            return true;
-        }
-        return false;
-    }
 }

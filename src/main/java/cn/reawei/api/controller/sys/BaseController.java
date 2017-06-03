@@ -78,10 +78,9 @@ public class BaseController extends SuperController implements HandlerIntercepto
      * @param appId
      * @return
      */
-    protected boolean checkAppIdAndDeskKey(String appId, Map<String, Object> ret) {
+    protected boolean checkAppIdAndDeskKeyPermission(String appId, String apiId, Map<String, Object> ret) {
         String path = this.request.getServletPath();
-
-        String deskKey = getDeskKey(path);
+        String deskKey = path.substring(path.indexOf("result/") + 7, path.lastIndexOf("."));
 
         boolean rlt = false;
         if (StringUtil.isBlank(appId) && StringUtil.isBlank(deskKey)) {
@@ -138,11 +137,15 @@ public class BaseController extends SuperController implements HandlerIntercepto
                 }
             }
         }
-        return rlt;
-    }
 
-    protected boolean updateLevelUseNumber(String appId, Map<String, Object> ret) {
         RwAppMember appMember = rwAppMemberService.getAppMemberById(Long.parseLong(appId));
+
+        if (!apiId.equals(appMember.getApiId().toString())) {
+            ret.put("code", Constants.CODE_ERROR_APP_ID_NOT_PERM);
+            ret.put("msg", "AppId没有权限!!!");
+            return true;
+        }
+
         switch (appMember.getLevel()) {
             case 0:
                 if (appMember.getNumberTotal() >= 500) {
@@ -174,7 +177,7 @@ public class BaseController extends SuperController implements HandlerIntercepto
         }
         appMember.setNumberTotal(appMember.getNumberTotal() + 1);
         rwAppMemberService.updateAppMemberById(appMember);
-        return false;
+        return rlt;
     }
 
 }

@@ -29,8 +29,6 @@ import java.util.Map;
 public class PhotoController extends BaseController {
 
     @Resource
-    private IRwAppMemberService rwAppMemberService;
-    @Resource
     private IRwPhotoInfoService rwPhotoInfoService;
 
     /**
@@ -48,16 +46,9 @@ public class PhotoController extends BaseController {
 
         Map<String, Object> ret = new HashMap<>();
         // 公钥验签
-        if (checkAppIdAndDeskKey(appId, ret)) {
+        if (checkAppIdAndDeskKeyPermission(appId, Constants.PHOTO_API_ID, ret)) {
             return toJSON(ret);
         }
-        // 接口调用权限
-        if (checkAppIdPermission(appId, ret, Constants.PHOTO_API_ID)) return toJSON(ret);
-        // 接口调用权限，次数控制
-        if (updateLevelUseNumber(appId, ret)) {
-            return toJSON(ret);
-        }
-
         Query<RwPhotoInfo> photoInfoQuery = new Query<>();
         RwPhotoInfo photoInfo = new RwPhotoInfo();
         photoInfo.setStatus(0);

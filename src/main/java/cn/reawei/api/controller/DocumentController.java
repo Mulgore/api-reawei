@@ -32,8 +32,6 @@ import java.util.Map;
 public class DocumentController extends BaseController {
 
     @Resource
-    private IRwAppMemberService rwAppMemberService;
-    @Resource
     private IRwDocumentService rwDocumentService;
 
     /**
@@ -49,14 +47,9 @@ public class DocumentController extends BaseController {
     @RequestMapping(value = "/result/**", method = RequestMethod.GET)
     public String getDocResult(String appId) {
         Map<String, Object> ret = new HashMap<>();
-        if (checkAppIdAndDeskKey(appId, ret)) {
+        if (checkAppIdAndDeskKeyPermission(appId, Constants.DOCUMENT_API_ID,ret)) {
             return toJSON(ret);
         }
-        if (updateLevelUseNumber(appId, ret)) {
-            return toJSON(ret);
-        }
-        //检查接口权限
-        if (checkAppIdPermission(appId, ret, Constants.DOCUMENT_API_ID)) return toJSON(ret);
         Query<RwDocument> documentQuery = new Query<>();
         RwDocument photoInfo = new RwDocument();
         documentQuery.setQueryObject(photoInfo);
@@ -74,15 +67,9 @@ public class DocumentController extends BaseController {
     @RequestMapping(value = "/info/result/**", method = RequestMethod.GET)
     public String getOneDocument(String appId, Long docId) {
         Map<String, Object> ret = new HashMap<>();
-        if (checkAppIdAndDeskKey(appId, ret)) {
+        if (checkAppIdAndDeskKeyPermission(appId, Constants.DOCUMENT_API_ID,ret)) {
             return toJSON(ret);
         }
-        if (updateLevelUseNumber(appId, ret)) {
-            return toJSON(ret);
-        }
-        //检查接口权限
-        if (checkAppIdPermission(appId, ret, Constants.DOCUMENT_API_ID)) return toJSON(ret);
-
         ret.put("code", 0);
         RwDocument result = rwDocumentService.getOneDocumentById(docId);
         ret.put("data", result);
