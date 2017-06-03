@@ -1,20 +1,14 @@
 package cn.reawei.api.controller.sys;
 
-import cn.reawei.api.common.Constants;
 import cn.reawei.api.common.utils.AjaxResult;
-import cn.reawei.api.model.RwAppMember;
-import cn.reawei.api.service.IRwAppMemberService;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Map;
 
 /**
  * 致终于来到这里的勇敢的人：
@@ -34,10 +28,6 @@ public class SuperController {
 
     @Autowired
     protected HttpServletResponse response;
-
-    @Resource
-    private IRwAppMemberService rwAppMemberService;
-
 
     /**
      * 转化成JSON格式

@@ -5,9 +5,7 @@ import cn.reawei.api.common.utils.Page.OrderBy;
 import cn.reawei.api.common.utils.Page.Query;
 import cn.reawei.api.common.utils.Page.Result;
 import cn.reawei.api.controller.sys.BaseController;
-import cn.reawei.api.model.RwAppMember;
 import cn.reawei.api.model.RwPhotoInfo;
-import cn.reawei.api.service.IRwAppMemberService;
 import cn.reawei.api.service.IRwPhotoInfoService;
 import org.springframework.web.bind.annotation.*;
 

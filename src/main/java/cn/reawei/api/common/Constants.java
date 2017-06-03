@@ -5,6 +5,7 @@ package cn.reawei.api.common;
  */
 public class Constants {
 
+    // 接口调用错误返回CODE码
     public static final int CODE_ERROR_APP_ID_NULL = 1001;
     public static final int CODE_ERROR_DESK_KEY_NULL = 1002;
     public static final int CODE_ERROR_APP_ID_AND_DESK_KEY_NULL = 1003;
@@ -12,8 +13,7 @@ public class Constants {
     public static final int CODE_ERROR_TOTAL_NUMBER_MAX = 1005;
     public static final int CODE_ERROR_APP_ID_NOT_ENABLED = 1006;
 
-
-
+    // 接口ID常量池
     public static final String PHOTO_API_ID = "100078";
     public static final String DOCUMENT_API_ID = "100079";
 

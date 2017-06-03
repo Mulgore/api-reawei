@@ -5,13 +5,10 @@ import cn.reawei.api.common.utils.Page.OrderBy;
 import cn.reawei.api.common.utils.Page.Query;
 import cn.reawei.api.common.utils.Page.Result;
 import cn.reawei.api.controller.sys.BaseController;
-import cn.reawei.api.model.RwAppMember;
 import cn.reawei.api.model.RwDocument;
-import cn.reawei.api.service.IRwAppMemberService;
 import cn.reawei.api.service.IRwDocumentService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;

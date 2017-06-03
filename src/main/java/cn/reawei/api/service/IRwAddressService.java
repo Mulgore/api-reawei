@@ -5,7 +5,6 @@ import cn.reawei.api.common.utils.Page.Result;
 import cn.reawei.api.model.RwAddress;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
 /**
  * Created by xingwu on 2017/5/24.

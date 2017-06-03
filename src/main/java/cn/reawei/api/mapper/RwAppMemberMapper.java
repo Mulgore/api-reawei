@@ -1,7 +1,6 @@
 package cn.reawei.api.mapper;
 
 import cn.reawei.api.common.utils.Page.Query;
-import cn.reawei.api.model.RwAddress;
 import cn.reawei.api.model.RwAppMember;
 import org.apache.ibatis.annotations.Mapper;
 
