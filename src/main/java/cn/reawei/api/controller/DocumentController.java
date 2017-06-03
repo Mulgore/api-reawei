@@ -46,7 +46,6 @@ public class DocumentController extends BaseController {
      * @param appId appId和公钥
      * @return 返回JSON格式的字符串
      */
-    @ResponseBody
     @RequestMapping(value = "/result/**", method = RequestMethod.GET)
     public String getDocResult(String appId) {
         Map<String, Object> ret = new HashMap<>();
@@ -56,12 +55,8 @@ public class DocumentController extends BaseController {
         if (updateLevelUseNumber(appId, ret)) {
             return toJSON(ret);
         }
-        RwAppMember appMember = rwAppMemberService.getAppMemberById(Long.parseLong(appId));
-        if (!"100079".equals(appMember.getApiId().toString())) {
-            ret.put("code", Constants.CODE_ERROR_APP_ID_NOT_PERM);
-            ret.put("msg", "AppId没有权限!!!");
-            return toJSON(ret);
-        }
+        //检查接口权限
+        if (checkAppIdPermission(appId, ret, Constants.DOCUMENT_API_ID)) return toJSON(ret);
         Query<RwDocument> documentQuery = new Query<>();
         RwDocument photoInfo = new RwDocument();
         documentQuery.setQueryObject(photoInfo);
@@ -76,5 +71,22 @@ public class DocumentController extends BaseController {
         return toJSON(ret);
     }
 
+    @RequestMapping(value = "/info/result/**", method = RequestMethod.GET)
+    public String getOneDocument(String appId, Long Id) {
+        Map<String, Object> ret = new HashMap<>();
+        if (checkAppIdAndDeskKey(appId, ret)) {
+            return toJSON(ret);
+        }
+        if (updateLevelUseNumber(appId, ret)) {
+            return toJSON(ret);
+        }
+        //检查接口权限
+        if (checkAppIdPermission(appId, ret, Constants.DOCUMENT_API_ID)) return toJSON(ret);
+
+        ret.put("code", 0);
+        RwDocument result = rwDocumentService.getOneDocumentById(Id);
+        ret.put("data", result);
+        return toJSON(ret);
+    }
 
 }

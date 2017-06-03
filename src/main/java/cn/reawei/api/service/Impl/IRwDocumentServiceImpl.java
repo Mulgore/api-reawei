@@ -25,4 +25,9 @@ public class IRwDocumentServiceImpl implements IRwDocumentService {
         result.setTotal(rwDocumentMapper.countResultByQuery(documentQuery));
         return result;
     }
+
+    @Override
+    public RwDocument getOneDocumentById(Long id) {
+        return rwDocumentMapper.selectByPrimaryKey(id);
+    }
 }

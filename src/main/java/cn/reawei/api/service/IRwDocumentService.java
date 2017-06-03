@@ -18,4 +18,12 @@ public interface IRwDocumentService {
      * @return
      */
     Result<RwDocument> getDocumentResultByQuery(Query<RwDocument> documentQuery);
+
+    /**
+     * 查询文档
+     *
+     * @param id 文档Id
+     * @return
+     */
+    RwDocument getOneDocumentById(Long id);
 }

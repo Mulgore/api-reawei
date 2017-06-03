@@ -12,4 +12,11 @@ public class Constants {
     public static final int CODE_ERROR_TOTAL_NUMBER_MAX = 1005;
     public static final int CODE_ERROR_APP_ID_NOT_ENABLED = 1006;
 
+
+
+    public static final String PHOTO_API_ID = "100078";
+    public static final String DOCUMENT_API_ID = "100079";
+
+
+
 }

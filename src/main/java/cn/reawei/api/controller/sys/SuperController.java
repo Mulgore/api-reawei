@@ -1,6 +1,9 @@
 package cn.reawei.api.controller.sys;
 
+import cn.reawei.api.common.Constants;
 import cn.reawei.api.common.utils.AjaxResult;
+import cn.reawei.api.model.RwAppMember;
+import cn.reawei.api.service.IRwAppMemberService;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import org.slf4j.Logger;
@@ -8,8 +11,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
 
 /**
  * 致终于来到这里的勇敢的人：
@@ -20,7 +25,6 @@ import javax.servlet.http.HttpServletResponse;
  * <p>
  * Created by xingwu on 2017/5/24.
  */
-@RestController
 public class SuperController {
 
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -30,6 +34,9 @@ public class SuperController {
 
     @Autowired
     protected HttpServletResponse response;
+
+    @Resource
+    private IRwAppMemberService rwAppMemberService;
 
 
     /**
@@ -98,5 +105,15 @@ public class SuperController {
      */
     protected String getDeskKey(String path) {
         return path.substring(path.indexOf("result/") + 7, path.lastIndexOf("."));
+    }
+
+    protected boolean checkAppIdPermission(String appId, Map<String, Object> ret, String apiId) {
+        RwAppMember appMember = rwAppMemberService.getAppMemberById(Long.parseLong(appId));
+        if (!apiId.equals(appMember.getApiId().toString())) {
+            ret.put("code", Constants.CODE_ERROR_APP_ID_NOT_PERM);
+            ret.put("msg", "AppId没有权限!!!");
+            return true;
+        }
+        return false;
     }
 }

@@ -51,12 +51,8 @@ public class PhotoController extends BaseController {
         if (checkAppIdAndDeskKey(appId, ret)) {
             return toJSON(ret);
         }
-        RwAppMember appMember = rwAppMemberService.getAppMemberById(Long.parseLong(appId));
-        if (!"100078".equals(appMember.getApiId().toString())) {
-            ret.put("code", Constants.CODE_ERROR_APP_ID_NOT_PERM);
-            ret.put("msg", "AppId没有权限!!!");
-            return toJSON(ret);
-        }
+        // 接口调用权限
+        if (checkAppIdPermission(appId, ret, Constants.PHOTO_API_ID)) return toJSON(ret);
         // 接口调用权限，次数控制
         if (updateLevelUseNumber(appId, ret)) {
             return toJSON(ret);
