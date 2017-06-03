@@ -72,7 +72,7 @@ public class DocumentController extends BaseController {
     }
 
     @RequestMapping(value = "/info/result/**", method = RequestMethod.GET)
-    public String getOneDocument(String appId, Long Id) {
+    public String getOneDocument(String appId, Long docId) {
         Map<String, Object> ret = new HashMap<>();
         if (checkAppIdAndDeskKey(appId, ret)) {
             return toJSON(ret);
@@ -84,7 +84,7 @@ public class DocumentController extends BaseController {
         if (checkAppIdPermission(appId, ret, Constants.DOCUMENT_API_ID)) return toJSON(ret);
 
         ret.put("code", 0);
-        RwDocument result = rwDocumentService.getOneDocumentById(Id);
+        RwDocument result = rwDocumentService.getOneDocumentById(docId);
         ret.put("data", result);
         return toJSON(ret);
     }
