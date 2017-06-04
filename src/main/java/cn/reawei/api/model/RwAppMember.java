@@ -11,7 +11,7 @@ public class RwAppMember implements Serializable {
 
     private Long memberId;
 
-    private Integer apiId;
+    private Long apiId;
 
     private Integer level;
 
@@ -43,11 +43,11 @@ public class RwAppMember implements Serializable {
         this.memberId = memberId;
     }
 
-    public Integer getApiId() {
+    public Long getApiId() {
         return apiId;
     }
 
-    public void setApiId(Integer apiId) {
+    public void setApiId(Long apiId) {
         this.apiId = apiId;
     }
 

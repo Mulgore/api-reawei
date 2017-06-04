@@ -41,7 +41,7 @@ public class PhotoController extends BaseController {
      */
     @RequestMapping(value = "/result/**", method = RequestMethod.GET)
     public String getPhotoResult(String appId) {
-
+        this.response.setHeader("Access-Control-Allow-Origin", "*");
         Map<String, Object> ret = new HashMap<>();
         // 公钥验签
         if (checkAppIdAndDeskKeyPermission(appId, Constants.PHOTO_API_ID, ret)) {
