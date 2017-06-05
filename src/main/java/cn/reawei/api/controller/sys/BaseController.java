@@ -40,7 +40,7 @@ public class BaseController extends SuperController implements HandlerIntercepto
      */
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
-//        this.response.setHeader("Access-Control-Allow-Origin", "*");
+
         return true;
     }
 

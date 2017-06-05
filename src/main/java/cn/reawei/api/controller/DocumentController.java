@@ -43,7 +43,7 @@ public class DocumentController extends BaseController {
      */
     @RequestMapping(value = "/result/**", method = RequestMethod.GET)
     public String getDocResult(String appId) {
-        this.response.setHeader("Access-Control-Allow-Origin", "*");
+       this.response.setHeader("Access-Control-Allow-Origin", "*");
         Map<String, Object> ret = new HashMap<>();
         if (checkAppIdAndDeskKeyPermission(appId, Constants.DOCUMENT_API_ID, ret)) {
             return toJSON(ret);
@@ -75,7 +75,7 @@ public class DocumentController extends BaseController {
      */
     @RequestMapping(value = "/info/result/**", method = RequestMethod.GET)
     public String getOneDocument(String appId, Long docId) {
-        this.response.setHeader("Access-Control-Allow-Origin", "*");
+       this.response.setHeader("Access-Control-Allow-Origin", "*");
         Map<String, Object> ret = new HashMap<>();
         if (checkAppIdAndDeskKeyPermission(appId, Constants.DOCUMENT_API_ID, ret)) {
             return toJSON(ret);
