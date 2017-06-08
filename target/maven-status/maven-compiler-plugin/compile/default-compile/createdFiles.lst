@@ -31,8 +31,10 @@ cn/reawei/api/service/Impl/IRwDocumentServiceImpl.class
 cn/reawei/api/common/utils/RSACoder.class
 cn/reawei/api/model/vo/RwAdressVo.class
 cn/reawei/api/service/IRwApiInfoService.class
+cn/reawei/api/common/CorsConfig.class
 cn/reawei/api/service/Impl/IRwMemberServiceImpl.class
 cn/reawei/api/controller/DocumentController.class
+cn/reawei/api/common/JsonpAdvice.class
 cn/reawei/api/service/IRwDocumentService.class
 cn/reawei/api/controller/DemoController.class
 cn/reawei/api/common/utils/Page/Result.class

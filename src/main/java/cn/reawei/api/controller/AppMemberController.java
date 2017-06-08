@@ -39,7 +39,6 @@ public class AppMemberController extends BaseController {
      */
     @RequestMapping(value = "/save", method = RequestMethod.GET)
     public String saveAppMember() {
-       this.response.setHeader("Access-Control-Allow-Origin", "*");
         RwAppMember appMember = new RwAppMember();
         appMember.setMemberId(864840390186938368l);
         boolean ret = false;

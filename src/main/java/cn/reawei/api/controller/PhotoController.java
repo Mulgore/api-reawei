@@ -7,6 +7,8 @@ import cn.reawei.api.common.utils.Page.Result;
 import cn.reawei.api.controller.sys.BaseController;
 import cn.reawei.api.model.RwPhotoInfo;
 import cn.reawei.api.service.IRwPhotoInfoService;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -41,7 +43,6 @@ public class PhotoController extends BaseController {
      */
     @RequestMapping(value = "/result/**", method = RequestMethod.GET)
     public String getPhotoResult(String appId) {
-        this.response.setHeader("Access-Control-Allow-Origin", "*");
         Map<String, Object> ret = new HashMap<>();
         // 公钥验签
         if (checkAppIdAndDeskKeyPermission(appId, Constants.PHOTO_API_ID, ret)) {
@@ -55,12 +56,33 @@ public class PhotoController extends BaseController {
         orderBy.setDesc(true);
         orderBy.setFieldName("id");
         photoInfoQuery.setOrderBy(orderBy);
-        ret.put("code", 0);
 
         Result<RwPhotoInfo> result = rwPhotoInfoService.getPhotoInfoResultByQuery(photoInfoQuery);
         ret.put("data", result.getDataList());
+        ret.put("total", result.getTotal());
         return toJSON(ret);
     }
 
+    /**
+     * 致终于来到这里的勇敢的人：
+     * <p>
+     * 天将降大任于是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为，所以动心忍性，曾益其所不能。
+     * <p>
+     * 嗯！好了这个接口的作用是: 请求照片墙接口列表
+     *
+     * @param appId appID和公钥
+     * @return 返回JSON格式的字符串
+     */
+    @RequestMapping(value = "/save/result/**",method = RequestMethod.POST)
+    public String savePhotoInfo(String appId, RwPhotoInfo photoInfo) {
+        Map<String, Object> ret = new HashMap<>();
+        // 公钥验签
+        if (checkAppIdAndDeskKeyPermission(appId, Constants.PHOTO_API_ID, ret)) {
+            return toJSON(ret);
+        }
+        rwPhotoInfoService.savePhotoInfo(photoInfo);
+        ret.put("data",true);
+        return toJSON(ret);
+    }
 
 }

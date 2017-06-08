@@ -13,6 +13,7 @@
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/service/Impl/IRwApiInforServiceImpl.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/service/IRwAppMemberService.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/mapper/RwMemberMapper.java
+/Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/common/JsonpAdvice.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/mapper/RwAddressMapper.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/mapper/RwDocumentMapper.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/service/Impl/IRwCacheServiceImpl.java
@@ -33,6 +34,7 @@
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/service/Impl/IRwPhotoInforServiceImpl.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/common/utils/DESCoder.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/service/Impl/IRwAppMemberServiceImpl.java
+/Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/common/CorsConfig.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/common/utils/AjaxResult.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/service/IRwApiInfoService.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/ApiReaweiApplication.java

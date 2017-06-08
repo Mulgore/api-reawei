@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
 import java.util.Map;
 
 /**
@@ -22,6 +23,7 @@ import java.util.Map;
  * <p>
  * Created by xingwu on 2017/5/24.
  */
+
 public class BaseController extends SuperController implements HandlerInterceptor {
 
     @Resource
@@ -69,7 +71,12 @@ public class BaseController extends SuperController implements HandlerIntercepto
      */
     @Override
     public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {
-
+        String  callback = httpServletRequest.getParameter("callback");
+        String jsoncallback = callback + "({'result':})";
+        PrintWriter out =  httpServletResponse.getWriter();
+        out.print(jsoncallback);
+        out.flush();
+        out.close();
     }
 
     /**
