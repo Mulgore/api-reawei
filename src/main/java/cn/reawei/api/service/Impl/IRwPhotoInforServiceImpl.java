@@ -37,4 +37,14 @@ public class IRwPhotoInforServiceImpl implements IRwPhotoInfoService {
         result.setTotal(rwPhotoInfoMapper.countResultByQuery(photoInfoQuery));
         return result;
     }
+
+    @Override
+    public int updatePhotoInfo(RwPhotoInfo photoInfo) {
+        return rwPhotoInfoMapper.updateByPrimaryKey(photoInfo);
+    }
+
+    @Override
+    public int removePhotoInfoById(Long id) {
+        return rwPhotoInfoMapper.deleteByPrimaryKey(id);
+    }
 }

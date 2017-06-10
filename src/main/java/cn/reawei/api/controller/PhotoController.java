@@ -9,6 +9,7 @@ import cn.reawei.api.model.RwPhotoInfo;
 import cn.reawei.api.service.IRwPhotoInfoService;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import org.eclipse.jetty.util.StringUtil;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -42,15 +43,17 @@ public class PhotoController extends BaseController {
      * @return 返回JSON格式的字符串
      */
     @RequestMapping(value = "/result/**", method = RequestMethod.GET)
-    public String getPhotoResult(String appId) {
+    public String getPhotoResult(String appId, String name) {
         Map<String, Object> ret = new HashMap<>();
         // 公钥验签
         if (checkAppIdAndDeskKeyPermission(appId, Constants.PHOTO_API_ID, ret)) {
             return toJSON(ret);
         }
-        Query<RwPhotoInfo> photoInfoQuery = new Query<>();
+        Query<RwPhotoInfo> photoInfoQuery = getQuery();
         RwPhotoInfo photoInfo = new RwPhotoInfo();
-        photoInfo.setStatus(0);
+        if (StringUtil.isNotBlank(name)){
+            photoInfo.setTitle(name);
+        }
         photoInfoQuery.setQueryObject(photoInfo);
         OrderBy orderBy = new OrderBy();
         orderBy.setDesc(true);
@@ -85,4 +88,47 @@ public class PhotoController extends BaseController {
         return toJSON(ret);
     }
 
+    /**
+     * 致终于来到这里的勇敢的人：
+     * <p>
+     * 天将降大任于是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为，所以动心忍性，曾益其所不能。
+     * <p>
+     * 嗯！好了这个接口的作用是: 请求照片墙接口列表
+     *
+     * @param appId appID和公钥
+     * @return 返回JSON格式的字符串
+     */
+    @RequestMapping(value = "/update/result/**",method = RequestMethod.PATCH)
+    public String updatePhotoInfo(String appId, RwPhotoInfo photoInfo) {
+        Map<String, Object> ret = new HashMap<>();
+        // 公钥验签
+        if (checkAppIdAndDeskKeyPermission(appId, Constants.PHOTO_API_ID, ret)) {
+            return toJSON(ret);
+        }
+        rwPhotoInfoService.updatePhotoInfo(photoInfo);
+        ret.put("data",true);
+        return toJSON(ret);
+    }
+
+    /**
+     * 致终于来到这里的勇敢的人：
+     * <p>
+     * 天将降大任于是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为，所以动心忍性，曾益其所不能。
+     * <p>
+     * 嗯！好了这个接口的作用是: 请求照片墙接口列表
+     *
+     * @param appId appID和公钥
+     * @return 返回JSON格式的字符串
+     */
+    @RequestMapping(value = "/remove/result/**", method = RequestMethod.DELETE)
+    public String removePhotoInfo(String appId, Long id) {
+        Map<String, Object> ret = new HashMap<>();
+        // 公钥验签
+        if (checkAppIdAndDeskKeyPermission(appId, Constants.PHOTO_API_ID, ret)) {
+            return toJSON(ret);
+        }
+        rwPhotoInfoService.removePhotoInfoById(id);
+        ret.put("data",true);
+        return toJSON(ret);
+    }
 }
