@@ -43,7 +43,7 @@ public class PhotoController extends BaseController {
      * @return 返回JSON格式的字符串
      */
     @RequestMapping(value = "/result/**", method = RequestMethod.GET)
-    public String getPhotoResult(String appId, String name) {
+    public String getPhotoResult(String appId, String name, String status) {
         Map<String, Object> ret = new HashMap<>();
         // 公钥验签
         if (checkAppIdAndDeskKeyPermission(appId, Constants.PHOTO_API_ID, ret)) {
@@ -51,8 +51,11 @@ public class PhotoController extends BaseController {
         }
         Query<RwPhotoInfo> photoInfoQuery = getQuery();
         RwPhotoInfo photoInfo = new RwPhotoInfo();
-        if (StringUtil.isNotBlank(name)){
+        if (StringUtil.isNotBlank(name)) {
             photoInfo.setTitle(name);
+        }
+        if (StringUtil.isNotBlank(status)){
+            photoInfo.setStatus(Integer.parseInt(status));
         }
         photoInfoQuery.setQueryObject(photoInfo);
         OrderBy orderBy = new OrderBy();
@@ -76,7 +79,7 @@ public class PhotoController extends BaseController {
      * @param appId appID和公钥
      * @return 返回JSON格式的字符串
      */
-    @RequestMapping(value = "/save/result/**",method = RequestMethod.POST)
+    @RequestMapping(value = "/save/result/**", method = RequestMethod.POST)
     public String savePhotoInfo(String appId, RwPhotoInfo photoInfo) {
         Map<String, Object> ret = new HashMap<>();
         // 公钥验签
@@ -84,7 +87,7 @@ public class PhotoController extends BaseController {
             return toJSON(ret);
         }
         rwPhotoInfoService.savePhotoInfo(photoInfo);
-        ret.put("data",true);
+        ret.put("data", true);
         return toJSON(ret);
     }
 
@@ -98,7 +101,7 @@ public class PhotoController extends BaseController {
      * @param appId appID和公钥
      * @return 返回JSON格式的字符串
      */
-    @RequestMapping(value = "/update/result/**",method = RequestMethod.PATCH)
+    @RequestMapping(value = "/update/result/**", method = RequestMethod.PATCH)
     public String updatePhotoInfo(String appId, RwPhotoInfo photoInfo) {
         Map<String, Object> ret = new HashMap<>();
         // 公钥验签
@@ -106,7 +109,7 @@ public class PhotoController extends BaseController {
             return toJSON(ret);
         }
         rwPhotoInfoService.updatePhotoInfo(photoInfo);
-        ret.put("data",true);
+        ret.put("data", true);
         return toJSON(ret);
     }
 
@@ -128,7 +131,7 @@ public class PhotoController extends BaseController {
             return toJSON(ret);
         }
         rwPhotoInfoService.removePhotoInfoById(id);
-        ret.put("data",true);
+        ret.put("data", true);
         return toJSON(ret);
     }
 }
