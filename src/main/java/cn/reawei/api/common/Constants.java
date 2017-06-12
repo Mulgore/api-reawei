@@ -18,7 +18,12 @@ public class Constants {
     public static final String DOCUMENT_API_ID = "100079";
 
     public static final int CODE_DOCUMENT_INFO_IS_NULL = 2000;
+    public static final int CODE_DOCUMENT_UPDATE_IS_ERROR = 2001;
+    public static final int CODE_DOCUMENT_SAVE_IS_ERROR = 2002;
+    public static final int CODE_DOCUMENT_REMOVE_IS_ERROR = 2003;
 
-
+    public static final int CODE_APP_MEMBER_MEMBER_ID_IS_ERROR = 3000;
+    public static final int CODE_APP_MEMBER_REMOVE_IS_ERROR = 3001;
+    public static final int CODE_APP_MEMBER_MEMBER_RESULT_IS_ERROR = 3002;
 
 }

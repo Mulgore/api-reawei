@@ -26,4 +26,10 @@ public interface IRwDocumentService {
      * @return
      */
     RwDocument getOneDocumentById(Long id);
+
+    int updateDocumentById(RwDocument document);
+
+    int saveDocument(RwDocument document);
+
+    int removeDocument(Long docId);
 }

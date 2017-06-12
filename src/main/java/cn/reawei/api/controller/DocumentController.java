@@ -36,7 +36,7 @@ public class DocumentController extends BaseController {
      * <p>
      * 天将降大任于是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为，所以动心忍性，曾益其所不能。
      * <p>
-     * 嗯！好了这个接口的作用是: 请求文章列表
+     * 嗯！好了这个接口的作用是: 请求文章列表接口
      *
      * @param appId appId和公钥
      * @return 返回JSON格式的字符串
@@ -66,7 +66,7 @@ public class DocumentController extends BaseController {
      * <p>
      * 天将降大任于是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为，所以动心忍性，曾益其所不能。
      * <p>
-     * 嗯！好了这个接口的作用是: 根据文章Id查询文档内容详情
+     * 嗯！好了这个接口的作用是: 根据文章Id查询文档内容详情接口
      *
      * @param appId appId和公钥
      * @param docId 文档Id
@@ -80,12 +80,92 @@ public class DocumentController extends BaseController {
         }
         RwDocument result = rwDocumentService.getOneDocumentById(docId);
         ret.put("code", 0);
-        ret.put("data", result);
+        ret.put("data", true);
         if (result == null) {
             ret.put("code", Constants.CODE_DOCUMENT_INFO_IS_NULL);
-            ret.put("data", "文档不存在!");
+            ret.put("data", false);
+            ret.put("message","文档不存在");
+            return toJSON(ret);
+        }
+        ret.put("result",result);
+        return toJSON(ret);
+    }
+
+    /**
+     * 致终于来到这里的勇敢的人：
+     * <p>
+     * 天将降大任于是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为，所以动心忍性，曾益其所不能。
+     * <p>
+     * 嗯！好了这个接口的作用是: 根据文章Id修改文档信息接口
+     *
+     * @param appId appId和公钥
+     * @return
+     */
+    @RequestMapping(value = "/update/result/**", method = RequestMethod.PATCH)
+    public String updateDocument(String appId, RwDocument document) {
+        Map<String, Object> ret = new HashMap<>();
+        if (checkAppIdAndDeskKeyPermission(appId, Constants.DOCUMENT_API_ID, ret)) {
+            return toJSON(ret);
+        }
+        int rlt = rwDocumentService.updateDocumentById(document);
+        ret.put("code", Constants.CODE_DOCUMENT_UPDATE_IS_ERROR);
+        ret.put("data", false);
+        if (rlt == 0) {
+            ret.put("code", 0);
+            ret.put("data", true);
         }
         return toJSON(ret);
     }
 
+    /**
+     * 致终于来到这里的勇敢的人：
+     * <p>
+     * 天将降大任于是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为，所以动心忍性，曾益其所不能。
+     * <p>
+     * 嗯！好了这个接口的作用是: 添加文档信息接口
+     *
+     * @param appId appId和公钥
+     * @return
+     */
+    @RequestMapping(value = "/save/result/**", method = RequestMethod.POST)
+    public String saveDocument(String appId, RwDocument document) {
+        Map<String, Object> ret = new HashMap<>();
+        if (checkAppIdAndDeskKeyPermission(appId, Constants.DOCUMENT_API_ID, ret)) {
+            return toJSON(ret);
+        }
+        int rlt = rwDocumentService.saveDocument(document);
+        ret.put("code", Constants.CODE_DOCUMENT_SAVE_IS_ERROR);
+        ret.put("data", false);
+        if (rlt == 0) {
+            ret.put("code", 0);
+            ret.put("data", true);
+        }
+        return toJSON(ret);
+    }
+
+    /**
+     * 致终于来到这里的勇敢的人：
+     * <p>
+     * 天将降大任于是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为，所以动心忍性，曾益其所不能。
+     * <p>
+     * 嗯！好了这个接口的作用是: 删除文档信息接口
+     *
+     * @param appId appId和公钥
+     * @return
+     */
+    @RequestMapping(value = "/remove/result/**", method = RequestMethod.DELETE)
+    public String removeDocument(String appId, Long docId) {
+        Map<String, Object> ret = new HashMap<>();
+        if (checkAppIdAndDeskKeyPermission(appId, Constants.DOCUMENT_API_ID, ret)) {
+            return toJSON(ret);
+        }
+        int rlt = rwDocumentService.removeDocument(docId);
+        ret.put("code", Constants.CODE_DOCUMENT_REMOVE_IS_ERROR);
+        ret.put("data", false);
+        if (rlt == 0) {
+            ret.put("code", 0);
+            ret.put("data", true);
+        }
+        return toJSON(ret);
+    }
 }

@@ -1,5 +1,7 @@
 package cn.reawei.api.service;
 
+import cn.reawei.api.common.utils.Page.Query;
+import cn.reawei.api.common.utils.Page.Result;
 import cn.reawei.api.model.RwAppMember;
 import org.springframework.stereotype.Service;
 
@@ -40,4 +42,6 @@ public interface IRwAppMemberService {
      * @return
      */
     int deleteAppMemberById(Long id);
+
+    Result<RwAppMember> getAppMemberResultByQuery(Query<RwAppMember> memberQuery);
 }

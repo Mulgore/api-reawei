@@ -30,4 +30,19 @@ public class IRwDocumentServiceImpl implements IRwDocumentService {
     public RwDocument getOneDocumentById(Long id) {
         return rwDocumentMapper.selectByPrimaryKey(id);
     }
+
+    @Override
+    public int updateDocumentById(RwDocument document) {
+        return rwDocumentMapper.updateByPrimaryKey(document);
+    }
+
+    @Override
+    public int saveDocument(RwDocument document) {
+        return rwDocumentMapper.insert(document);
+    }
+
+    @Override
+    public int removeDocument(Long docId) {
+        return rwDocumentMapper.deleteByPrimaryKey(docId);
+    }
 }
