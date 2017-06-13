@@ -21,7 +21,6 @@ public class IRwPhotoInforServiceImpl implements IRwPhotoInfoService {
 
     @Override
     public RwPhotoInfo getPhotoInfoById(Long id) {
-
         return rwPhotoInfoMapper.selectByPrimaryKey(id);
     }
 
@@ -39,8 +38,8 @@ public class IRwPhotoInforServiceImpl implements IRwPhotoInfoService {
     }
 
     @Override
-    public int updatePhotoInfo(RwPhotoInfo photoInfo) {
-        return rwPhotoInfoMapper.updateByPrimaryKey(photoInfo);
+    public int updatePhotoInfoByIdSelective(RwPhotoInfo photoInfo) {
+        return rwPhotoInfoMapper.updateByPrimaryKeySelective(photoInfo);
     }
 
     @Override

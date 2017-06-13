@@ -108,7 +108,7 @@ public class PhotoController extends BaseController {
         if (checkAppIdAndDeskKeyPermission(appId, Constants.PHOTO_API_ID, ret)) {
             return toJSON(ret);
         }
-        rwPhotoInfoService.updatePhotoInfo(photoInfo);
+        rwPhotoInfoService.updatePhotoInfoByIdSelective(photoInfo);
         ret.put("data", true);
         return toJSON(ret);
     }

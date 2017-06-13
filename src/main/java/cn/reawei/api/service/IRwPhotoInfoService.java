@@ -41,7 +41,7 @@ public interface IRwPhotoInfoService {
      */
     Result<RwPhotoInfo> getPhotoInfoResultByQuery(Query<RwPhotoInfo> photoInfoQuery);
 
-    int updatePhotoInfo(RwPhotoInfo photoInfo);
+    int updatePhotoInfoByIdSelective(RwPhotoInfo photoInfo);
 
     int removePhotoInfoById(Long id);
 }
