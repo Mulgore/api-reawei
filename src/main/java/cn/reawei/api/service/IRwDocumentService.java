@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
  * <p>
  * 天将降大任于是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为，所以动心忍性，曾益其所不能。
  * <p>
- * 嗯！好了这个接口的作用是: 对文档信息禁用GUID操作
+ * 嗯！好了这个接口的作用是: 对文档信息禁用CRUD操作
  * <p>
  * Created by xingwu on 2017/6/8.
  */
