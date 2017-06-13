@@ -2,6 +2,9 @@ package cn.reawei.api.model;
 
 import java.io.Serializable;
 
+/**
+ * 照片
+ */
 public class RwPhotoInfo implements Serializable {
 
     private static final long serialVersionUID = -2307364508217301467L;

@@ -3,6 +3,9 @@ package cn.reawei.api.model;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * 用户与接口关联权限
+ */
 public class RwAppMember implements Serializable {
 
     private static final long serialVersionUID = 2993191498407201315L;

@@ -12,11 +12,17 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
- * springboot集成mybatis的基本入口
+ * 致终于来到这里的勇敢的人：
+ * <p>
+ * 天将降大任于是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为，所以动心忍性，曾益其所不能。
+ * <p>
+ * 嗯！好了这个类的作用是:
+ * 1）springboot集成mybatis的基本入口
  * 1）创建数据源
  * 2）创建SqlSessionFactory
+ * <p>
+ * Created by xingwu on 2017/6/8.
  */
-
 @Configuration    //该注解类似于spring配置文件
 @EnableTransactionManagement
 @PropertySource(value = {"classpath:properties/jdbc.properties"})
