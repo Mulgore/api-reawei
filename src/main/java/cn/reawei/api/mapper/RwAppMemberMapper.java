@@ -13,7 +13,6 @@ import java.util.List;
  * <p>
  * 嗯！好了这个Mapper的作用是: 访问数据库查询用户接口权限信息
  */
-@Mapper
 public interface RwAppMemberMapper {
     int deleteByPrimaryKey(Long id);
 

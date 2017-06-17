@@ -10,7 +10,6 @@ import org.apache.ibatis.annotations.Mapper;
  * <p>
  * 嗯！好了这个Mapper的作用是: 访问数据库查询接口信息
  */
-@Mapper
 public interface RwApiInfoMapper {
     int deleteByPrimaryKey(Long id);
 

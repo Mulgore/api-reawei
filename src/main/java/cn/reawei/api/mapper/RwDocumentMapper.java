@@ -13,7 +13,6 @@ import java.util.List;
  * <p>
  * 嗯！好了这个Mapper的作用是: 访问数据库查询文章信息
  */
-@Mapper
 public interface RwDocumentMapper {
     int deleteByPrimaryKey(Long id);
 

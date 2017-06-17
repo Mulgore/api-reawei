@@ -13,7 +13,6 @@ import java.util.List;
  * <p>
  * 嗯！好了这个Mapper的作用是: 访问数据库查询照片墙信息
  */
-@Mapper
 public interface RwPhotoInfoMapper {
     int deleteByPrimaryKey(Long id);
 

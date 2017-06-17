@@ -10,7 +10,6 @@ import org.apache.ibatis.annotations.Mapper;
  * <p>
  * 嗯！好了这个类的作用是: 访问数据库查询用户信息
  */
-@Mapper
 public interface RwUserMapper {
 
     int deleteByPrimaryKey(Long id);
