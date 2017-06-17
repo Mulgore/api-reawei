@@ -8,6 +8,7 @@ import cn.reawei.api.controller.sys.BaseController;
 import cn.reawei.api.model.RwAppMember;
 import cn.reawei.api.service.IRwAppMemberService;
 import org.eclipse.jetty.util.StringUtil;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -105,7 +106,7 @@ public class AppMemberController extends BaseController {
      * @return
      */
     @RequestMapping(value = "/update", method = RequestMethod.PATCH)
-    public String removeAppMember(RwAppMember appMember) {
+    public String updateAppMember(RwAppMember appMember) {
         Map<String, Object> ret = new HashMap<>();
         int rlt = rwAppMemberService.updateAppMemberById(appMember);
         ret.put("code", 0);
@@ -126,7 +127,7 @@ public class AppMemberController extends BaseController {
      *
      * @return
      */
-    @RequestMapping(value = "/info", method = RequestMethod.PATCH)
+    @RequestMapping(value = "/info", method = RequestMethod.GET)
     public String infoAppMember(Long appMemberId) {
         Map<String, Object> ret = new HashMap<>();
         RwAppMember rwAppMember = rwAppMemberService.getAppMemberById(appMemberId);
@@ -150,8 +151,8 @@ public class AppMemberController extends BaseController {
      *
      * @return
      */
-    @RequestMapping(value = "/member/results", method = RequestMethod.PATCH)
-    public String getAppMemberResultByMemberId(Long memberId) {
+    @RequestMapping(value = "/member/results/{memberId}", method = RequestMethod.GET)
+    public String getAppMemberResultByMemberId(@PathVariable Long memberId) {
         Map<String, Object> ret = new HashMap<>();
         if (memberId == null) {
             ret.put("code", Constants.CODE_APP_MEMBER_MEMBER_RESULT_IS_ERROR);
@@ -183,7 +184,7 @@ public class AppMemberController extends BaseController {
      *
      * @return
      */
-    @RequestMapping(value = "/member/results", method = RequestMethod.PATCH)
+    @RequestMapping(value = "/member/results", method = RequestMethod.GET)
     public String getAppMemberResult() {
         Map<String, Object> ret = new HashMap<>();
         Query<RwAppMember> memberQuery = getQuery();

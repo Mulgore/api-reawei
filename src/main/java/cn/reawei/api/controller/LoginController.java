@@ -105,7 +105,7 @@ public class LoginController extends BaseController {
                 if ("token".equals(cookie.getName().toString())) {
                     ret.put("success", true);
                     Map<String, Object> data = new HashMap<>();
-                    String[] str = new String[]{"dashboard", "users", "UIElement", "UIElementIconfont", "chart"};
+                    String[] str = new String[]{"dashboard", "users", "UIElement", "UIElementIconfont", "chart", "photo"};
                     data.put("permissions", str);
                     data.put("username", "xingwu");
                     ret.put("user", data);
