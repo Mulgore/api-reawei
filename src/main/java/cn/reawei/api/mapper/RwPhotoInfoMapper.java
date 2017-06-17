@@ -2,7 +2,7 @@ package cn.reawei.api.mapper;
 
 import cn.reawei.api.common.utils.Page.Query;
 import cn.reawei.api.model.RwPhotoInfo;
-import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -13,6 +13,7 @@ import java.util.List;
  * <p>
  * 嗯！好了这个Mapper的作用是: 访问数据库查询照片墙信息
  */
+@Repository
 public interface RwPhotoInfoMapper {
     int deleteByPrimaryKey(Long id);
 

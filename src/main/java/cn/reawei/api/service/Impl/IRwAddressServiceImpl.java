@@ -5,6 +5,7 @@ import cn.reawei.api.common.utils.Page.Result;
 import cn.reawei.api.mapper.RwAddressMapper;
 import cn.reawei.api.model.RwAddress;
 import cn.reawei.api.service.IRwAddressService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -16,7 +17,7 @@ import javax.annotation.Resource;
 public class IRwAddressServiceImpl implements IRwAddressService {
 
 
-    @Resource
+    @Autowired
     private RwAddressMapper rwAddressMapper;
 
     @Override

@@ -1,7 +1,7 @@
 package cn.reawei.api.mapper;
 
 import cn.reawei.api.model.RwApiInfo;
-import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 /**
  * 致终于来到这里的勇敢的人：
@@ -10,7 +10,9 @@ import org.apache.ibatis.annotations.Mapper;
  * <p>
  * 嗯！好了这个Mapper的作用是: 访问数据库查询接口信息
  */
+@Repository
 public interface RwApiInfoMapper {
+
     int deleteByPrimaryKey(Long id);
 
     int insert(RwApiInfo record);
@@ -22,4 +24,5 @@ public interface RwApiInfoMapper {
     int updateByPrimaryKeySelective(RwApiInfo record);
 
     int updateByPrimaryKey(RwApiInfo record);
+
 }

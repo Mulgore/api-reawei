@@ -18,7 +18,7 @@ public class IRwMemberServiceImpl implements IRwMemberService {
 
 
     @Autowired
-    private RwMemberMapper memberMapper;
+    private RwMemberMapper rwMemberMapper;
 
     @Override
     public List<RwMember> getRwMemberResult(Query<RwMember> memberQuery) {
@@ -27,6 +27,6 @@ public class IRwMemberServiceImpl implements IRwMemberService {
 
     @Override
     public RwMember getRwMemberById(Long memberId) {
-        return memberMapper.selectByPrimaryKey(memberId);
+        return rwMemberMapper.selectByPrimaryKey(memberId);
     }
 }

@@ -24,6 +24,8 @@ public class ApiReaweiApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 		logger.info("========== { api-reawei spring boot start } ==========");
+		// 程序启动入口
+		// 启动嵌入式的 Tomcat 并初始化 Spring 环境及其各 Spring 组件
 		SpringApplication.run(ApiReaweiApplication.class, args);
 	}
 }

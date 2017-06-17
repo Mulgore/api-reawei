@@ -5,6 +5,7 @@ import cn.reawei.api.common.utils.Page.Result;
 import cn.reawei.api.mapper.RwDocumentMapper;
 import cn.reawei.api.model.RwDocument;
 import cn.reawei.api.service.IRwDocumentService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -15,7 +16,7 @@ import javax.annotation.Resource;
 @Service("rwDocumentService")
 public class IRwDocumentServiceImpl implements IRwDocumentService {
 
-    @Resource
+    @Autowired
     private RwDocumentMapper rwDocumentMapper;
 
     @Override
