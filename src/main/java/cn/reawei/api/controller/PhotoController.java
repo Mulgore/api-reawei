@@ -95,10 +95,10 @@ public class PhotoController extends BaseController {
      *
      * @return 返回JSON格式的字符串
      */
-    @RequestMapping(value = "/photo", method = RequestMethod.PATCH)
-    public String updatePhotoInfo(RwPhotoInfo photoInfo) {
+    @RequestMapping(value = "/photo/{id}", method = RequestMethod.PATCH)
+    public String updatePhotoInfo(@PathVariable Long id, RwPhotoInfo photoInfo) {
         Map<String, Object> ret = new HashMap<>();
-
+        photoInfo.setId(id);
         rwPhotoInfoService.updatePhotoInfoByIdSelective(photoInfo);
         ret.put("data", true);
         return toJSON(ret);
