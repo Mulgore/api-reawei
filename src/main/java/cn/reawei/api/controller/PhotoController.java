@@ -7,8 +7,6 @@ import cn.reawei.api.common.utils.Page.Result;
 import cn.reawei.api.controller.sys.BaseController;
 import cn.reawei.api.model.RwPhotoInfo;
 import cn.reawei.api.service.IRwPhotoInfoService;
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import org.eclipse.jetty.util.StringUtil;
 import org.springframework.web.bind.annotation.*;
 
