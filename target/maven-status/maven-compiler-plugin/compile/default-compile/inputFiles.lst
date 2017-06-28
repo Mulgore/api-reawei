@@ -5,7 +5,6 @@
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/controller/sys/BaseController.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/common/utils/RSACoder.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/service/IRwPhotoInfoService.java
-/Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/common/utils/ECCCoder.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/controller/DemoController.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/model/RwPhotoInfo.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/mapper/RwMemberMapper.java
@@ -14,6 +13,7 @@
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/mapper/RwDocumentMapper.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/service/Impl/IRwUserServiceImpl.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/service/IRwAddressService.java
+/Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/common/GlobalExceptionHandler.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/controller/AppMemberController.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/controller/PhotoController.java
 /Users/xingwu/workspace/api-reawei/src/main/java/cn/reawei/api/service/IRwUserService.java

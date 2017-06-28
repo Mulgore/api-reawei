@@ -48,5 +48,15 @@ public class DemoController extends BaseController {
         return toJSON(rwMemberService.getRwMemberById(864850852613988352L));
     }
 
+    @RequestMapping("/exception")
+    public String  testException(){
+       try{
+            Integer a = null;
+           System.out.println(a.toString());
+       }catch (Exception e){
+           throw new RuntimeException(e);
+       }
+        return "ss";
+    }
 
 }

@@ -1,5 +1,6 @@
 cn/reawei/api/common/utils/DESCoder.class
 cn/reawei/api/service/IRwMemberService.class
+cn/reawei/api/common/GlobalExceptionHandler.class
 cn/reawei/api/service/IRwAppMemberService.class
 cn/reawei/api/service/IRwCacheService.class
 cn/reawei/api/mapper/RwApiInfoMapper.class
@@ -47,7 +48,6 @@ cn/reawei/api/common/CacheConfiguration.class
 cn/reawei/api/controller/AppMemberController.class
 cn/reawei/api/controller/sys/SuperController.class
 cn/reawei/api/model/RwDocument.class
-cn/reawei/api/common/utils/ECCCoder.class
 cn/reawei/api/mapper/RwUserMapper.class
 cn/reawei/api/mapper/RwAddressMapper.class
 cn/reawei/api/ApiReaweiApplication.class
