@@ -1,0 +1,16 @@
+asspath
+.project
+target
+logs/*
+.settings
+tools/**/*
+dist
+.idea
+*.ipr
+*.iws
+classes/
+*.sh
+rebel.xml
+*.log
+.DS_Store
+*.zip
