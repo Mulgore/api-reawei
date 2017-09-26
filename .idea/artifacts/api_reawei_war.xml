@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="api-reawei:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="root.war">
-      <element id="artifact" artifact-name="api-reawei:war exploded" />
-    </root>
-  </artifact>
-</component>
