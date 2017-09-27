@@ -11,6 +11,7 @@ package cn.reawei.api.common;
  */
 public class Constants {
 
+    public static final int CODE_SUCCESS = 0;
     // 接口调用错误返回CODE码
     public static final int CODE_ERROR_APP_ID_NULL = 1001;
     public static final int CODE_ERROR_DESK_KEY_NULL = 1002;

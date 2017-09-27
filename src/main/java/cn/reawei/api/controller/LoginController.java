@@ -28,7 +28,7 @@ import java.util.Map;
  * Created by xingwu on 2017/5/26.
  */
 @RestController
-@RequestMapping("/api/v1/login")
+@RequestMapping("/api/v1")
 public class LoginController extends BaseController {
 
     @Resource
