@@ -4,7 +4,7 @@ import cn.reawei.api.common.utils.AjaxResult;
 import cn.reawei.api.common.utils.Page.Query;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import org.eclipse.jetty.util.StringUtil;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,10 +33,10 @@ public class SuperController {
 
     protected <T> Query<T> getQuery() {
         int page = 1, pageSize = 10;
-        if (StringUtil.isNotBlank(request.getParameter("page"))) {
+        if (StringUtils.isNotBlank(request.getParameter("page"))) {
             page = Integer.parseInt(this.request.getParameter("page"));
         }
-        if (StringUtil.isNotBlank(request.getParameter("pageSize"))) {
+        if (StringUtils.isNotBlank(request.getParameter("pageSize"))) {
             pageSize = Integer.parseInt(this.request.getParameter("pageSize"));
         }
         return new Query<T> (null, (page - 1) * pageSize,  pageSize, null);

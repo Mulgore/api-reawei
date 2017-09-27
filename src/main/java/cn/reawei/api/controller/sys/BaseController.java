@@ -4,7 +4,7 @@ import cn.reawei.api.common.Constants;
 import cn.reawei.api.common.utils.RSACoder;
 import cn.reawei.api.model.RwAppMember;
 import cn.reawei.api.service.IRwAppMemberService;
-import org.eclipse.jetty.util.StringUtil;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -91,17 +91,17 @@ public class BaseController extends SuperController implements HandlerIntercepto
 
         boolean rlt = false;
         //判断公钥与AppId是否为空
-        if (StringUtil.isBlank(appId) && StringUtil.isBlank(deskKey)) {
+        if (StringUtils.isBlank(appId) && StringUtils.isBlank(deskKey)) {
             ret.put("code", Constants.CODE_ERROR_APP_ID_AND_DESK_KEY_NULL);
             ret.put("msg", "AppId和DeskKey为空!!!");
             return true;
         }
-        if (StringUtil.isBlank(deskKey)) {
+        if (StringUtils.isBlank(deskKey)) {
             ret.put("code", Constants.CODE_ERROR_DESK_KEY_NULL);
             ret.put("msg", "DeskKey为空!!!");
             return true;
         }
-        if (StringUtil.isBlank(appId)) {
+        if (StringUtils.isBlank(appId)) {
             ret.put("code", Constants.CODE_ERROR_APP_ID_NULL);
             ret.put("msg", "AppId为空!!!");
             return true;
@@ -124,7 +124,7 @@ public class BaseController extends SuperController implements HandlerIntercepto
             return true;
         }
 //        验证公钥
-        if (StringUtil.isNotBlank(appId) && StringUtil.isNotBlank(deskKey)) {
+        if (StringUtils.isNotBlank(appId) && StringUtils.isNotBlank(deskKey)) {
             boolean status = false;
             try {
                 String privateKey = appMember.getPrivateKey();

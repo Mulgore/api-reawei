@@ -7,7 +7,7 @@ import cn.reawei.api.common.utils.Page.Result;
 import cn.reawei.api.controller.sys.BaseController;
 import cn.reawei.api.model.RwPhotoInfo;
 import cn.reawei.api.service.IRwPhotoInfoService;
-import org.eclipse.jetty.util.StringUtil;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -49,10 +49,10 @@ public class PhotoController extends BaseController {
         }
         Query<RwPhotoInfo> photoInfoQuery = getQuery();
         RwPhotoInfo photoInfo = new RwPhotoInfo();
-        if (StringUtil.isNotBlank(name)) {
+        if (StringUtils.isNotBlank(name)) {
             photoInfo.setTitle(name);
         }
-        if (StringUtil.isNotBlank(status)){
+        if (StringUtils.isNotBlank(status)){
             photoInfo.setStatus(Integer.parseInt(status));
         }
         photoInfoQuery.setQueryObject(photoInfo);
@@ -133,10 +133,10 @@ public class PhotoController extends BaseController {
         Map<String, Object> ret = new HashMap<>();
         Query<RwPhotoInfo> photoInfoQuery = getQuery();
         RwPhotoInfo photoInfo = new RwPhotoInfo();
-        if (StringUtil.isNotBlank(name)) {
+        if (StringUtils.isNotBlank(name)) {
             photoInfo.setTitle(name);
         }
-        if (StringUtil.isNotBlank(status)){
+        if (StringUtils.isNotBlank(status)){
             photoInfo.setStatus(Integer.parseInt(status));
         }
         photoInfoQuery.setQueryObject(photoInfo);

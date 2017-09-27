@@ -7,7 +7,7 @@ import cn.reawei.api.common.utils.RSACoder;
 import cn.reawei.api.controller.sys.BaseController;
 import cn.reawei.api.model.RwAppMember;
 import cn.reawei.api.service.IRwAppMemberService;
-import org.eclipse.jetty.util.StringUtil;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -63,7 +63,7 @@ public class AppMemberController extends BaseController {
 
         } catch (Exception e) {
             e.printStackTrace();
-            if (StringUtil.isNotBlank(e.getMessage())) {
+            if (StringUtils.isNotBlank(e.getMessage())) {
                 return toJSON("生成秘钥失败！");
             }
         }
