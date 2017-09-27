@@ -67,7 +67,15 @@ public class SuperController {
         }
     }
 
-
+    /**
+     * 返回 JSON 格式对象
+     * @return
+     */
+    protected String callbackSuccess() {
+        Map<String, Object> data = new HashMap<>();
+        data.put("success", true);
+        return JSONObject.toJSONString(data);
+    }
     /**
      * 返回 JSON 格式对象
      * @param ret

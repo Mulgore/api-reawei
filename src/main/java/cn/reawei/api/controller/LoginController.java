@@ -63,7 +63,7 @@ public class LoginController extends BaseController {
                 SSOToken ssoToken = new SSOToken();
                 ssoToken.setId(user.getId());
                 SSOHelper.setCookie(request, response, ssoToken,true);
-                return callbackSuccess(null);
+                return callbackSuccess();
             } else {
                 return callbackFail("密码错误");
             }
