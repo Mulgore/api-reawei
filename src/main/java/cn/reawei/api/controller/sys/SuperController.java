@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 致终于来到这里的勇敢的人：
@@ -41,17 +43,7 @@ public class SuperController {
         if (StringUtils.isNotBlank(request.getParameter("pageSize"))) {
             pageSize = Integer.parseInt(this.request.getParameter("pageSize"));
         }
-        return new Query<T> (null, (page - 1) * pageSize,  pageSize, null);
-    }
-
-    /**
-     * 转化成JSON格式
-     *
-     * @param object 参数
-     * @return 返回JSON字符串
-     */
-    protected String toJSON(Object object) {
-        return JSONObject.toJSONString(object, SerializerFeature.WriteDateUseDateFormat);
+        return new Query<T>(null, (page - 1) * pageSize, pageSize, null);
     }
 
     /**
@@ -77,52 +69,43 @@ public class SuperController {
         }
     }
 
+
     /**
      * 返回 JSON 格式对象
-     *
-     * @param object 转换对象
-     * @param format 序列化特点
+     * @param ret
+     * @param message
      * @return
      */
-    protected String toJSON(Object object, String format) {
-        if (format == null) {
-            return toJSON(object);
-        }
-        return JSONObject.toJSONStringWithDateFormat(object, format, SerializerFeature.WriteDateUseDateFormat);
+    protected String callbackSuccess(Object ret, String message) {
+        Map<String, Object> data = new HashMap<>();
+        data.put("success", true);
+        data.put("message", message);
+        data.put("data", ret);
+        return JSONObject.toJSONString(data);
     }
 
     /**
-     * <p>
-     * 自动判定是否有跨域操作,转成字符串并返回
-     * </p>
-     *
-     * @param object
-     * @return 跨域或不跨域的字符串
+     * 返回 JSON 格式对象
+     * @param ret
+     * @return
      */
-    protected String callback(AjaxResult object) {
-        return callback(object, null);
+    protected String callbackSuccess(Object ret) {
+        Map<String, Object> data = new HashMap<>();
+        data.put("success", true);
+        data.put("data", ret);
+        return JSONObject.toJSONString(data);
     }
 
-    protected String callback(AjaxResult object, String format) {
-        String callback = request.getParameter("callback");
-        if (callback == null) {
-            /**
-             * 非 JSONP 请求
-             */
-            return toJSON(object, format);
-        }
-        StringBuffer json = new StringBuffer();
-        json.append(callback);
-        json.append("(").append(toJSON(object, format)).append(")");
-        return json.toString();
-    }
-
-    protected String callbackSuccess(Object obj) {
-        return callback(new AjaxResult(obj));
-    }
-
+    /**
+     * 返回 JSON 格式对象
+     * @param message
+     * @return
+     */
     protected String callbackFail(String message) {
-        return callback(new AjaxResult(false, message));
+        Map<String, Object> data = new HashMap<>();
+        data.put("success", true);
+        data.put("message", message);
+        return JSONObject.toJSONString(data);
     }
 
 }
