@@ -144,6 +144,18 @@
             <artifactId>bcprov-jdk14</artifactId>
             <version>1.50</version>
         </dependency>
+        <!-- kisso 单点登录 start -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>kisso</artifactId>
+            <version>3.7.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>4.3.11.RELEASE</version>
+        </dependency>
+        <!-- kisso 单点登录 end -->
     </dependencies>
 
     <build>

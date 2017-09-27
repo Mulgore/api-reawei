@@ -4,6 +4,8 @@ import cn.reawei.api.common.Constants;
 import cn.reawei.api.common.utils.RSACoder;
 import cn.reawei.api.model.RwAppMember;
 import cn.reawei.api.service.IRwAppMemberService;
+import com.baomidou.kisso.SSOHelper;
+import com.baomidou.kisso.security.token.SSOToken;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -11,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.PrintWriter;
 import java.util.Map;
 
 /**
@@ -42,7 +43,18 @@ public class BaseController extends SuperController implements HandlerIntercepto
      */
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
-
+        SSOToken ssoToken = SSOHelper.getSSOToken(httpServletRequest);
+        if (ssoToken == null) {
+            switch (httpServletRequest.getRequestURI()) {
+                case "/api/v1/user":
+                    return true;
+                case "/api/v1/user/login":
+                    return true;
+                case "/api/v1/user/sendSms":
+                    return true;
+            }
+            return false;
+        }
         return true;
     }
 
@@ -71,12 +83,12 @@ public class BaseController extends SuperController implements HandlerIntercepto
      */
     @Override
     public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {
-        String  callback = httpServletRequest.getParameter("callback");
-        String jsoncallback = callback + "({'result':})";
-        PrintWriter out =  httpServletResponse.getWriter();
-        out.print(jsoncallback);
-        out.flush();
-        out.close();
+//        String  callback = httpServletRequest.getParameter("callback");
+//        String jsoncallback = callback + "({'result':})";
+//        PrintWriter out =  httpServletResponse.getWriter();
+//        out.print(jsoncallback);
+//        out.flush();
+//        out.close();
     }
 
     /**
@@ -187,5 +199,6 @@ public class BaseController extends SuperController implements HandlerIntercepto
         rwAppMemberService.updateAppMemberById(appMember);
         return rlt;
     }
+
 
 }

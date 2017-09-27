@@ -4,6 +4,8 @@ import cn.reawei.api.common.utils.AjaxResult;
 import cn.reawei.api.common.utils.Page.Query;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.baomidou.kisso.SSOHelper;
+import com.baomidou.kisso.security.token.SSOToken;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -52,6 +54,28 @@ public class SuperController {
         return JSONObject.toJSONString(object, SerializerFeature.WriteDateUseDateFormat);
     }
 
+    /**
+     * 返回登录 Token
+     */
+    protected SSOToken getSSOToken() {
+        SSOToken tk = SSOHelper.getSSOToken(request);
+        if (tk == null) {
+            throw new RuntimeException("授权失败");
+        }
+        return tk;
+    }
+
+    /**
+     * 用户ID
+     */
+    protected Integer getCurrentUserId() {
+        try {
+            return Integer.parseInt(getSSOToken().getId());
+        } catch (RuntimeException e) {
+            logger.warn("用户不存在");
+            return null;
+        }
+    }
 
     /**
      * 返回 JSON 格式对象
