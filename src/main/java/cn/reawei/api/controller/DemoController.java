@@ -35,17 +35,17 @@ public class DemoController extends BaseController {
 
     @RequestMapping("/user")
     public String getAddress() {
-        return toJSON(rwAddressService.getRwAddressResultByQuery(null));
+        return callbackSuccess(rwAddressService.getRwAddressResultByQuery(null));
     }
 
     @RequestMapping("/cache")
     public String getCache() {
-        return toJSON(rwCacheService.getByCache());
+        return callbackSuccess(rwCacheService.getByCache());
     }
 
     @RequestMapping("/member")
     public String getMemberById() {
-        return toJSON(rwMemberService.getRwMemberById(864850852613988352L));
+        return callbackSuccess(rwMemberService.getRwMemberById(864850852613988352L));
     }
 
     @RequestMapping("/exception")

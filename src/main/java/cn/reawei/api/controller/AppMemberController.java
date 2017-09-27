@@ -48,11 +48,10 @@ public class AppMemberController extends BaseController {
         if (memberId == null) {
             data.put("code", Constants.CODE_APP_MEMBER_MEMBER_ID_IS_ERROR);
             data.put("data", false);
-            return toJSON(data);
+            return callbackSuccess(data);
         }
         RwAppMember appMember = new RwAppMember();
         appMember.setMemberId(memberId);
-
         boolean ret = false;
         try {
             Map<String, Object> keyMap = RSACoder.initKey();
@@ -64,14 +63,14 @@ public class AppMemberController extends BaseController {
         } catch (Exception e) {
             e.printStackTrace();
             if (StringUtils.isNotBlank(e.getMessage())) {
-                return toJSON("生成秘钥失败！");
+                return callbackSuccess("生成秘钥失败！");
             }
         }
         int rlt = rwAppMemberService.saveAppMember(appMember);
         if (rlt > 0) {
             ret = true;
         }
-        return toJSON(ret);
+        return callbackSuccess(ret);
     }
 
     /**
@@ -93,7 +92,7 @@ public class AppMemberController extends BaseController {
             ret.put("code", Constants.CODE_APP_MEMBER_REMOVE_IS_ERROR);
             ret.put("data", false);
         }
-        return toJSON(ret);
+        return callbackSuccess(ret);
     }
 
     /**
@@ -115,7 +114,7 @@ public class AppMemberController extends BaseController {
             ret.put("code", Constants.CODE_APP_MEMBER_REMOVE_IS_ERROR);
             ret.put("data", false);
         }
-        return toJSON(ret);
+        return callbackSuccess(ret);
     }
 
     /**
@@ -136,10 +135,10 @@ public class AppMemberController extends BaseController {
         if (rwAppMember == null) {
             ret.put("code", Constants.CODE_APP_MEMBER_REMOVE_IS_ERROR);
             ret.put("data", false);
-            return toJSON(ret);
+            return callbackSuccess(ret);
         }
         ret.put("result", rwAppMember);
-        return toJSON(ret);
+        return callbackSuccess(ret);
     }
 
     /**
@@ -157,7 +156,7 @@ public class AppMemberController extends BaseController {
         if (memberId == null) {
             ret.put("code", Constants.CODE_APP_MEMBER_MEMBER_RESULT_IS_ERROR);
             ret.put("data", false);
-            return toJSON(ret);
+            return callbackSuccess(ret);
         }
         Query<RwAppMember> memberQuery = getQuery();
         RwAppMember appMember = new RwAppMember();
@@ -169,10 +168,10 @@ public class AppMemberController extends BaseController {
         if (results == null) {
             ret.put("code", Constants.CODE_APP_MEMBER_REMOVE_IS_ERROR);
             ret.put("data", false);
-            return toJSON(ret);
+            return callbackSuccess(ret);
         }
         ret.put("result", results);
-        return toJSON(ret);
+        return callbackSuccess(ret);
     }
 
     /**
@@ -196,9 +195,9 @@ public class AppMemberController extends BaseController {
         if (results == null) {
             ret.put("code", Constants.CODE_APP_MEMBER_REMOVE_IS_ERROR);
             ret.put("data", false);
-            return toJSON(ret);
+            return callbackSuccess(ret);
         }
         ret.put("result", results);
-        return toJSON(ret);
+        return callbackSuccess(ret);
     }
 }

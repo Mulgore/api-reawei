@@ -45,7 +45,7 @@ public class DocumentController extends BaseController {
     public String getDocResult(String appId) {
         Map<String, Object> ret = new HashMap<>();
         if (checkAppIdAndDeskKeyPermission(appId, Constants.DOCUMENT_API_ID, ret)) {
-            return toJSON(ret);
+            return callbackSuccess(ret);
         }
         Query<RwDocument> documentQuery = new Query<>();
         RwDocument photoInfo = new RwDocument();
@@ -58,7 +58,7 @@ public class DocumentController extends BaseController {
 
         Result<RwDocument> result = rwDocumentService.getDocumentResultByQuery(documentQuery);
         ret.put("data", result.getDataList());
-        return toJSON(ret);
+        return callbackSuccess(ret);
     }
 
     /**
@@ -76,7 +76,7 @@ public class DocumentController extends BaseController {
     public String getOneDocument(String appId, Long docId) {
         Map<String, Object> ret = new HashMap<>();
         if (checkAppIdAndDeskKeyPermission(appId, Constants.DOCUMENT_API_ID, ret)) {
-            return toJSON(ret);
+            return callbackSuccess(ret);
         }
         RwDocument result = rwDocumentService.getOneDocumentById(docId);
         ret.put("code", 0);
@@ -85,10 +85,10 @@ public class DocumentController extends BaseController {
             ret.put("code", Constants.CODE_DOCUMENT_INFO_IS_NULL);
             ret.put("data", false);
             ret.put("message","文档不存在");
-            return toJSON(ret);
+            return callbackSuccess(ret);
         }
         ret.put("result",result);
-        return toJSON(ret);
+        return callbackSuccess(ret);
     }
 
     /**
@@ -105,7 +105,7 @@ public class DocumentController extends BaseController {
     public String updateDocument(String appId, RwDocument document) {
         Map<String, Object> ret = new HashMap<>();
         if (checkAppIdAndDeskKeyPermission(appId, Constants.DOCUMENT_API_ID, ret)) {
-            return toJSON(ret);
+            return callbackSuccess(ret);
         }
         int rlt = rwDocumentService.updateDocumentById(document);
         ret.put("code", Constants.CODE_DOCUMENT_UPDATE_IS_ERROR);
@@ -114,7 +114,7 @@ public class DocumentController extends BaseController {
             ret.put("code", 0);
             ret.put("data", true);
         }
-        return toJSON(ret);
+        return callbackSuccess(ret);
     }
 
     /**
@@ -131,7 +131,7 @@ public class DocumentController extends BaseController {
     public String saveDocument(String appId, RwDocument document) {
         Map<String, Object> ret = new HashMap<>();
         if (checkAppIdAndDeskKeyPermission(appId, Constants.DOCUMENT_API_ID, ret)) {
-            return toJSON(ret);
+            return callbackSuccess(ret);
         }
         int rlt = rwDocumentService.saveDocument(document);
         ret.put("code", Constants.CODE_DOCUMENT_SAVE_IS_ERROR);
@@ -140,7 +140,7 @@ public class DocumentController extends BaseController {
             ret.put("code", 0);
             ret.put("data", true);
         }
-        return toJSON(ret);
+        return callbackSuccess(ret);
     }
 
     /**
@@ -157,7 +157,7 @@ public class DocumentController extends BaseController {
     public String removeDocument(String appId, Long docId) {
         Map<String, Object> ret = new HashMap<>();
         if (checkAppIdAndDeskKeyPermission(appId, Constants.DOCUMENT_API_ID, ret)) {
-            return toJSON(ret);
+            return callbackSuccess(ret);
         }
         int rlt = rwDocumentService.removeDocument(docId);
         ret.put("code", Constants.CODE_DOCUMENT_REMOVE_IS_ERROR);
@@ -166,6 +166,6 @@ public class DocumentController extends BaseController {
             ret.put("code", 0);
             ret.put("data", true);
         }
-        return toJSON(ret);
+        return callbackSuccess(ret);
     }
 }

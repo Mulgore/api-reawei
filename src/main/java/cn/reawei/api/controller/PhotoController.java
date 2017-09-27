@@ -45,7 +45,7 @@ public class PhotoController extends BaseController {
         Map<String, Object> ret = new HashMap<>();
         // 公钥验签
         if (checkAppIdAndDeskKeyPermission(appId, Constants.PHOTO_API_ID, ret)) {
-            return toJSON(ret);
+            return callbackSuccess(ret);
         }
         Query<RwPhotoInfo> photoInfoQuery = getQuery();
         RwPhotoInfo photoInfo = new RwPhotoInfo();
@@ -64,7 +64,7 @@ public class PhotoController extends BaseController {
         Result<RwPhotoInfo> result = rwPhotoInfoService.getPhotoInfoResultByQuery(photoInfoQuery);
         ret.put("data", result.getDataList());
         ret.put("total", result.getTotal());
-        return toJSON(ret);
+        return callbackSuccess(ret);
     }
 
     /**
@@ -81,7 +81,7 @@ public class PhotoController extends BaseController {
         Map<String, Object> ret = new HashMap<>();
         rwPhotoInfoService.savePhotoInfo(photoInfo);
         ret.put("data", true);
-        return toJSON(ret);
+        return callbackSuccess(ret);
     }
 
     /**
@@ -99,7 +99,7 @@ public class PhotoController extends BaseController {
         photoInfo.setId(id);
         rwPhotoInfoService.updatePhotoInfoByIdSelective(photoInfo);
         ret.put("data", true);
-        return toJSON(ret);
+        return callbackSuccess(ret);
     }
 
     /**
@@ -116,7 +116,7 @@ public class PhotoController extends BaseController {
         Map<String, Object> ret = new HashMap<>();
         rwPhotoInfoService.removePhotoInfoById(id);
         ret.put("data", true);
-        return toJSON(ret);
+        return callbackSuccess(ret);
     }
 
     /**
@@ -148,6 +148,6 @@ public class PhotoController extends BaseController {
         Result<RwPhotoInfo> result = rwPhotoInfoService.getPhotoInfoResultByQuery(photoInfoQuery);
         ret.put("data", result.getDataList());
         ret.put("total", result.getTotal());
-        return toJSON(ret);
+        return callbackSuccess(ret);
     }
 }
