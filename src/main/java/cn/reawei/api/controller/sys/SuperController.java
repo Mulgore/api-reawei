@@ -1,9 +1,7 @@
 package cn.reawei.api.controller.sys;
 
-import cn.reawei.api.common.utils.AjaxResult;
 import cn.reawei.api.common.utils.Page.Query;
 import com.alibaba.fastjson.JSONObject;
-import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.baomidou.kisso.SSOHelper;
 import com.baomidou.kisso.security.token.SSOToken;
 import org.apache.commons.lang3.StringUtils;
