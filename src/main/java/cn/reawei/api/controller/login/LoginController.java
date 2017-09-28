@@ -46,8 +46,8 @@ public class LoginController extends BaseController {
     @RequestMapping(value = "/user/login", method = RequestMethod.POST)
     public String login() {
         WafRequestWrapper wr = new WafRequestWrapper(this.request);
-        String username = wr.getParameter("username").replaceAll(" ","");
-        String password = wr.getParameter("password").replaceAll(" ","");
+        String username = wr.getParameter("username");
+        String password = wr.getParameter("password");
         if (StringUtils.isBlank(username) && StringUtils.isBlank(password)) {
             return callbackFail("用户名和密码为空");
         }
@@ -57,6 +57,8 @@ public class LoginController extends BaseController {
         if (StringUtils.isBlank(password)) {
             return callbackFail("密码为空");
         }
+        username = username.replaceAll(" ","");
+        password = password.replaceAll(" ","");
         RwUser user = rwUserService.getUserInfoByLoginName(username);
         if (user != null) {
             if (user.getPassword().toString().equals(MD5Util.encode(password).toLowerCase())) {
