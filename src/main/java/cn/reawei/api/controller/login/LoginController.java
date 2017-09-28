@@ -1,4 +1,4 @@
-package cn.reawei.api.controller;
+package cn.reawei.api.controller.login;
 
 import cn.reawei.api.common.utils.MD5Util;
 import cn.reawei.api.controller.sys.BaseController;
@@ -120,7 +120,7 @@ public class LoginController extends BaseController {
         index2.put("id", "2");
         index2.put("bpid", "1");
         index2.put("name", "基础管理");
-        index2.put("icon", "team");
+        index2.put("icon", "setting");
         data.add(index2);
         Map<String, Object> index21 = new HashMap<>();
         index21.put("id", "21");
@@ -128,23 +128,15 @@ public class LoginController extends BaseController {
         index21.put("mpid", "2");
         index21.put("icon", "user");
         index21.put("name", "角色管理");
-        index21.put("route", "/agentInfo");
+        index21.put("route", "/roleManage");
         data.add(index21);
-        Map<String, Object> index22 = new HashMap<>();
-        index22.put("id", "22");
-        index22.put("bpid", "2");
-        index22.put("mpid", "2");
-        index22.put("icon", "pay-circle-o");
-        index22.put("name", "结算费率");
-        index22.put("route", "/agentRate");
-        data.add(index22);
         Map<String, Object> index23 = new HashMap<>();
-        index23.put("id", "23");
+        index23.put("id", "22");
         index23.put("bpid", "2");
         index23.put("mpid", "2");
         index23.put("icon", "contacts");
         index23.put("name", "权限管理");
-        index23.put("route", "/agentManage");
+        index23.put("route", "/accessManage");
         data.add(index23);
         return callbackSuccess(data);
     }
