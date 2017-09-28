@@ -9,7 +9,6 @@ dist
 *.ipr
 *.iws
 classes/
-*.sh
 rebel.xml
 *.log
 .DS_Store
