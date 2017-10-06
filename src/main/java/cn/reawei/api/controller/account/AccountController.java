@@ -1,5 +1,6 @@
 package cn.reawei.api.controller.account;
 
+import cn.reawei.api.common.utils.ResultBean;
 import cn.reawei.api.controller.sys.BaseController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,10 +22,10 @@ public class AccountController extends BaseController {
      * @return 返回JSON格式的字符串
      */
     @RequestMapping(value = "/dashboard", method = RequestMethod.GET)
-    public String login() {
-        Map<String,Object> data = new HashMap<>();
+    public ResultBean login() {
+        Map<String, Object> data = new HashMap<>();
         //上周交易额
-        List<Map<String,Object>> number = new ArrayList<>();
+        List<Map<String, Object>> number = new ArrayList<>();
         Map<String, Object> number1 = new HashMap<>();
         number1.put("icon", "pay-circle-o");
         number1.put("color", "#76d0a3");
@@ -57,20 +58,20 @@ public class AccountController extends BaseController {
         number.add(number2);
         number.add(number3);
         number.add(number4);
-        List<Map<String,Object>> salesList = new ArrayList<>();
+        List<Map<String, Object>> salesList = new ArrayList<>();
         for (int i = -7; i < 0; i++) {
             //	前7天每天分润额
             long dayPay = 0;
             //  前7天每天交易笔数
             long dayNumber = 0;
             Map<String, Object> sales = new HashMap<>();
-            sales.put("name", 19-16);
+            sales.put("name", 19 - 16);
             sales.put("交易金额", 10000);
             sales.put("交易笔数", 111);
             salesList.add(sales);
         }
-        data.put("numbers",number);
+        data.put("numbers", number);
         data.put("sales", salesList);
-        return  callbackSuccess(data);
+        return new ResultBean(data);
     }
 }

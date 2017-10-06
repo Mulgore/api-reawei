@@ -1,6 +1,7 @@
 package cn.reawei.api.controller.login;
 
 import cn.reawei.api.common.utils.MD5Util;
+import cn.reawei.api.common.utils.ResultBean;
 import cn.reawei.api.controller.sys.BaseController;
 import cn.reawei.api.model.RwUser;
 import cn.reawei.api.service.IRwUserService;
@@ -44,18 +45,18 @@ public class LoginController extends BaseController {
      * @return 返回JSON格式的字符串
      */
     @RequestMapping(value = "/user/login", method = RequestMethod.POST)
-    public String login() {
+    public ResultBean login() {
         WafRequestWrapper wr = new WafRequestWrapper(this.request);
         String username = wr.getParameter("username");
         String password = wr.getParameter("password");
         if (StringUtils.isBlank(username) && StringUtils.isBlank(password)) {
-            return callbackFail("用户名和密码为空");
+            return new ResultBean("用户名和密码为空");
         }
         if (StringUtils.isBlank(username)) {
-            return callbackFail("用户名为空");
+            return new ResultBean("用户名为空");
         }
         if (StringUtils.isBlank(password)) {
-            return callbackFail("密码为空");
+            return new ResultBean("密码为空");
         }
         username = username.replaceAll(" ","");
         password = password.replaceAll(" ","");
@@ -65,12 +66,12 @@ public class LoginController extends BaseController {
                 SSOToken ssoToken = new SSOToken();
                 ssoToken.setId(user.getId());
                 SSOHelper.setCookie(request, response, ssoToken,true);
-                return callbackSuccess();
+                return new ResultBean();
             } else {
-                return callbackFail("密码错误");
+                return new ResultBean("密码错误");
             }
         } else {
-            return callbackFail("未注册");
+            return new ResultBean("未注册");
         }
     }
 
@@ -85,7 +86,7 @@ public class LoginController extends BaseController {
      * @return 返回JSON格式的字符串
      */
     @RequestMapping(value = "/user", method = RequestMethod.GET)
-    public String checkLogin() {
+    public ResultBean checkLogin() {
         SSOToken token = SSOHelper.getSSOToken(request);
         if (token != null) {
             Map<String, Object> data = new HashMap<>();
@@ -95,9 +96,9 @@ public class LoginController extends BaseController {
             userData.put("permissions", permissions);
             userData.put("username", token.getData());
             data.put("user", userData);
-            return callbackSuccess(data);
+            return new ResultBean(data);
         }
-        return callbackFail("没有登录");
+        return new ResultBean("没有登录");
     }
 
     /**
@@ -110,7 +111,7 @@ public class LoginController extends BaseController {
      * @return 返回JSON格式的字符串
      */
     @RequestMapping(value = "/menus", method = RequestMethod.GET)
-    public String menusList() {
+    public ResultBean menusList() {
         List<Map<String, Object>> data = new ArrayList<>();
         Map<String, Object> index = new HashMap<>();
         index.put("id", "1");
@@ -140,6 +141,6 @@ public class LoginController extends BaseController {
         index23.put("name", "权限管理");
         index23.put("route", "/accessManage");
         data.add(index23);
-        return callbackSuccess(data);
+        return new ResultBean(data);
     }
 }
