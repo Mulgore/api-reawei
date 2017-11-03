@@ -15,12 +15,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * @since 2017-08-08
  */
 //@ControllerAdvice
-//@Configuration
+@Configuration
 public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         // kisso 拦截器配置
-        registry.addInterceptor(new SSOSpringInterceptor()).addPathPatterns("/**").excludePathPatterns("/login");
+        registry.addInterceptor(new BaseController()).addPathPatterns("/**");
+//        registry.addInterceptor(new SSOSpringInterceptor()).addPathPatterns("/**").excludePathPatterns("/login");
     }
 }

@@ -22,7 +22,7 @@ public class AccountController extends BaseController {
      * @return 返回JSON格式的字符串
      */
     @RequestMapping(value = "/dashboard", method = RequestMethod.GET)
-    public ResultBean login() {
+    public String login() {
         Map<String, Object> data = new HashMap<>();
         //上周交易额
         List<Map<String, Object>> number = new ArrayList<>();
@@ -72,6 +72,6 @@ public class AccountController extends BaseController {
         }
         data.put("numbers", number);
         data.put("sales", salesList);
-        return new ResultBean(data);
+        return callbackSuccess(data);
     }
 }

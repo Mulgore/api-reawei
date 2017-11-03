@@ -5,6 +5,7 @@ import cn.reawei.api.common.utils.ResultBean;
 import cn.reawei.api.controller.sys.BaseController;
 import cn.reawei.api.model.RwUser;
 import cn.reawei.api.service.IRwUserService;
+import com.alibaba.fastjson.JSONObject;
 import com.baomidou.kisso.SSOHelper;
 import com.baomidou.kisso.security.token.SSOToken;
 import com.baomidou.kisso.web.waf.request.WafRequestWrapper;
@@ -45,18 +46,18 @@ public class LoginController extends BaseController {
      * @return 返回JSON格式的字符串
      */
     @RequestMapping(value = "/user/login", method = RequestMethod.POST)
-    public ResultBean login() {
+    public String login() {
         WafRequestWrapper wr = new WafRequestWrapper(this.request);
         String username = wr.getParameter("username");
         String password = wr.getParameter("password");
         if (StringUtils.isBlank(username) && StringUtils.isBlank(password)) {
-            return new ResultBean("用户名和密码为空");
+            return JSONObject.toJSONString("用户名和密码为空");
         }
         if (StringUtils.isBlank(username)) {
-            return new ResultBean("用户名为空");
+            return JSONObject.toJSONString("用户名为空");
         }
         if (StringUtils.isBlank(password)) {
-            return new ResultBean("密码为空");
+            return JSONObject.toJSONString("密码为空");
         }
         username = username.replaceAll(" ","");
         password = password.replaceAll(" ","");
@@ -65,13 +66,14 @@ public class LoginController extends BaseController {
             if (user.getPassword().toString().equals(MD5Util.encode(password).toLowerCase())) {
                 SSOToken ssoToken = new SSOToken();
                 ssoToken.setId(user.getId());
+                ssoToken.setData(user.getLoginName());
                 SSOHelper.setCookie(request, response, ssoToken,true);
-                return new ResultBean();
+                return callbackSuccess();
             } else {
-                return new ResultBean("密码错误");
+                return JSONObject.toJSONString("密码错误");
             }
         } else {
-            return new ResultBean("未注册");
+            return JSONObject.toJSONString("未注册");
         }
     }
 
@@ -86,7 +88,7 @@ public class LoginController extends BaseController {
      * @return 返回JSON格式的字符串
      */
     @RequestMapping(value = "/user", method = RequestMethod.GET)
-    public ResultBean checkLogin() {
+    public String checkLogin() {
         SSOToken token = SSOHelper.getSSOToken(request);
         if (token != null) {
             Map<String, Object> data = new HashMap<>();
@@ -96,9 +98,9 @@ public class LoginController extends BaseController {
             userData.put("permissions", permissions);
             userData.put("username", token.getData());
             data.put("user", userData);
-            return new ResultBean(data);
+            return JSONObject.toJSONString(data);
         }
-        return new ResultBean("没有登录");
+        return JSONObject.toJSONString("没有登录");
     }
 
     /**
@@ -111,7 +113,7 @@ public class LoginController extends BaseController {
      * @return 返回JSON格式的字符串
      */
     @RequestMapping(value = "/menus", method = RequestMethod.GET)
-    public ResultBean menusList() {
+    public String menusList() {
         List<Map<String, Object>> data = new ArrayList<>();
         Map<String, Object> index = new HashMap<>();
         index.put("id", "1");
@@ -141,6 +143,6 @@ public class LoginController extends BaseController {
         index23.put("name", "权限管理");
         index23.put("route", "/accessManage");
         data.add(index23);
-        return new ResultBean(data);
+        return JSONObject.toJSONString(data);
     }
 }

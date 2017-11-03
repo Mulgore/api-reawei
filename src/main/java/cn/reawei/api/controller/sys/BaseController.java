@@ -44,7 +44,6 @@ public class BaseController extends SuperController implements HandlerIntercepto
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
         SSOToken ssoToken = SSOHelper.getSSOToken(httpServletRequest);
-        logger.info(ssoToken.toString());
         if (ssoToken == null) {
             switch (httpServletRequest.getRequestURI()) {
                 case "/api/v1/user":
