@@ -114,7 +114,7 @@ public class SuperController {
      */
     protected String callbackFail(String message) {
         Map<String, Object> data = new HashMap<>();
-        data.put("success", true);
+        data.put("success", false);
         data.put("message", message);
         return JSONObject.toJSONString(data);
     }

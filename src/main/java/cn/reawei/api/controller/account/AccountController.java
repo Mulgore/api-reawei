@@ -1,8 +1,6 @@
 package cn.reawei.api.controller.account;
 
-import cn.reawei.api.common.utils.ResultBean;
 import cn.reawei.api.controller.sys.BaseController;
-import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,6 +28,8 @@ public class AccountController extends BaseController {
     public String login() {
         Map<String, Object> data = new HashMap<>();
         //上周交易额
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM月dd");
+        DecimalFormat decimalFormat = new DecimalFormat("#.00");
         List<Map<String, Object>> number = new ArrayList<>();
         Map<String, Object> number1 = new HashMap<>();
         number1.put("icon", "pay-circle-o");
@@ -37,28 +37,28 @@ public class AccountController extends BaseController {
         number1.put("title", "上周交易");
         number1.put("day", "总数");
         number1.put("decimals", 2);
-        number1.put("number", 1000);
+        number1.put("number", Double.parseDouble(decimalFormat.format(Math.random()*5000)));
         Map<String, Object> number2 = new HashMap<>();
         number2.put("icon", "pay-circle-o");
         number2.put("color", "#76d0a3");
         number2.put("title", "上周交易");
         number2.put("day", "总数");
         number2.put("decimals", 2);
-        number2.put("number", 1000);
+        number2.put("number", Double.parseDouble(decimalFormat.format(Math.random()*5000)));
         Map<String, Object> number3 = new HashMap<>();
         number3.put("icon", "pay-circle-o");
         number3.put("color", "#76d0a3");
         number3.put("title", "上周交易");
         number3.put("day", "总数");
         number3.put("decimals", 2);
-        number3.put("number", 1000);
+        number3.put("number", Double.parseDouble(decimalFormat.format(Math.random()*5000)));
         Map<String, Object> number4 = new HashMap<>();
-        number4.put("icon", "pay-circle-o");
-        number4.put("color", "#76d0a3");
-        number4.put("title", "上周交易");
+        number4.put("icon", "user");
+        number4.put("color", "#f7629e");
+        number4.put("title", "访问用户");
         number4.put("day", "总数");
-        number4.put("decimals", 2);
-        number4.put("number", 1000);
+        number4.put("decimals", 0);
+        number4.put("number", Math.round(Math.random()*5000));
         number.add(number1);
         number.add(number2);
         number.add(number3);
@@ -68,8 +68,7 @@ public class AccountController extends BaseController {
             Map<String, Object> sales = new HashMap<>();
             Calendar calendar = Calendar.getInstance();
             calendar.add(DATE,i);
-            SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY年MM月dd");
-            DecimalFormat decimalFormat = new DecimalFormat("#.00");
+
             sales.put("name",dateFormat.format(calendar.getTime()));
             sales.put("交易金额", Double.parseDouble(decimalFormat.format(Math.random()*5000)));
             sales.put("交易笔数", Math.round(Math.random()*2000));

@@ -98,9 +98,9 @@ public class LoginController extends BaseController {
             userData.put("permissions", permissions);
             userData.put("username", token.getData());
             data.put("user", userData);
-            return JSONObject.toJSONString(data);
+            return callbackSuccess(data);
         }
-        return JSONObject.toJSONString("没有登录");
+        return callbackFail("没有登录");
     }
 
     /**
