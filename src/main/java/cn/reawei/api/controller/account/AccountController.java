@@ -2,11 +2,16 @@ package cn.reawei.api.controller.account;
 
 import cn.reawei.api.common.utils.ResultBean;
 import cn.reawei.api.controller.sys.BaseController;
+import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
+
+import static java.util.Calendar.DATE;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -60,14 +65,14 @@ public class AccountController extends BaseController {
         number.add(number4);
         List<Map<String, Object>> salesList = new ArrayList<>();
         for (int i = -7; i < 0; i++) {
-            //	前7天每天分润额
-            long dayPay = 0;
-            //  前7天每天交易笔数
-            long dayNumber = 0;
             Map<String, Object> sales = new HashMap<>();
-            sales.put("name", 19 - 16);
-            sales.put("交易金额", 10000);
-            sales.put("交易笔数", 111);
+            Calendar calendar = Calendar.getInstance();
+            calendar.add(DATE,i);
+            SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY年MM月dd");
+            DecimalFormat decimalFormat = new DecimalFormat("#.00");
+            sales.put("name",dateFormat.format(calendar.getTime()));
+            sales.put("交易金额", Double.parseDouble(decimalFormat.format(Math.random()*5000)));
+            sales.put("交易笔数", Math.round(Math.random()*2000));
             salesList.add(sales);
         }
         data.put("numbers", number);

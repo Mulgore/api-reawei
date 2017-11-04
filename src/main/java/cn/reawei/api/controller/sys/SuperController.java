@@ -102,6 +102,11 @@ public class SuperController {
         return JSONObject.toJSONString(data);
     }
 
+    protected String callbackSuccess(Map<String,Object> ret) {
+        ret.put("success", true);
+        return JSONObject.toJSONString(ret);
+    }
+
     /**
      * 返回 JSON 格式对象
      * @param message
