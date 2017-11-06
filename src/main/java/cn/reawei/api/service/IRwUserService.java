@@ -16,4 +16,6 @@ import org.springframework.stereotype.Service;
 public interface IRwUserService {
 
     RwUser getUserInfoByLoginName(String loginName);
+
+    RwUser getUserInfoById(Integer id);
 }

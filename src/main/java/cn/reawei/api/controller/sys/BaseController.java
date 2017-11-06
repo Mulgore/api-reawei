@@ -50,8 +50,6 @@ public class BaseController extends SuperController implements HandlerIntercepto
                     return true;
                 case "/api/v1/user/login":
                     return true;
-                case "/api/v1/user/sendSms":
-                    return true;
             }
             return false;
         }

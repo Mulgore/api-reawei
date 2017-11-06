@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.reawei.api.mapper.RwRoleMapper" >
+  <resultMap id="BaseResultMap" type="cn.reawei.api.model.RwRole" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="sort" property="sort" jdbcType="SMALLINT" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, sort, description
+  </sql>
+  <sql id="pagination">
+    <if test="start!=null ">
+      <![CDATA[ limit #{start}, #{limit}]]>
+    </if>
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from rw_role
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from rw_role
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="cn.reawei.api.model.RwRole" >
+    insert into rw_role (id, name, sort, 
+      description)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{sort,jdbcType=SMALLINT}, 
+      #{description,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.reawei.api.model.RwRole" >
+    insert into rw_role
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="sort != null" >
+        sort,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null" >
+        #{sort,jdbcType=SMALLINT},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.reawei.api.model.RwRole" >
+    update rw_role
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null" >
+        sort = #{sort,jdbcType=SMALLINT},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.reawei.api.model.RwRole" >
+    update rw_role
+    set name = #{name,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=SMALLINT},
+      description = #{description,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectResultByQuery" resultMap="BaseResultMap" parameterType="cn.reawei.api.common.utils.Page.Query">
+    select
+    <include refid="Base_Column_List"/>
+    from
+    rw_role
+    where
+    1=1
+    <if test="queryObject != null and queryObject.id != null">
+      and id = #{queryObject.id,jdbcType=BIGINT}
+    </if>
+    <if test="queryObject != null and queryObject.name != null">
+      and name = #{queryObject.name,jdbcType=VARCHAR}
+    </if>
+    <if test="queryObject != null and queryObject.sort != null">
+      and sort = #{queryObject.sort,jdbcType=INTEGER}
+    </if>
+    <if test="queryObject != null and queryObject.description != null">
+      and description = #{queryObject.description,jdbcType=VARCHAR}
+    </if>
+    <if test="orderBy !=null and orderBy.toOrderBy != null">
+      order by ${orderBy.toOrderBy}
+    </if>
+    <include refid="pagination"/>
+  </select>
+
+  <select id="countResultByQuery" resultType="java.lang.Integer" parameterType="cn.reawei.api.common.utils.Page.Query">
+    select
+    COUNT(1)
+    from
+    rw_role
+    where
+    1=1
+    <if test="queryObject != null and queryObject.id != null">
+      and id = #{queryObject.id,jdbcType=BIGINT}
+    </if>
+    <if test="queryObject != null and queryObject.name != null">
+      and name = #{queryObject.name,jdbcType=VARCHAR}
+    </if>
+    <if test="queryObject != null and queryObject.sort != null">
+      and sort = #{queryObject.sort,jdbcType=INTEGER}
+    </if>
+    <if test="queryObject != null and queryObject.description != null">
+      and description = #{queryObject.description,jdbcType=VARCHAR}
+    </if>
+  </select>
+</mapper>

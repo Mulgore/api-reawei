@@ -1,11 +1,11 @@
 package cn.reawei.api.controller.login;
 
 import cn.reawei.api.common.utils.MD5Util;
-import cn.reawei.api.common.utils.ResultBean;
 import cn.reawei.api.controller.sys.BaseController;
 import cn.reawei.api.model.RwUser;
 import cn.reawei.api.service.IRwUserService;
 import com.alibaba.fastjson.JSONObject;
+import com.baomidou.kisso.SSOConfig;
 import com.baomidou.kisso.SSOHelper;
 import com.baomidou.kisso.security.token.SSOToken;
 import com.baomidou.kisso.web.waf.request.WafRequestWrapper;
@@ -15,10 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 致终于来到这里的勇敢的人：
@@ -51,29 +48,30 @@ public class LoginController extends BaseController {
         String username = wr.getParameter("username");
         String password = wr.getParameter("password");
         if (StringUtils.isBlank(username) && StringUtils.isBlank(password)) {
-            return JSONObject.toJSONString("用户名和密码为空");
+            return callbackFail("用户名和密码为空");
         }
         if (StringUtils.isBlank(username)) {
-            return JSONObject.toJSONString("用户名为空");
+            return callbackFail("用户名为空");
         }
         if (StringUtils.isBlank(password)) {
             return JSONObject.toJSONString("密码为空");
         }
-        username = username.replaceAll(" ","");
-        password = password.replaceAll(" ","");
+        username = username.replaceAll(" ", "");
+        password = password.replaceAll(" ", "");
         RwUser user = rwUserService.getUserInfoByLoginName(username);
         if (user != null) {
             if (user.getPassword().toString().equals(MD5Util.encode(password).toLowerCase())) {
                 SSOToken ssoToken = new SSOToken();
                 ssoToken.setId(user.getId());
-                ssoToken.setData(user.getLoginName());
-                SSOHelper.setCookie(request, response, ssoToken,true);
-                return callbackSuccess();
+                ssoToken.setUserAgent(user.getLoginName());
+                SSOHelper.setCookie(request, response, ssoToken, true);
+                Map<String,Object> data = new HashMap<>();
+                return callbackSuccess(data);
             } else {
-                return JSONObject.toJSONString("密码错误");
+                return callbackFail("密码错误");
             }
         } else {
-            return JSONObject.toJSONString("未注册");
+            return callbackFail("未注册");
         }
     }
 
@@ -90,13 +88,22 @@ public class LoginController extends BaseController {
     @RequestMapping(value = "/user", method = RequestMethod.GET)
     public String checkLogin() {
         SSOToken token = SSOHelper.getSSOToken(request);
-        if (token != null) {
+        if (!Objects.isNull(token)) {
+            if (Objects.isNull(token.getId())) {
+                SSOHelper.clearLogin(request, response);
+                return callbackFail("无效用户");
+            }
+            RwUser rwUser = rwUserService.getUserInfoById(Integer.parseInt(token.getId()));
+            if(Objects.isNull(rwUser)){
+                SSOHelper.clearLogin(request, response);
+                return callbackFail("无效用户");
+            }
             Map<String, Object> data = new HashMap<>();
             Map<String, Object> userData = new HashMap<>();
             Map<String, Object> permissions = new HashMap<>();
             permissions.put("role", "admin");
             userData.put("permissions", permissions);
-            userData.put("username", token.getData());
+            userData.put("username", token.getUserAgent());
             data.put("user", userData);
             return callbackSuccess(data);
         }
@@ -133,7 +140,7 @@ public class LoginController extends BaseController {
         index21.put("mpid", "2");
         index21.put("icon", "user");
         index21.put("name", "角色管理");
-        index21.put("route", "/roleManage");
+        index21.put("route", "/settingRole");
         data.add(index21);
         Map<String, Object> index23 = new HashMap<>();
         index23.put("id", "22");
@@ -141,7 +148,7 @@ public class LoginController extends BaseController {
         index23.put("mpid", "2");
         index23.put("icon", "contacts");
         index23.put("name", "权限管理");
-        index23.put("route", "/accessManage");
+        index23.put("route", "/settingPermission");
         data.add(index23);
         return JSONObject.toJSONString(data);
     }

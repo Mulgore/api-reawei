@@ -17,4 +17,9 @@ public class IRwUserServiceImpl implements IRwUserService {
     public RwUser getUserInfoByLoginName(String loginName) {
         return rwUserMapper.selectByLoginName(loginName);
     }
+
+    @Override
+    public RwUser getUserInfoById(Integer id) {
+        return rwUserMapper.selectByPrimaryKey(id.longValue());
+    }
 }

@@ -1,6 +1,7 @@
 package cn.reawei.api.controller.sys;
 
 import cn.reawei.api.common.utils.Page.Query;
+import cn.reawei.api.common.utils.Page.Result;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.kisso.SSOHelper;
 import com.baomidou.kisso.security.token.SSOToken;
@@ -68,42 +69,36 @@ public class SuperController {
     }
 
     /**
-     * 返回 JSON 格式对象
+     * <p>
+     * 转换为 bootstrap-table 需要的分页格式 JSON
+     * </p>
+     *
+     * @param result 分页对象
      * @return
      */
-    protected String callbackSuccess() {
+    protected String jsonPageResult(Result<?> result) {
         Map<String, Object> data = new HashMap<>();
+        data.put("data", result.getDataList());
+        data.put("total", result.getTotal());
         data.put("success", true);
-        return JSONObject.toJSONString(data);
-    }
-    /**
-     * 返回 JSON 格式对象
-     * @param ret
-     * @param message
-     * @return
-     */
-    protected String callbackSuccess(Object ret, String message) {
-        Map<String, Object> data = new HashMap<>();
-        data.put("success", true);
-        data.put("message", message);
-        data.put("data", ret);
-        return JSONObject.toJSONString(data);
-    }
-
-    /**
-     * 返回 JSON 格式对象
-     * @param ret
-     * @return
-     */
-    protected String callbackSuccess(Object ret) {
-        Map<String, Object> data = new HashMap<>();
-        data.put("success", true);
-        data.put("data", ret);
         return JSONObject.toJSONString(data);
     }
 
     protected String callbackSuccess(Map<String,Object> ret) {
         ret.put("success", true);
+        return JSONObject.toJSONString(ret);
+    }
+
+    protected String callbackSuccess() {
+        Map<String, Object> ret = new HashMap<>();
+        ret.put("success", true);
+        return JSONObject.toJSONString(ret);
+    }
+
+    protected String callbackSuccess(String message) {
+        Map<String, Object> ret = new HashMap<>();
+        ret.put("success", true);
+        ret.put("message", message);
         return JSONObject.toJSONString(ret);
     }
 
