@@ -14,6 +14,8 @@ public interface RwRoleMapper {
 
     int insertSelective(RwRole record);
 
+    int selectByLevel(Integer level);
+
     RwRole selectByPrimaryKey(Long id);
 
     int updateByPrimaryKeySelective(RwRole record);

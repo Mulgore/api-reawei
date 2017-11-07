@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="cn.reawei.api.model.RwRole" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="sort" property="sort" jdbcType="SMALLINT" />
+    <result column="sort" property="sort" jdbcType="INTEGER" />
     <result column="description" property="description" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
@@ -21,6 +21,12 @@
     from rw_role
     where id = #{id,jdbcType=BIGINT}
   </select>
+  <select id="selectByLevel" resultType="java.lang.Integer" parameterType="java.lang.Integer" >
+    select
+    count(1)
+    from rw_role
+    where 1=1 AND sort = #{level,jdbcType=INTEGER}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from rw_role
     where id = #{id,jdbcType=BIGINT}
@@ -28,7 +34,7 @@
   <insert id="insert" parameterType="cn.reawei.api.model.RwRole" >
     insert into rw_role (id, name, sort, 
       description)
-    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{sort,jdbcType=SMALLINT}, 
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER},
       #{description,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.reawei.api.model.RwRole" >
@@ -55,7 +61,7 @@
         #{name,jdbcType=VARCHAR},
       </if>
       <if test="sort != null" >
-        #{sort,jdbcType=SMALLINT},
+        #{sort,jdbcType=INTEGER},
       </if>
       <if test="description != null" >
         #{description,jdbcType=VARCHAR},
@@ -69,7 +75,7 @@
         name = #{name,jdbcType=VARCHAR},
       </if>
       <if test="sort != null" >
-        sort = #{sort,jdbcType=SMALLINT},
+        sort = #{sort,jdbcType=INTEGER},
       </if>
       <if test="description != null" >
         description = #{description,jdbcType=VARCHAR},
@@ -80,7 +86,7 @@
   <update id="updateByPrimaryKey" parameterType="cn.reawei.api.model.RwRole" >
     update rw_role
     set name = #{name,jdbcType=VARCHAR},
-      sort = #{sort,jdbcType=SMALLINT},
+      sort = #{sort,jdbcType=INTEGER},
       description = #{description,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -95,7 +101,7 @@
       and id = #{queryObject.id,jdbcType=BIGINT}
     </if>
     <if test="queryObject != null and queryObject.name != null">
-      and name = #{queryObject.name,jdbcType=VARCHAR}
+      <![CDATA[ AND name LIKE  CONCAT('%',#{queryObject.name,jdbcType=VARCHAR},'%' )]]>
     </if>
     <if test="queryObject != null and queryObject.sort != null">
       and sort = #{queryObject.sort,jdbcType=INTEGER}
@@ -120,7 +126,7 @@
       and id = #{queryObject.id,jdbcType=BIGINT}
     </if>
     <if test="queryObject != null and queryObject.name != null">
-      and name = #{queryObject.name,jdbcType=VARCHAR}
+      <![CDATA[ AND name LIKE  CONCAT('%',#{queryObject.name,jdbcType=VARCHAR},'%' )]]>
     </if>
     <if test="queryObject != null and queryObject.sort != null">
       and sort = #{queryObject.sort,jdbcType=INTEGER}

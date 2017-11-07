@@ -22,4 +22,40 @@ public class IRwRoleServiceImpl implements IRwRoleService {
         result.setDataList(rwRoleMapper.selectResultByQuery(roleQuery));
         return result;
     }
+
+    @Override
+    public boolean addRwRole(RwRole rwRole) {
+        int ret = rwRoleMapper.insertSelective(rwRole);
+        if (ret > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean updateRwRoleById(RwRole rwRole) {
+        int ret = rwRoleMapper.updateByPrimaryKeySelective(rwRole);
+        if (ret > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean getCheckByLevel(Integer level) {
+        int ret = rwRoleMapper.selectByLevel(level);
+        if (ret > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean deleteById(Integer id) {
+        int ret = rwRoleMapper.deleteByPrimaryKey(id * 1l);
+        if (ret > 0) {
+            return true;
+        }
+        return false;
+    }
 }

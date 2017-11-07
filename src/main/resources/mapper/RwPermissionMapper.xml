@@ -5,7 +5,7 @@
         <id column="id" property="id" jdbcType="BIGINT"/>
         <result column="pid" property="pid" jdbcType="BIGINT"/>
         <result column="title" property="title" jdbcType="VARCHAR"/>
-        <result column="state" property="state" jdbcType="SMALLINT"/>
+        <result column="state" property="state" jdbcType="INTEGER"/>
         <result column="url" property="url" jdbcType="VARCHAR"/>
         <result column="icon" property="icon" jdbcType="VARCHAR"/>
         <result column="description" property="description" jdbcType="VARCHAR"/>
@@ -33,7 +33,7 @@
       state, url, icon, 
       description)
     values (#{id,jdbcType=BIGINT}, #{pid,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, 
-      #{state,jdbcType=SMALLINT}, #{url,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR}, 
+      #{state,jdbcType=INTEGER}, #{url,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR},
       #{description,jdbcType=VARCHAR})
   </insert>
     <insert id="insertSelective" parameterType="cn.reawei.api.model.RwPermission">
@@ -72,7 +72,7 @@
                 #{title,jdbcType=VARCHAR},
             </if>
             <if test="state != null">
-                #{state,jdbcType=SMALLINT},
+                #{state,jdbcType=INTEGER},
             </if>
             <if test="url != null">
                 #{url,jdbcType=VARCHAR},
@@ -95,7 +95,7 @@
                 title = #{title,jdbcType=VARCHAR},
             </if>
             <if test="state != null">
-                state = #{state,jdbcType=SMALLINT},
+                state = #{state,jdbcType=INTEGER},
             </if>
             <if test="url != null">
                 url = #{url,jdbcType=VARCHAR},
@@ -113,7 +113,7 @@
     update rw_permission
     set pid = #{pid,jdbcType=BIGINT},
       title = #{title,jdbcType=VARCHAR},
-      state = #{state,jdbcType=SMALLINT},
+      state = #{state,jdbcType=INTEGER},
       url = #{url,jdbcType=VARCHAR},
       icon = #{icon,jdbcType=VARCHAR},
       description = #{description,jdbcType=VARCHAR}
@@ -145,7 +145,7 @@
             <![CDATA[ AND title LIKE  CONCAT('%',#{queryObject.title,jdbcType=VARCHAR},'%' )]]>
         </if>
         <if test="queryObject != null and queryObject.state != null">
-            AND state = #{queryObject.state,jdbcType=SMALLINT}
+            AND state = #{queryObject.state,jdbcType=INTEGER}
         </if>
         <if test="queryObject != null and queryObject.url != null">
             AND url = #{queryObject.url,jdbcType=VARCHAR}
@@ -177,7 +177,7 @@
             <![CDATA[ AND title LIKE  CONCAT('%',#{queryObject.title,jdbcType=VARCHAR},'%' )]]>
         </if>
         <if test="queryObject != null and queryObject.state != null">
-            AND state = #{queryObject.state,jdbcType=SMALLINT}
+            AND state = #{queryObject.state,jdbcType=INTEGER}
         </if>
         <if test="queryObject != null and queryObject.url != null">
             AND url = #{queryObject.url,jdbcType=VARCHAR}

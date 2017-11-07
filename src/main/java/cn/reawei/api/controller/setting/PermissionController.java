@@ -30,7 +30,7 @@ public class PermissionController extends BaseController {
         String state = request.getParameter("state");
         String title = request.getParameter("title");
         if (!Objects.isNull(state)) {
-            permission.setState(Short.parseShort(state));
+            permission.setState(Integer.parseInt(state));
         }
         if (!Objects.isNull(title)) {
             permission.setTitle(title.replaceAll(" ", ""));
@@ -77,7 +77,7 @@ public class PermissionController extends BaseController {
         String state = request.getParameter("state");
         String title = request.getParameter("title");
         if (!Objects.isNull(state)) {
-            permission.setState(Short.parseShort(state));
+            permission.setState(Integer.parseInt(state));
         }
         if (!Objects.isNull(title)) {
             permission.setTitle(title.replaceAll(" ", ""));
@@ -93,7 +93,7 @@ public class PermissionController extends BaseController {
     @RequestMapping(value = "settingPermission/state/child", method = RequestMethod.POST)
     public String removeChild(Integer id, String state) {
         RwPermission permission = rwPermissionService.getRwPermissionById(id);
-        permission.setState(Short.parseShort(state));
+        permission.setState(Integer.parseInt(state));
         rwPermissionService.updateRwPermissionById(permission);
         if (state.equals("0")) {
             return callbackSuccess("禁用成功");
