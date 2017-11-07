@@ -5,8 +5,8 @@ import cn.reawei.api.controller.sys.BaseController;
 import cn.reawei.api.model.RwUser;
 import cn.reawei.api.service.IRwUserService;
 import com.alibaba.fastjson.JSONObject;
-import com.baomidou.kisso.SSOConfig;
 import com.baomidou.kisso.SSOHelper;
+import com.baomidou.kisso.common.SSOConstants;
 import com.baomidou.kisso.security.token.SSOToken;
 import com.baomidou.kisso.web.waf.request.WafRequestWrapper;
 import org.apache.commons.lang3.StringUtils;
@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.*;
 
 /**
@@ -64,8 +66,12 @@ public class LoginController extends BaseController {
                 SSOToken ssoToken = new SSOToken();
                 ssoToken.setId(user.getId());
                 ssoToken.setUserAgent(user.getLoginName());
+                String remember = request.getParameter("remember");
+                if (!Objects.isNull(remember) && "true".equals(remember)) {
+                    request.setAttribute(SSOConstants.SSO_COOKIE_MAXAGE, 302400);
+                }
                 SSOHelper.setCookie(request, response, ssoToken, true);
-                Map<String,Object> data = new HashMap<>();
+                Map<String, Object> data = new HashMap<>();
                 return callbackSuccess(data);
             } else {
                 return callbackFail("密码错误");
@@ -94,7 +100,7 @@ public class LoginController extends BaseController {
                 return callbackFail("无效用户");
             }
             RwUser rwUser = rwUserService.getUserInfoById(Integer.parseInt(token.getId()));
-            if(Objects.isNull(rwUser)){
+            if (Objects.isNull(rwUser)) {
                 SSOHelper.clearLogin(request, response);
                 return callbackFail("无效用户");
             }
@@ -103,7 +109,7 @@ public class LoginController extends BaseController {
             Map<String, Object> permissions = new HashMap<>();
             permissions.put("role", "admin");
             userData.put("permissions", permissions);
-            userData.put("username", token.getUserAgent());
+            userData.put("username", "管理员");
             data.put("user", userData);
             return callbackSuccess(data);
         }
@@ -151,5 +157,92 @@ public class LoginController extends BaseController {
         index23.put("route", "/settingPermission");
         data.add(index23);
         return JSONObject.toJSONString(data);
+    }
+
+    @RequestMapping(value = "/user/logout", method = RequestMethod.GET)
+    public void logout(HttpServletRequest request, HttpServletResponse response) {
+        SSOHelper.clearLogin(request, response);
+        request.getSession().invalidate();
+    }
+
+
+    @RequestMapping(value = "/user/sendSms", method = RequestMethod.POST)
+    public String sendSms() {
+        // 过滤 XSS SQL 注入
+        WafRequestWrapper wr = new WafRequestWrapper(request);
+        String mobile = wr.getParameter("mobile");
+//        if (StringUtil.isBlank(mobile)) {
+//            return callbackFail("手机号不能为空 !");
+//        }
+//        UserVo userVo = userService.findByMobile(mobile);
+//        if (userVo == null) {
+//            return callbackFail("账户不存在 !");
+//        }
+//        // 先固定使用些appId发送短信
+//        final Integer appId = Sms.FULA_APPID;
+//        final Integer templeId = Sms.FULA_TPLID_VERIFY;
+//        Map<String, Object> data = new HashMap<>();
+//        try {
+//            Random random = new Random();
+//            String authCode = "";
+//            for (int i = 0; i < 4; i++) {
+//                authCode = authCode + random.nextInt(9);
+//            }
+//            String ip = RequestUtils.getIpAddr(request);
+//            FmSmsTemplate smsTemplate = messageService.getSmsTmplById(templeId);
+//            String content = smsTemplate.getContent().replace("#vcode#", authCode);
+//            smsApiService.sendSmsByHttp(mobile, content, appId, templeId, ip);
+//            Object token = TokenUtil.token(TokenUtil.formatJsonToken(mobile, authCode), true, null);
+//            redisUtil.set("token_" + mobile, token, (long) (60 * 30));
+//            data.put("token", token);
+//            data.put("message", "验证码发送成功 !");
+//            return callbackSuccess(data);
+//        } catch (Exception e) {
+//            logger.error("send sms exception: {}", e);
+//            return callbackFail("短信验证码发送失败!");
+//        }
+        return callbackSuccess();
+    }
+
+    @RequestMapping(value = "/user/forgot", method = RequestMethod.POST)
+    public String forgot() {
+        String mobile = request.getParameter("mobile");
+        String password = request.getParameter("password");
+        if (Objects.isNull(mobile) && Objects.isNull(password)) {
+            return callbackFail("账号和密码不能为空");
+        }
+        if (Objects.isNull(mobile)) {
+            return callbackFail("账号不能为空");
+        }
+        if (Objects.isNull(password)) {
+            return callbackFail("密码不能为空");
+        }
+        RwUser rwUser = rwUserService.getUserInfoByLoginName(mobile);
+        if (Objects.isNull(rwUser)) {
+            return callbackFail("账号未注册");
+        }
+        rwUser.setPassword(MD5Util.encode(password).toLowerCase());
+        rwUserService.updateUserById(rwUser);
+        return callbackSuccess("密码修改成功");
+    }
+
+    @RequestMapping(value = "/user/update", method = RequestMethod.POST)
+    public String update() {
+        String oldPassword = request.getParameter("oldPassword");
+        String password = request.getParameter("password");
+        String checkPassword = request.getParameter("checkPassword");
+        if (!checkPassword.equals(password)) {
+            return callbackFail("确认密码与新密码不一致 !");
+        }
+        RwUser user = rwUserService.getUserInfoById(getCurrentUserId());
+        if (MD5Util.encode(oldPassword).toLowerCase().equals(user.getPassword())) {
+            Map<String, Object> data = new HashMap<>();
+            user.setPassword(MD5Util.encode(password).toLowerCase());
+            rwUserService.updateUserById(user);
+            data.put("message", "密码修改成功 !");
+            return callbackSuccess(data);
+        } else {
+            return callbackFail("原密码不正确, 修改失败");
+        }
     }
 }

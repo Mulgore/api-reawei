@@ -22,4 +22,13 @@ public class IRwUserServiceImpl implements IRwUserService {
     public RwUser getUserInfoById(Integer id) {
         return rwUserMapper.selectByPrimaryKey(id.longValue());
     }
+
+    @Override
+    public boolean updateUserById(RwUser user) {
+        int ret = rwUserMapper.updateByPrimaryKeySelective(user);
+        if(ret > 0){
+            return true;
+        }
+        return false;
+    }
 }

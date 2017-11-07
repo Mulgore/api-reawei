@@ -18,4 +18,6 @@ public interface IRwUserService {
     RwUser getUserInfoByLoginName(String loginName);
 
     RwUser getUserInfoById(Integer id);
+
+    boolean updateUserById(RwUser user);
 }
