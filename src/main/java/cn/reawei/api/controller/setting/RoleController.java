@@ -4,7 +4,11 @@ import cn.reawei.api.common.utils.Page.OrderBy;
 import cn.reawei.api.common.utils.Page.Query;
 import cn.reawei.api.common.utils.Page.Result;
 import cn.reawei.api.controller.sys.BaseController;
+import cn.reawei.api.model.RwPermission;
 import cn.reawei.api.model.RwRole;
+import cn.reawei.api.model.RwRolePermission;
+import cn.reawei.api.service.IRwPermissionService;
+import cn.reawei.api.service.IRwRolePermissionService;
 import cn.reawei.api.service.IRwRoleService;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,10 +24,14 @@ public class RoleController extends BaseController {
 
     @Resource
     IRwRoleService rwRoleService;
+    @Resource
+    IRwPermissionService rwPermissionService;
+    @Resource
+    IRwRolePermissionService rwRolePermissionService;
 
     @RequestMapping(value = "settingRole", method = RequestMethod.GET)
     public String getRoleList() {
-        Query<RwRole> roleQuery = new Query<>();
+        Query<RwRole> roleQuery = getQuery();
         RwRole rwRole = new RwRole();
         String title = request.getParameter("title");
         if (!Objects.isNull(title)) {
@@ -63,5 +71,38 @@ public class RoleController extends BaseController {
             return callbackFail("删除失败！");
         }
         return callbackSuccess("角色删除成功");
+    }
+
+    @RequestMapping(value = "settingRole/perm", method = RequestMethod.GET)
+    public String getPermList(Integer level) {
+        Query<RwPermission> permissionQuery = getQuery();
+        RwPermission permission = new RwPermission();
+        permission.setState(1);
+        permissionQuery.setQueryObject(permission);
+        Result<RwPermission> result = rwPermissionService.getResultByQuery(permissionQuery);
+        for (RwPermission perm : result.getDataList()) {
+            boolean check = rwRolePermissionService.getByPidAndLevel(perm.getId().intValue(), level);
+            perm.setState(0);
+            if(check){
+                perm.setState(1);
+            }
+        }
+        return jsonPageResult(result);
+    }
+
+    @RequestMapping(value = "settingRole/perm/status", method = RequestMethod.POST)
+    public String removeChild(Integer level, Integer id, Integer type) {
+        switch (type) {
+            case 1:
+                RwRolePermission permission = new RwRolePermission();
+                permission.setPid(id * 1l);
+                permission.setRid(level * 1l);
+                rwRolePermissionService.addRwRolePermission(permission);
+                return callbackSuccess("启用成功");
+            case 0:
+                rwRolePermissionService.deleteByPidAndLevel(id, level);
+                return callbackSuccess("禁用成功");
+        }
+        return callbackSuccess("系统异常");
     }
 }

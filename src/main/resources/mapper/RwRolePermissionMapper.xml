@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.reawei.api.mapper.RwRolePermissionMapper" >
+  <resultMap id="BaseResultMap" type="cn.reawei.api.model.RwRolePermission" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="rid" property="rid" jdbcType="BIGINT" />
+    <result column="pid" property="pid" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, rid, pid
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from rw_role_permission
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectByPidAndLevel" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from rw_role_permission
+    where pid = #{pid,jdbcType=BIGINT} and rid = #{level,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from rw_role_permission
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByPermIdAndLevel" parameterType="java.lang.Long" >
+    delete from rw_role_permission
+    where pid = #{pid,jdbcType=BIGINT} and rid = #{level,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="cn.reawei.api.model.RwRolePermission" >
+    insert into rw_role_permission (id, rid, pid)
+    values (#{id,jdbcType=BIGINT}, #{rid,jdbcType=BIGINT}, #{pid,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.reawei.api.model.RwRolePermission" >
+    insert into rw_role_permission
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="rid != null" >
+        rid,
+      </if>
+      <if test="pid != null" >
+        pid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="rid != null" >
+        #{rid,jdbcType=BIGINT},
+      </if>
+      <if test="pid != null" >
+        #{pid,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.reawei.api.model.RwRolePermission" >
+    update rw_role_permission
+    <set >
+      <if test="rid != null" >
+        rid = #{rid,jdbcType=BIGINT},
+      </if>
+      <if test="pid != null" >
+        pid = #{pid,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.reawei.api.model.RwRolePermission" >
+    update rw_role_permission
+    set rid = #{rid,jdbcType=BIGINT},
+      pid = #{pid,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
