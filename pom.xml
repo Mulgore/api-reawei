@@ -56,16 +56,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jetty</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.eclipse.jetty.websocket</groupId>
-                    <artifactId>websocket-server</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.eclipse.jetty.websocket</groupId>
-                    <artifactId>javax-websocket-server-impl</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <!-- spring boot jetty end -->
 
@@ -111,7 +101,16 @@
             <artifactId>ehcache</artifactId>
         </dependency>
         <!-- 缓存 end -->
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
         <!-- 热部署 start -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
