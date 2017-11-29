@@ -7,6 +7,7 @@ import cn.reawei.api.model.RwAddress;
 import cn.reawei.api.service.IRwAddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 
@@ -21,6 +22,7 @@ public class IRwAddressServiceImpl implements IRwAddressService {
     private RwAddressMapper rwAddressMapper;
 
     @Override
+    @Transactional
     public Result<RwAddress> getRwAddressResultByQuery(Query<RwAddress> addressQuery) {
         Result<RwAddress> result = new Result<>();
         result.setDataList(rwAddressMapper.selectResultByQuery(addressQuery));

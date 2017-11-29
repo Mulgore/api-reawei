@@ -6,6 +6,7 @@ import cn.reawei.api.mapper.RwPermissionMapper;
 import cn.reawei.api.model.RwPermission;
 import cn.reawei.api.service.IRwPermissionService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -17,6 +18,7 @@ public class IRwPermissionServiceImpl implements IRwPermissionService {
     public RwPermissionMapper rwPermissionMapper;
 
     @Override
+    @Transactional
     public Result<RwPermission> getResultByQuery(Query<RwPermission> roleQuery) {
         Result<RwPermission> result = new Result<>();
         result.setTotal(rwPermissionMapper.countResultByQuery(roleQuery));
@@ -25,6 +27,7 @@ public class IRwPermissionServiceImpl implements IRwPermissionService {
     }
 
     @Override
+    @Transactional
     public boolean deleteById(Integer id) {
         int ret = rwPermissionMapper.deleteByPrimaryKey(id * 1l);
 
@@ -39,6 +42,7 @@ public class IRwPermissionServiceImpl implements IRwPermissionService {
     }
 
     @Override
+    @Transactional
     public boolean addRwPermission(RwPermission permission) {
         int ret = rwPermissionMapper.insertSelective(permission);
         if (ret > 0) {
@@ -48,6 +52,7 @@ public class IRwPermissionServiceImpl implements IRwPermissionService {
     }
 
     @Override
+    @Transactional
     public boolean updateRwPermissionById(RwPermission permission) {
         int ret = rwPermissionMapper.updateByPrimaryKeySelective(permission);
         if (ret > 0) {
@@ -57,6 +62,7 @@ public class IRwPermissionServiceImpl implements IRwPermissionService {
     }
 
     @Override
+    @Transactional
     public RwPermission getRwPermissionById(Integer id) {
         return  rwPermissionMapper.selectByPrimaryKey(id * 1l);
     }

@@ -8,6 +8,7 @@ import cn.reawei.api.model.RwPermission;
 import cn.reawei.api.model.RwRolePermission;
 import cn.reawei.api.service.IRwRolePermissionService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -23,6 +24,7 @@ public class IRwRolePermissionServiceImpl implements IRwRolePermissionService {
 
 
     @Override
+    @Transactional
     public boolean deleteByPidAndLevel(Integer id, Integer level) {
         int ret = 0;
         RwPermission permission = rwPermissionMapper.selectByPrimaryKey(id * 1l);
@@ -42,11 +44,13 @@ public class IRwRolePermissionServiceImpl implements IRwRolePermissionService {
     }
 
     @Override
+    @Transactional
     public Result<RwRolePermission> getResultByQuery(Query<RwRolePermission> roleQuery) {
         return null;
     }
 
     @Override
+    @Transactional
     public boolean addRwRolePermission(RwRolePermission permission) {
         int ret = rwRolePermissionMapper.insertSelective(permission);
         if (ret > 0) {
@@ -56,16 +60,19 @@ public class IRwRolePermissionServiceImpl implements IRwRolePermissionService {
     }
 
     @Override
+    @Transactional
     public boolean updateRwRolePermissionById(RwRolePermission permission) {
         return false;
     }
 
     @Override
+    @Transactional
     public RwPermission getRwRolePermissionById(Integer id) {
         return null;
     }
 
     @Override
+    @Transactional
     public boolean getByPidAndLevel(Integer pid, Integer level) {
         RwRolePermission rolePermission = rwRolePermissionMapper.selectByPidAndLevel(pid*1l,level*1l);
         if(Objects.isNull(rolePermission)){

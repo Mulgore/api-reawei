@@ -7,6 +7,7 @@ import cn.reawei.api.model.RwDocument;
 import cn.reawei.api.service.IRwDocumentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 
@@ -14,6 +15,7 @@ import javax.annotation.Resource;
  * Created by xingwu on 2017/5/31.
  */
 @Service("rwDocumentService")
+@Transactional
 public class IRwDocumentServiceImpl implements IRwDocumentService {
 
     @Autowired

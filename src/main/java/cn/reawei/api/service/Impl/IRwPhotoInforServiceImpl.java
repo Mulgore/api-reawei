@@ -6,6 +6,7 @@ import cn.reawei.api.mapper.RwPhotoInfoMapper;
 import cn.reawei.api.model.RwPhotoInfo;
 import cn.reawei.api.service.IRwPhotoInfoService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 
@@ -14,6 +15,7 @@ import javax.annotation.Resource;
  * Created by xingwu on 2017/5/24.
  */
 @Service("rwPhotoInfoService")
+@Transactional
 public class IRwPhotoInforServiceImpl implements IRwPhotoInfoService {
 
     @Resource

@@ -1,6 +1,7 @@
 package cn.reawei.api.controller.account;
 
 import cn.reawei.api.controller.sys.BaseController;
+import cn.reawei.utils.BaiDuUtil;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;

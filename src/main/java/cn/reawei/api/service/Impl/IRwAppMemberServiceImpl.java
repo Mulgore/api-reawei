@@ -6,6 +6,7 @@ import cn.reawei.api.mapper.RwAppMemberMapper;
 import cn.reawei.api.model.RwAppMember;
 import cn.reawei.api.service.IRwAppMemberService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 
@@ -14,6 +15,7 @@ import javax.annotation.Resource;
  * Created by xingwu on 2017/5/24.
  */
 @Service("rwAppMemberService")
+@Transactional
 public class IRwAppMemberServiceImpl implements IRwAppMemberService {
 
     @Resource
