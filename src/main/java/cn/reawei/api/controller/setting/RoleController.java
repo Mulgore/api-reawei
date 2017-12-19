@@ -1,8 +1,5 @@
 package cn.reawei.api.controller.setting;
 
-import cn.reawei.api.common.utils.Page.OrderBy;
-import cn.reawei.api.common.utils.Page.Query;
-import cn.reawei.api.common.utils.Page.Result;
 import cn.reawei.api.controller.sys.BaseController;
 import cn.reawei.api.model.RwPermission;
 import cn.reawei.api.model.RwRole;
@@ -10,6 +7,9 @@ import cn.reawei.api.model.RwRolePermission;
 import cn.reawei.api.service.IRwPermissionService;
 import cn.reawei.api.service.IRwRolePermissionService;
 import cn.reawei.api.service.IRwRoleService;
+import cn.reawei.common.page.OrderBy;
+import cn.reawei.common.page.Query;
+import cn.reawei.common.page.Result;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

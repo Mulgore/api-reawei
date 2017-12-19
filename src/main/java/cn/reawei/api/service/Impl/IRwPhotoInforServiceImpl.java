@@ -1,10 +1,10 @@
 package cn.reawei.api.service.Impl;
 
-import cn.reawei.api.common.utils.Page.Query;
-import cn.reawei.api.common.utils.Page.Result;
 import cn.reawei.api.mapper.RwPhotoInfoMapper;
 import cn.reawei.api.model.RwPhotoInfo;
 import cn.reawei.api.service.IRwPhotoInfoService;
+import cn.reawei.common.page.Query;
+import cn.reawei.common.page.Result;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

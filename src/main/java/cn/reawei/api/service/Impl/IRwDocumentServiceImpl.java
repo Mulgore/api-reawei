@@ -1,15 +1,14 @@
 package cn.reawei.api.service.Impl;
 
-import cn.reawei.api.common.utils.Page.Query;
-import cn.reawei.api.common.utils.Page.Result;
 import cn.reawei.api.mapper.RwDocumentMapper;
 import cn.reawei.api.model.RwDocument;
 import cn.reawei.api.service.IRwDocumentService;
+import cn.reawei.common.page.Query;
+import cn.reawei.common.page.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
 
 /**
  * Created by xingwu on 2017/5/31.

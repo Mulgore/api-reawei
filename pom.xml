@@ -56,6 +56,16 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jetty</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.eclipse.jetty.websocket</groupId>
+                    <artifactId>websocket-server</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.eclipse.jetty.websocket</groupId>
+                    <artifactId>javax-websocket-server-impl</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!-- spring boot jetty end -->
 
@@ -158,6 +168,11 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <version>4.3.11.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.websocket</groupId>
+            <artifactId>javax.websocket-api</artifactId>
+            <version>1.0</version>
         </dependency>
         <!-- kisso 单点登录 end -->
     </dependencies>

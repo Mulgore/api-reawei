@@ -1,7 +1,7 @@
 package cn.reawei.api.controller.sys;
 
-import cn.reawei.api.common.utils.Page.Query;
-import cn.reawei.api.common.utils.Page.Result;
+import cn.reawei.common.page.Query;
+import cn.reawei.common.page.Result;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.kisso.SSOHelper;
 import com.baomidou.kisso.security.token.SSOToken;

@@ -1,9 +1,9 @@
 package cn.reawei.api.service;
 
-import cn.reawei.api.common.utils.Page.Query;
-import cn.reawei.api.common.utils.Page.Result;
 import cn.reawei.api.model.RwPermission;
 import cn.reawei.api.model.RwRolePermission;
+import cn.reawei.common.page.Query;
+import cn.reawei.common.page.Result;
 
 public interface IRwRolePermissionService {
 

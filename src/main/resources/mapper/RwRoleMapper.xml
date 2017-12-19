@@ -90,7 +90,7 @@
       description = #{description,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <select id="selectResultByQuery" resultMap="BaseResultMap" parameterType="cn.reawei.api.common.utils.Page.Query">
+  <select id="selectResultByQuery" resultMap="BaseResultMap" parameterType="cn.reawei.common.page.Query">
     select
     <include refid="Base_Column_List"/>
     from
@@ -115,7 +115,7 @@
     <include refid="pagination"/>
   </select>
 
-  <select id="countResultByQuery" resultType="java.lang.Integer" parameterType="cn.reawei.api.common.utils.Page.Query">
+  <select id="countResultByQuery" resultType="java.lang.Integer" parameterType="cn.reawei.common.page.Query">
     select
     COUNT(1)
     from

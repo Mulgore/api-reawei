@@ -1,9 +1,9 @@
 package cn.reawei.api.service.Impl;
 
-import cn.reawei.api.common.utils.Page.Query;
 import cn.reawei.api.mapper.RwMemberMapper;
 import cn.reawei.api.model.RwMember;
 import cn.reawei.api.service.IRwMemberService;
+import cn.reawei.common.page.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

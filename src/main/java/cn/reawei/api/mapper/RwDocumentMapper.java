@@ -1,7 +1,7 @@
 package cn.reawei.api.mapper;
 
-import cn.reawei.api.common.utils.Page.Query;
 import cn.reawei.api.model.RwDocument;
+import cn.reawei.common.page.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

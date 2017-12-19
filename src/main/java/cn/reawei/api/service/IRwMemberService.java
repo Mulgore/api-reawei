@@ -1,7 +1,7 @@
 package cn.reawei.api.service;
 
-import cn.reawei.api.common.utils.Page.Query;
 import cn.reawei.api.model.RwMember;
+import cn.reawei.common.page.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
