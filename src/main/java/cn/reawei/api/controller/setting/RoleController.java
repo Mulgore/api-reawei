@@ -10,6 +10,8 @@ import cn.reawei.api.service.IRwRoleService;
 import cn.reawei.common.page.OrderBy;
 import cn.reawei.common.page.Query;
 import cn.reawei.common.page.Result;
+import com.baomidou.kisso.annotation.Action;
+import com.baomidou.kisso.annotation.Permission;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -29,6 +31,7 @@ public class RoleController extends BaseController {
     @Resource
     IRwRolePermissionService rwRolePermissionService;
 
+    @Permission(action = Action.Skip)
     @RequestMapping(value = "settingRole", method = RequestMethod.GET)
     public String getRoleList() {
         Query<RwRole> roleQuery = getQuery();
@@ -46,6 +49,7 @@ public class RoleController extends BaseController {
         return jsonPageResult(result);
     }
 
+    @Permission(action = Action.Skip)
     @RequestMapping(value = "settingRole", method = RequestMethod.POST)
     public String addAndUpdate(RwRole rwRole) {
         if (Objects.isNull(rwRole)) {
@@ -64,6 +68,7 @@ public class RoleController extends BaseController {
         }
     }
 
+    @Permission(action = Action.Skip)
     @RequestMapping(value = "settingRole/{id}", method = RequestMethod.DELETE)
     public String deletePerm(@PathVariable Integer id) {
         boolean rlt = rwRoleService.deleteById(id);
@@ -73,6 +78,7 @@ public class RoleController extends BaseController {
         return callbackSuccess("角色删除成功");
     }
 
+    @Permission(action = Action.Skip)
     @RequestMapping(value = "settingRole/perm", method = RequestMethod.GET)
     public String getPermList(Integer level) {
         Query<RwPermission> permissionQuery = getQuery();
@@ -90,6 +96,7 @@ public class RoleController extends BaseController {
         return jsonPageResult(result);
     }
 
+    @Permission(action = Action.Skip)
     @RequestMapping(value = "settingRole/perm/status", method = RequestMethod.POST)
     public String removeChild(Integer level, Integer id, Integer type) {
         switch (type) {

@@ -2,13 +2,20 @@ package cn.reawei.api.common;
 
 import cn.reawei.api.controller.sys.SuperController;
 import com.baomidou.kisso.SSOHelper;
+import com.baomidou.kisso.annotation.Action;
+import com.baomidou.kisso.annotation.Permission;
 import com.baomidou.kisso.security.token.SSOToken;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.lang.reflect.Method;
+import java.util.Objects;
+import java.util.logging.Logger;
 
 /**
  * 拦截器
@@ -23,23 +30,26 @@ public class SSOInterceptor extends SuperController implements HandlerIntercepto
      *
      * @param httpServletRequest
      * @param httpServletResponse
-     * @param o
+     * @param handler
      * @return
      * @throws Exception
      */
     @Override
-    public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
-        SSOToken ssoToken = SSOHelper.getSSOToken(httpServletRequest);
-        if (ssoToken == null) {
-            switch (httpServletRequest.getRequestURI()) {
-                case "/api/v1/user":
-                    return true;
-                case "/api/v1/user/login":
-                    return true;
+    public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object handler) throws Exception {
+        HandlerMethod handlerMethod = (HandlerMethod) handler;
+        Method method = handlerMethod.getMethod();
+        Permission pm = method.getAnnotation(Permission.class);
+        logger.info(" ================ 拦截器 =================== ");
+        if (Objects.nonNull(pm)) {
+            if (Objects.equals(pm.action(), Action.Skip)) {
+                // 权限拦截忽略
+                return true;
+            } else {
+                return true;
             }
+        } else {
             return false;
         }
-        return true;
     }
 
     /**

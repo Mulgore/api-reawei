@@ -6,6 +6,8 @@ import cn.reawei.api.service.IRwPermissionService;
 import cn.reawei.common.page.OrderBy;
 import cn.reawei.common.page.Query;
 import cn.reawei.common.page.Result;
+import com.baomidou.kisso.annotation.Action;
+import com.baomidou.kisso.annotation.Permission;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,6 +23,7 @@ public class PermissionController extends BaseController {
     @Resource
     IRwPermissionService rwPermissionService;
 
+    @Permission(action = Action.Skip)
     @RequestMapping(value = "settingPermission", method = RequestMethod.GET)
     public String getList() {
         Query<RwPermission> permissionQuery = getQuery();
@@ -41,6 +44,7 @@ public class PermissionController extends BaseController {
         return jsonPageResult(result);
     }
 
+    @Permission(action = Action.Skip)
     @RequestMapping(value = "settingPermission/{id}", method = RequestMethod.DELETE)
     public String deletePerm(@PathVariable Integer id) {
         boolean rlt = rwPermissionService.deleteById(id);
@@ -50,7 +54,7 @@ public class PermissionController extends BaseController {
         return callbackSuccess("权限删除成功");
     }
 
-
+    @Permission(action = Action.Skip)
     @RequestMapping(value = "settingPermission", method = RequestMethod.POST)
     public String createAndUpdate(RwPermission permission) {
         if (Objects.isNull(permission)) {
@@ -68,6 +72,7 @@ public class PermissionController extends BaseController {
         }
     }
 
+    @Permission(action = Action.Skip)
     @RequestMapping(value = "settingPermission/child/{id}", method = RequestMethod.GET)
     public String getChildList(@PathVariable Integer id) {
         Query<RwPermission> permissionQuery = getQuery();
@@ -88,6 +93,7 @@ public class PermissionController extends BaseController {
         return jsonPageResult(result);
     }
 
+    @Permission(action = Action.Skip)
     @RequestMapping(value = "settingPermission/state/child", method = RequestMethod.POST)
     public String removeChild(Integer id, String state) {
         RwPermission permission = rwPermissionService.getRwPermissionById(id);

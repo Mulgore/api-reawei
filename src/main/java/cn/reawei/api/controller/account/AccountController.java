@@ -1,6 +1,8 @@
 package cn.reawei.api.controller.account;
 
 import cn.reawei.api.controller.sys.BaseController;
+import com.baomidou.kisso.annotation.Action;
+import com.baomidou.kisso.annotation.Permission;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,6 +26,7 @@ public class AccountController extends BaseController {
      *
      * @return 返回JSON格式的字符串
      */
+    @Permission(action = Action.Skip)
     @RequestMapping(value = "/dashboard", method = RequestMethod.GET)
     public String login() {
         Map<String, Object> data = new HashMap<>();

@@ -6,6 +6,8 @@ import cn.reawei.api.model.RwUser;
 import cn.reawei.api.service.IRwUserService;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.kisso.SSOHelper;
+import com.baomidou.kisso.annotation.Action;
+import com.baomidou.kisso.annotation.Permission;
 import com.baomidou.kisso.common.SSOConstants;
 import com.baomidou.kisso.security.token.SSOToken;
 import com.baomidou.kisso.web.waf.request.WafRequestWrapper;
@@ -45,6 +47,7 @@ public class LoginController extends BaseController {
      *
      * @return 返回JSON格式的字符串
      */
+    @Permission(action = Action.Skip)
     @RequestMapping(value = "/user/login", method = RequestMethod.POST)
     public String login() {
         WafRequestWrapper wr = new WafRequestWrapper(this.request);
@@ -92,6 +95,7 @@ public class LoginController extends BaseController {
      *
      * @return 返回JSON格式的字符串
      */
+    @Permission(action = Action.Skip)
     @RequestMapping(value = "/user", method = RequestMethod.GET)
     public String checkLogin() {
         SSOToken token = SSOHelper.getSSOToken(request);
@@ -126,6 +130,7 @@ public class LoginController extends BaseController {
      *
      * @return 返回JSON格式的字符串
      */
+    @Permission(action = Action.Skip)
     @RequestMapping(value = "/menus", method = RequestMethod.GET)
     public String menusList() {
         List<Map<String, Object>> data = new ArrayList<>();
@@ -160,13 +165,14 @@ public class LoginController extends BaseController {
         return JSONObject.toJSONString(data);
     }
 
+    @Permission(action = Action.Skip)
     @RequestMapping(value = "/user/logout", method = RequestMethod.GET)
     public void logout(HttpServletRequest request, HttpServletResponse response) {
         SSOHelper.clearLogin(request, response);
         request.getSession().invalidate();
     }
 
-
+    @Permission(action = Action.Skip)
     @RequestMapping(value = "/user/sendSms", method = RequestMethod.POST)
     public String sendSms() {
         // 过滤 XSS SQL 注入
@@ -205,6 +211,7 @@ public class LoginController extends BaseController {
         return callbackSuccess();
     }
 
+    @Permission(action = Action.Skip)
     @RequestMapping(value = "/user/forgot", method = RequestMethod.POST)
     public String forgot() {
         String mobile = request.getParameter("mobile");
@@ -227,6 +234,7 @@ public class LoginController extends BaseController {
         return callbackSuccess("密码修改成功");
     }
 
+    @Permission(action = Action.Skip)
     @RequestMapping(value = "/user/update", method = RequestMethod.POST)
     public String update() {
         String oldPassword = request.getParameter("oldPassword");
