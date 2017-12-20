@@ -1,5 +1,8 @@
 package cn.reawei.api.model;
 
+import lombok.Data;
+
+@Data
 public class ResponseMessage {
     private String responseMessage;
 
@@ -7,7 +10,4 @@ public class ResponseMessage {
         this.responseMessage = responseMessage;
     }
 
-    public String getResponseMessage() {
-        return responseMessage;
-    }
 }

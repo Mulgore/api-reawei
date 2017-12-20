@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.lang.reflect.Method;
 import java.util.Objects;
-import java.util.logging.Logger;
 
 /**
  * 拦截器
@@ -39,7 +38,6 @@ public class SSOInterceptor extends SuperController implements HandlerIntercepto
         HandlerMethod handlerMethod = (HandlerMethod) handler;
         Method method = handlerMethod.getMethod();
         Permission pm = method.getAnnotation(Permission.class);
-        logger.info(" ================ 拦截器 =================== ");
         if (Objects.nonNull(pm)) {
             if (Objects.equals(pm.action(), Action.Skip)) {
                 // 权限拦截忽略

@@ -1,5 +1,6 @@
 package cn.reawei.api.common;
 
+import cn.reawei.common.constants.Constant;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -20,7 +21,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(getInterceptor()).addPathPatterns("/**");
+        registry.addInterceptor(new SSOInterceptor()).addPathPatterns("/**").excludePathPatterns(Constant.PATH_PERFIX, Constant.PATH);
         super.addInterceptors(registry);
     }
 }

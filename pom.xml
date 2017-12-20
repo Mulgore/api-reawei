@@ -175,6 +175,14 @@
             <version>1.0</version>
         </dependency>
         <!-- kisso 单点登录 end -->
+        <!-- lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.16</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- lombok -->
     </dependencies>
 
     <build>
@@ -204,4 +212,24 @@
         </plugins>
     </build>
 
+    <profiles>
+        <profile>
+            <id>release</id>
+            <!--<build>-->
+                <!--<filters>-->
+                    <!--<filter>${user.home}/release.properties</filter>-->
+                <!--</filters>-->
+                <!--<resources>-->
+                    <!--<resource>-->
+                        <!--<directory>src/main/resources</directory>-->
+                        <!--<filtering>true</filtering>-->
+                    <!--</resource>-->
+                <!--</resources>-->
+            <!--</build>-->
+            <properties>
+                <log4j.log.path>/data/logs/apiserver.log</log4j.log.path>
+                <log4j.debug.level>info</log4j.debug.level>
+            </properties>
+        </profile>
+    </profiles>
 </project>

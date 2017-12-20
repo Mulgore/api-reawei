@@ -1,9 +1,9 @@
 package cn.reawei.api.controller.login;
 
-import cn.reawei.api.common.utils.MD5Util;
 import cn.reawei.api.controller.sys.BaseController;
 import cn.reawei.api.model.RwUser;
 import cn.reawei.api.service.IRwUserService;
+import cn.reawei.common.utils.MD5Util;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.kisso.SSOHelper;
 import com.baomidou.kisso.annotation.Action;
@@ -66,7 +66,7 @@ public class LoginController extends BaseController {
         password = password.replaceAll(" ", "");
         RwUser user = rwUserService.getUserInfoByLoginName(username);
         if (user != null) {
-            if (user.getPassword().toString().equals(MD5Util.encode(password).toLowerCase())) {
+            if (Objects.equals(user.getPassword(), MD5Util.getMD5(password))) {
                 SSOToken ssoToken = new SSOToken();
                 ssoToken.setId(user.getId());
                 ssoToken.setUserAgent(user.getLoginName());
@@ -229,7 +229,7 @@ public class LoginController extends BaseController {
         if (Objects.isNull(rwUser)) {
             return callbackFail("账号未注册");
         }
-        rwUser.setPassword(MD5Util.encode(password).toLowerCase());
+        rwUser.setPassword(MD5Util.getMD5(password));
         rwUserService.updateUserById(rwUser);
         return callbackSuccess("密码修改成功");
     }
@@ -244,9 +244,9 @@ public class LoginController extends BaseController {
             return callbackFail("确认密码与新密码不一致 !");
         }
         RwUser user = rwUserService.getUserInfoById(getCurrentUserId());
-        if (MD5Util.encode(oldPassword).toLowerCase().equals(user.getPassword())) {
+        if (MD5Util.getMD5(oldPassword).equals(user.getPassword())) {
             Map<String, Object> data = new HashMap<>();
-            user.setPassword(MD5Util.encode(password).toLowerCase());
+            user.setPassword(MD5Util.getMD5(password));
             rwUserService.updateUserById(user);
             data.put("message", "密码修改成功 !");
             return callbackSuccess(data);

@@ -8,10 +8,11 @@
         <result column="state" property="state" jdbcType="INTEGER"/>
         <result column="url" property="url" jdbcType="VARCHAR"/>
         <result column="icon" property="icon" jdbcType="VARCHAR"/>
+        <result column="perm_code" property="permCode" jdbcType="VARCHAR"/>
         <result column="description" property="description" jdbcType="VARCHAR"/>
     </resultMap>
     <sql id="Base_Column_List">
-    id, pid, title, state, url, icon, description
+    id, pid, title, state, url, icon, perm_code, description
   </sql>
     <sql id="pagination">
         <if test="start!=null ">
@@ -30,10 +31,10 @@
   </delete>
     <insert id="insert" parameterType="cn.reawei.api.model.RwPermission">
     insert into rw_permission (id, pid, title, 
-      state, url, icon, 
+      state, url, icon, perm_code,
       description)
     values (#{id,jdbcType=BIGINT}, #{pid,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, 
-      #{state,jdbcType=INTEGER}, #{url,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR},
+      #{state,jdbcType=INTEGER}, #{url,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR}, #{permCode,jdbcType=VARCHAR},
       #{description,jdbcType=VARCHAR})
   </insert>
     <insert id="insertSelective" parameterType="cn.reawei.api.model.RwPermission">
@@ -56,6 +57,9 @@
             </if>
             <if test="icon != null">
                 icon,
+            </if>
+            <if test="permCode != null">
+                perm_code,
             </if>
             <if test="description != null">
                 description,
@@ -80,6 +84,9 @@
             <if test="icon != null">
                 #{icon,jdbcType=VARCHAR},
             </if>
+            <if test="permCode != null">
+                #{permCode,jdbcType=VARCHAR},
+            </if>
             <if test="description != null">
                 #{description,jdbcType=VARCHAR},
             </if>
@@ -103,6 +110,9 @@
             <if test="icon != null">
                 icon = #{icon,jdbcType=VARCHAR},
             </if>
+            <if test="permCode != null">
+                perm_code = #{permCode,jdbcType=VARCHAR},
+            </if>
             <if test="description != null">
                 description = #{description,jdbcType=VARCHAR},
             </if>
@@ -116,6 +126,7 @@
       state = #{state,jdbcType=INTEGER},
       url = #{url,jdbcType=VARCHAR},
       icon = #{icon,jdbcType=VARCHAR},
+      perm_code = #{permCode,jdbcType=VARCHAR},
       description = #{description,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -153,6 +164,9 @@
         <if test="queryObject != null and queryObject.icon != null">
             AND icon = #{queryObject.icon,jdbcType=VARCHAR}
         </if>
+        <if test="queryObject != null and queryObject.permCode != null">
+            AND perm_code = #{queryObject.permCode,jdbcType=VARCHAR}
+        </if>
         <if test="queryObject != null and queryObject.description != null">
             AND description = #{queryObject.description,jdbcType=VARCHAR}
         </if>
@@ -184,6 +198,9 @@
         </if>
         <if test="queryObject != null and queryObject.icon != null">
             AND icon = #{queryObject.icon,jdbcType=VARCHAR}
+        </if>
+        <if test="queryObject != null and queryObject.permCode != null">
+            AND perm_code = #{queryObject.permCode,jdbcType=VARCHAR}
         </if>
         <if test="queryObject != null and queryObject.description != null">
             AND description = #{queryObject.description,jdbcType=VARCHAR}
