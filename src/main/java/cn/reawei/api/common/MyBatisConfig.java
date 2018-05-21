@@ -20,10 +20,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * 1）springboot集成mybatis的基本入口
  * 1）创建数据源
  * 2）创建SqlSessionFactory
- * <p>
- * Created by xingwu on 2017/6/8.
+ *
+ * @author xingwu
+ * @date 2017/6/8
  */
-@Configuration    //该注解类似于spring配置文件
+@Configuration
 @EnableTransactionManagement
 @PropertySource(value = {"classpath:properties/jdbc.properties"})
 public class MyBatisConfig {

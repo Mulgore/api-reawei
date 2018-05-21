@@ -183,6 +183,12 @@
             <scope>provided</scope>
         </dependency>
         <!-- lombok -->
+        <!-- redis 开始 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <!-- redis 结束 -->
     </dependencies>
 
     <build>

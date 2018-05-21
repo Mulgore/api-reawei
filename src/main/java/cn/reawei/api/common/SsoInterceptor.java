@@ -16,9 +16,11 @@ import java.util.Objects;
 
 /**
  * 拦截器
+ *
+ * @author qigong
  */
 @Component
-public class SSOInterceptor extends SuperController implements HandlerInterceptor {
+public class SsoInterceptor extends SuperController implements HandlerInterceptor {
 
     /**
      * 在请求处理之前进行调用（Controller方法调用之前）

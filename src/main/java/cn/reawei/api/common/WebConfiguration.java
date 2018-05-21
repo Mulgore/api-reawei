@@ -5,23 +5,23 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import org.springframework.web.socket.server.HandshakeInterceptor;
 
 /**
  * 拦截器
  *
+ * @author qigong
  */
 @Configuration
-public class WebConfig extends WebMvcConfigurerAdapter {
+public class WebConfiguration extends WebMvcConfigurerAdapter {
 
     @Bean
-    public SSOInterceptor getInterceptor(){
-        return new SSOInterceptor();
+    public SsoInterceptor getInterceptor(){
+        return new SsoInterceptor();
     }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new SSOInterceptor()).addPathPatterns("/**").excludePathPatterns(Constant.PATH_PERFIX, Constant.PATH);
+        registry.addInterceptor(new SsoInterceptor()).addPathPatterns("/**").excludePathPatterns(Constant.PATH_PERFIX, Constant.PATH);
         super.addInterceptors(registry);
     }
 }
