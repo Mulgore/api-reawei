@@ -1,2 +1,2 @@
  mvn clean package -Dmaven.test.skip -Prelease
- scp -r target/root.war apiserver@123.206.181.24:/home/apiserver/builds/
+ scp -r target/root.war apiserver@120.27.219.12:/home/apiserver/builds/
